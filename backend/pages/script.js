@@ -1,14 +1,9 @@
 const andar1 = document.querySelector('#floor1')
 
+let response = fetch('http://0.0.0.0:3333/floors/1',{ method: 'GET'});
 
-function loadData(floor) {
-fetch(`http://localhost:3333/floors/${floor}`,{ 
-          method: 'GET'
-          }).then(datas => { 
-              datas.json()
-          }).then((datas)=>{
-              console.log(datas)
-          })    
-}
-
-loadData(1)
+response.then(res =>{
+    res.text()
+}).then(text =>{
+    console.log(text)
+})

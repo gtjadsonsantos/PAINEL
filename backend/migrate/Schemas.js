@@ -36,7 +36,7 @@ async function SchemaFloors() {
         FloorsID INT AUTO_INCREMENT PRIMARY KEY,
         NumberFloor VARCHAR(30) NOT NULL ,
         RoomsID INT NOT NULL,
-        FOREIGN KEY(RoomsID) REFERENCES Rooms(RoomsID)
+        FOREIGN KEY(RoomsID) REFERENCES Rooms(RoomsID)ON DELETE CASCADE ON UPDATE CASCADE
     );
     `
     

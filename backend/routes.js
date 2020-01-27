@@ -17,11 +17,16 @@ routes.post('/tables', (req,res)=>{
 routes.post('/user', UserController.store)
 routes.get('/users/index', UserController.index )
 routes.post('/update/user', UserController.update)
+routes.post('/delete/user', UserController.delete)
 
 routes.post('/floor', FloorController.store)
 routes.get('/floors/:id', FloorController.index )
+routes.post('/update/floor', FloorController.update)
+routes.post('/delete/floor', FloorController.delete)
 
 routes.post('/room', RoomController.store)
 routes.get('/rooms/index', RoomController.index)
+routes.post('/update/room', RoomController.update)
+routes.post('/delete/room', RoomController.delete)
 
 module.exports = routes 

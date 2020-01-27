@@ -14,5 +14,26 @@ module.exports = {
         await connection.query(sql,(err, results, fields)=>{
             return response.json(results)
         })
-    }
+    },
+    async update (request, response) {   
+        const sql = `
+        UPDATE Rooms SET 
+        NumberRoom = '${request.body.NewNumberRoom}'
+        WHERE 
+            NumberRoom='${request.body.NumberRoom}'
+        `
+        await connection.query(sql,(err, results, fields)=>{
+            return response.json(results)
+        })
+},
+async delete (request, response) {   
+    const sql = ` 
+    DELETE FROM Rooms WHERE NumberRoom='${request.body.NumberRoom}';
+    
+    `
+    await connection.query(sql,(err, results, fields)=>{
+        return response.json(results)
+    })
+
+}
 }
