@@ -15,7 +15,7 @@ routes.post('/tables', (req,res)=>{
 })
 
 routes.post('/user', UserController.store)
-routes.get('/users/index', UserController.index )
+routes.post('/user/auth', UserController.index )
 routes.post('/update/user', UserController.update)
 routes.post('/delete/user', UserController.delete)
 

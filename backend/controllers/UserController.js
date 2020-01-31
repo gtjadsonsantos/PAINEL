@@ -1,10 +1,15 @@
 const connection = require('../database/connection')
 
 module.exports = {
-    async index (reques,response) {
+    async index (request,response) {
         const sql = ` SELECT * FROM Users; `
         await connection.query(sql,(err, results, fields)=>{
-             return response.json(results)
+             results.forEach(user => {
+                if (user.UserName == request.body.username && user.UserPassword == request.body.password ){
+                    console.log(user)
+                   return response.json(user)  
+                }
+             });
         })
     },
     async store (request, response) {

@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+html, body, #root {
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background: rgb(2,0,36);
+    background: linear-gradient(rgb(69, 16, 85), rgb(1, 21, 92));
+}
+#box-login {
+    width: 500px;
+    height: 50%;
+    background-color: rgba(218, 217, 236, 0);
+    border-radius: 10px;
+}
+header {
+    width: 100%;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    border-radius: 5px 5px 0 0;
+    color: #fff;
+}
+h2 {
+    color: #fff;
+    font-size: 25px;
+    text-align: center;
+    border-bottom: 1px solid #000;
+}
+main {
+    width: 100%;
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+input {
+    height: 40px;
+    width: 90%;
+    margin-top: 20px;
+    border-radius: 0.3em;
+}
+
+#area-buttons {
+    width: 100%;
+    height: 70px;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+}
+button {
+    width: 130px;
+    height: 40px;
+    border-radius: 5px;
+    font-size: 15px;
+    background-color: rgb(97, 97, 97);
+    color: #fff;
+    cursor: pointer;
+    margin-left: 24px;
+}
+
+a {
+    text-decoration: none;
+}
+
