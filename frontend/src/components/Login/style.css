@@ -8,19 +8,25 @@
     font-family: 'Roboto', sans-serif;
 }
 
-html, body, #root {
+html, body, #root, #containerLogin {
     height: 100%;
-    align-items: center;
-    justify-content: center;
     display: flex;
     background: rgb(2,0,36);
     background: linear-gradient(rgb(69, 16, 85), rgb(1, 21, 92));
+    flex: 1;
+}
+#containerLogin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 #box-login {
     width: 500px;
     height: 50%;
     background-color: rgba(218, 217, 236, 0);
     border-radius: 10px;
+    align-items: center;
+    justify-content: center;
 }
 header {
     width: 100%;

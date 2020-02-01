@@ -6,8 +6,8 @@ module.exports = {
         await connection.query(sql,(err, results, fields)=>{
              results.forEach(user => {
                 if (user.UserName == request.body.username && user.UserPassword == request.body.password ){
-                    console.log(user)
-                   return response.json(user)  
+                    console.log(request.body.username)
+                    return response.json(user)  
                 }
              });
         })

@@ -1,46 +1,46 @@
-
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-  }
-  html, body {
-    height: 100%;
-  }
+  padding: 0;
+  margin: 0;
+  box-sizing: 0;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+}
+
+#container {
+  height: 100%;
+  display: flex;
+  flex: 1;
   
-  #root {
-    margin-top: 10px;
-  }
-  ul {
-    height: 910px;
-    width: 122px;
-    border-right:1px solid #fff ;
-    background-color: black;
-    border-left: 1px solid ;
-  }
-  ul:nth-child(odd) {
-    background-color: rgb(250, 250, 250);
-  }
-  ul:nth-child(even) {
-    background-color: rgb(246, 246, 246);
-  }
-  li {
-    text-align: center;
-    display: block;
-    color: #000;
-    font-size: 20px;
-    margin-bottom: 5px;
-  }
-  img {
-    width: 90%;
-    height: 8%;
-    max-height: 45px;
-  }
-  .title {
-    border-bottom: 1px solid #fff;
-    height: 30px;
-    color: #000;
-    font-weight: bold;
-    font-size: 20px;
-  }
-  
+}
+.floors {
+  width: 10%;
+  background-color: rgb(255, 255, 255);
+}
+
+.title {
+  margin-bottom: 25px;
+  color: #000;
+  font-size: 15px;
+  height: 35px;
+  text-align: center;
+  line-height: 25px;
+}
+.imageCostumer {
+  width: 90%;
+  margin: auto;
+  height: 30px ;
+}
+
+.numberRoom {
+  color: #fff;
+  text-align: center;
+  background-color: rgb(117, 117, 117);
+  border-radius: 1em;
+  width: 50%;
+  font-size: small;
+  display: block;
+  margin: auto;
+}
