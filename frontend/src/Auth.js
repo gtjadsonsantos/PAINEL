@@ -1,8 +1,6 @@
 
-function isAuthenticated ( ) {
-    let status = ( (localStorage.getItem('AuthUsername') == localStorage.getItem('username')) && (localStorage.getItem('AuthPassword') == localStorage.getItem('password')))? true:false
-    console.log(status)
-
+function isAuthenticated () {
+    const status = localStorage.getItem('status')
     return status
 }
 

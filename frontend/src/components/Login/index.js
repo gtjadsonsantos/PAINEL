@@ -1,42 +1,48 @@
-import React, { useState, useContext } from 'react';
-import { Link } from "react-router-dom";
+import React, { useState, createContext} from 'react';
+
+import history from '../../history'
 import api from '../../services/api'
 import './style.css'
 
-
+createContext({
+  status: true
+})
 function Login() {
 
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
-  const [response, setResponse] = useState('')
   
   localStorage.setItem('username',username)
   localStorage.setItem('password',password)
 
-async function Auth() {
-  
-    
-    const response =  await api.post('/user/auth', { username, password }, { 
-      headers: {'Access-Control-Allow-Origin': '*', 'content-type':'content-type; charset=utf-8','X-Powered-By': 'Express','mode':'no-cors'}     
-    })
-    setResponse(response1.data)
+function Auth() { 
 
-    localStorage.setItem('AuthUsername',response.data.UserName)
-    localStorage.setItem('AuthPassword',response.data.UserPassword)
-  }
+     api.post('/user/auth', { username, password })
+     .then(resp => { 
+       const { UserName, UserPassword } = resp.data
+       if(username === UserName && password === UserPassword){
+         localStorage.setItem('status', true)
+         history.push('/Administracao')
+       }
+     })
+     .catch(error =>{
+       console.log(error)
+     })
   
+  }
+
     return (
       <div id="containerLogin">
         <div id="box-login">
           <header>
-              <h1>{response}</h1>          
+              <h1>Login</h1>          
           </header>
           <main>
-            <input type="text" placeholder="Usuario" onChange={username => setUsername(username.target.value)}/>
-            <input type="text" placeholder="Senha" onChange={password => setPassword(password.target.value)} />
+            <input type="text" placeholder="Usuario" onChange={username => setUsername(username.target.value)} autoFocus  />
+            <input type="password" placeholder="Senha" onChange={password => setPassword(password.target.value)} />
           </main>
           <div id="area-buttons">
-          <Link to="/Sessao"><button onClick={Auth}>Acessar</button></Link>
+          <button onClick={Auth}>Acessar</button>
           <a href="#">Esqueci minha senha</a>
           </div>
         </div>

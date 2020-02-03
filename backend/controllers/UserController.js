@@ -6,25 +6,31 @@ module.exports = {
         await connection.query(sql,(err, results, fields)=>{
              results.forEach(user => {
                 if (user.UserName == request.body.username && user.UserPassword == request.body.password ){
-                    console.log(request.body.username)
+                    console.log(user)
                     return response.json(user)  
                 }
              });
+        })
+    },
+    async indexAll (request,response) {
+        const sql = ` SELECT * FROM Users; `
+        await connection.query(sql,(err, results, fields)=>{
+            return response.json(results)  
         })
     },
     async store (request, response) {
         const sql = `
         INSERT INTO Users 
         (UserName,
-        UserPassword,
-        NameImage,
-        UrlImage)
+        UserPassword
+        )
         VALUES (
         '${request.body.username}',
-        '${request.body.password}',
-        '${request.body.name_image}',
-        '${request.body.url_image}');    
+        '${request.body.password}'
+        );
         `
+        console.log(sql)
+
         await connection.query(sql,(err, results, fields)=>{
             return response.json(results)
 
@@ -33,13 +39,11 @@ module.exports = {
     async update (request, response) {   
         const sql = `
         UPDATE Users SET 
-        UserName = '${request.body.new_username}',
-        UserPassword = '${request.body.new_password}',
-        NameImage = '${request.body.name_image}',
-        UrlImage = '${request.body.url_image}' 
+        UserName = '${request.body.username}',
+        UserPassword = '${request.body.password}'
         WHERE 
             UserName='${request.body.username}' AND
-            UserPassword = '${request.body.password}';    
+            UserPassword = '${request.body.oldPassword}';
         `
         console.log(sql)
         

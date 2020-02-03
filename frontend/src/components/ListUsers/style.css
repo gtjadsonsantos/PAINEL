@@ -1,0 +1,22 @@
+#contianerListUsers{ 
+    float: 1;
+    height: 100%;
+    display: flex;
+    
+}
+h2 {
+    border-bottom: none;
+    margin-bottom: 10px ;
+
+}
+#list {
+    width: 200px;
+}
+.item-list {
+    color: #fff;
+    display: block;
+    text-align: center;
+    height: 30px;
+    font-weight: bold;
+    
+}

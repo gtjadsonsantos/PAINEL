@@ -1,0 +1,27 @@
+
+#contianerAddRoom {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 40px;
+    padding-left: 20px;
+    border-left: 0.1px solid #000;
+}
+
+#contianerAddRoom h2 { 
+    text-align: start;
+}
+
+#contianerAddRoom div {
+    width: 100%;
+    height: 150px;
+    display: flex;
+    justify-content: left;
+    align-items: flex-end;
+}
+
+
+#contianerAddRoom div button {
+    margin: 0;
+}

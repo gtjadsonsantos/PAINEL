@@ -5,9 +5,7 @@ async function SchemaUsers () {
     CREATE TABLE Users (
         UserID INT AUTO_INCREMENT PRIMARY KEY,
         UserName VARCHAR(255) NOT NULL,
-        UserPassword VARCHAR(255) NOT NULL,
-        NameImage VARCHAR(255) NOT NULL,
-        UrlImage VARCHAR(255)
+        UserPassword VARCHAR(255) NOT NULL
     );    
     `
     await connection.query(sql,(err, results, fields)=>{

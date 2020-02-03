@@ -1,15 +1,14 @@
 import React from 'react';
-import isAuthenticated from './Auth'
-import {BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
+import {Router, Route, Switch, Redirect } from 'react-router-dom'
 
+import history from './history'
 import Login from './components/Login'
-import Sessao from './components/Sessao'
+import Section from './components/Section'
+import Administration from './components/Administration'
 
-
-    
 const PrivateRoute =  ({component: Component, ...rest })=> (
     <Route {...rest} render={props => (
-        isAuthenticated() == true ?(
+            localStorage.getItem('status') ?(
             <Component {...props}/> 
         ):(
             <Redirect to={{pathname: '/', state:{ from: props.location }}}/>
@@ -19,12 +18,13 @@ const PrivateRoute =  ({component: Component, ...rest })=> (
 )
 
 const Routes = () => (
-    <BrowserRouter>
+    <Router history={history} >
         <Switch>
             <Route exact path="/" component={Login} />
-            <PrivateRoute path="/Sessao" component={Sessao} />
+            <Route exact path="/Sessao" component={Section} />
+            <PrivateRoute exact path="/Administracao" component={Administration} />
         </Switch>
-    </BrowserRouter>
+    </Router>
 )
 
 export default Routes
