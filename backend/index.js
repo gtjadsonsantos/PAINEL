@@ -3,7 +3,6 @@ const routes = require('./routes')
 const http = require('http')
 const path = require('path')
 const cors = require('cors')
-const socket = require('./utils/websocket')
 const app = express()
 const server = http.Server(app)
 
@@ -21,4 +20,6 @@ app.use(routes)
 app.use(express.static(path.join('imgs')))
 
 
-server.listen(3333)     
+server.listen(3333, ()=>{
+    console.log('http://0.0.0.0:3333')
+})     
