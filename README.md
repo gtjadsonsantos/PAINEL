@@ -15,7 +15,6 @@ A PROPOSTA DESSA APLICAÇÃO É TORNAR SIMPLES A IDENTIFICAÇÃO DAS EMPRESAS PR
 
 [MYSQL](https://www.apachefriends.org/pt_br/download.html)
 
-[CURL](https://curl.haxx.se/download.html)
 
 ## PARA COMEÇAR 
 
