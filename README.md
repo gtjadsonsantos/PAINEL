@@ -1,5 +1,10 @@
 # PAINEL DE SALAS
 
+
+![](frontend/public/view.png)
+
+
+
 A PROPOSTA DESSA APLICAÇÃO É TORNAR SIMPLES A IDENTIFICAÇÃO DAS EMPRESAS PRESENTES EM EMPREENDIMENTOS QUE SÃO COMERCIAIS.S 
 
 ### REQUISITOS 
@@ -33,13 +38,11 @@ ACESSE A PASTA `fronend` DO PROJETO
 ```
 
 
-### CRIAÇÃO DO USUÁRIO ADMINISTRADOR
+### CRIAÇÃO DO USUÁRIO ADMINISTRADOR E PROVISONAMENTO DO BANCO
 
-RODE O COMANDO ABAIXO
+Acesse a interface do seu banco mysql http://`seuendereçoip`/phpmyadmin/
 
-```
-
-```
+Copie o conteúdo do arquivo `PAINEL/provisioning.sql`, cole e execute 
 
 # AUTENTICAÇÃO INICIAL
 
