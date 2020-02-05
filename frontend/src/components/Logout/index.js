@@ -1,5 +1,5 @@
 function LogoutSystem(){
-    localStorage.clear()
+    sessionStorage.clear()
     window.location.assign('/')
 }
 

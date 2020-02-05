@@ -10,7 +10,7 @@ const RoomController  = require('./controllers/RoomController')
 const routes = Router()
 
 
-routes.post('/tables', (req,res)=>{
+routes.post('/provisioning', (req,res)=>{
     SchemaUsers()
     SchemaRooms()
     SchemaFloors()

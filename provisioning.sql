@@ -1,7 +1,33 @@
 
 USE test;
 
+/* TABLEA DE USUÁRIOS */
+
+CREATE TABLE IF NOT EXISTS Users (
+    UserID INT AUTO_INCREMENT PRIMARY KEY,
+    UserName VARCHAR(255) NOT NULL,
+    UserPassword VARCHAR(255) NOT NULL,
+    UserType VARCHAR(255) NOT NULL
+);
+
+/* TABLE DE SALAS */
+CREATE TABLE IF NOT EXISTS Rooms (
+        RoomsID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+        NumberRoom VARCHAR(10),
+        NameImage VARCHAR(100)
+);
+
+/* TABLE DE ANDARES */
+
+CREATE TABLE IF NOT EXISTS Floors (
+        FloorsID INT AUTO_INCREMENT PRIMARY KEY,
+        NumberFloor VARCHAR(30) NOT NULL ,
+        RoomsID INT NOT NULL,
+        FOREIGN KEY(RoomsID) REFERENCES Rooms(RoomsID)ON DELETE CASCADE ON UPDATE CASCADE
+    );
 /* 1º ANDAR  */
+
+INSERT INTO Users (UserName, UserPassword, UserType ) VALUES ('admin','admin','administrator');
 
 INSERT INTO Rooms (NumberRoom, NameImage ) VALUES ('101', 'logo-beco-castelo.png');
 INSERT INTO Floors (NumberFloor, RoomsID) VALUES ('1', '1');

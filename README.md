@@ -1,8 +1,8 @@
 # PAINEL DE SALAS
 
-A PROPOSTA DESSA APLICAÇÃO É TORNAR SIMPLES A IDENTIFICAÇÃO DAS EMPRESAS PRESENTES EM EMPREENDIMENTOS COMERCIAIS PARA COM SEUS CLIENTES
+A PROPOSTA DESSA APLICAÇÃO É TORNAR SIMPLES A IDENTIFICAÇÃO DAS EMPRESAS PRESENTES EM EMPREENDIMENTOS QUE SÃO COMERCIAIS.S 
 
-### REQUISITOS
+### REQUISITOS 
 
 [NODEJS > 12.14.1](https://nodejs.org/en/)
 
@@ -10,22 +10,39 @@ A PROPOSTA DESSA APLICAÇÃO É TORNAR SIMPLES A IDENTIFICAÇÃO DAS EMPRESAS PR
 
 [MYSQL](https://www.apachefriends.org/pt_br/download.html)
 
+[CURL](https://curl.haxx.se/download.html)
+
 ## PARA COMEÇAR 
 
 INICIE O BANCO DE DADOS 
 
-```
+```yml
     sudo /opt/lampp/./xampp startmysql 
 ```
 
-INICIE O BACKEND
+ACESSE A PASTA `backend` DO PROJETO
+
+```yml
+    yarn install && yarn start 
+```
+
+ACESSE A PASTA `fronend` DO PROJETO
+
+```yml
+   yarn server
+```
+
+
+### CRIAÇÃO DO USUÁRIO ADMINISTRADOR
+
+RODE O COMANDO ABAIXO
 
 ```
-    cd PAINEL/backend && yarn start
-```
-
-INICIE O FRONTEND
 
 ```
-    cd PAINEL/fronend && yarn start
-```
+
+# AUTENTICAÇÃO INICIAL
+
+`Username`: admin
+`Password`: admin
+

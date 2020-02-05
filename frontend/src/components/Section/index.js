@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 
 import api from '../../services/api'
+import config from '../../config'
 
 import './style.css';
 
@@ -16,9 +17,8 @@ import './style.css';
     const [floor9, setFloor9] = useState([])
     const [floor10, setFloor10] = useState([])
     const [floor11, setFloor11] = useState([])
-    const [update] = useState(localStorage.getItem('update'))
 
-    const url = "http://localhost:3333"
+    const url = config.backend.url
 
     useEffect(()=>{
      async function getDatas (){
@@ -48,7 +48,7 @@ import './style.css';
 
       }
       getDatas()
-  },[update])
+  },[])
 
 
   return (

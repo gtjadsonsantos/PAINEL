@@ -40,3 +40,8 @@
 #incorret {
     color: rgb(136, 12, 12);
 }
+.options-admin {
+    margin: 13px;
+    width: 90%;
+    height: 25px;
+}

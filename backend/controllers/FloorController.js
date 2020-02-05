@@ -11,8 +11,6 @@ module.exports = {
     async store (request, response) {
         const sql = `INSERT INTO Floors (NumberFloor, RoomsID) VALUES ('${request.body.NumberFloor}', '${request.body.RoomsID}');`
 
-        console.log(sql)
-
         await connection.query(sql,(err, results, fields)=>{
            
             return response.json(results)
