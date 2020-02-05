@@ -4,10 +4,10 @@ module.exports = {
     async index (request,response) {
         const sql = ` SELECT * FROM Users; `
         await connection.query(sql,(err, results, fields)=>{
+            console.log(results)
              results.forEach(user => {
                 if (user.UserName == request.body.username && user.UserPassword == request.body.password ){
-                    console.log(user)
-                    return response.json(user)  
+                    return response.json(user)     
                 }
              });
         })
@@ -22,36 +22,42 @@ module.exports = {
         const sql = `
         INSERT INTO Users 
         (UserName,
-        UserPassword
+        UserPassword,
+        UserType
         )
         VALUES (
         '${request.body.username}',
-        '${request.body.password}'
+        '${request.body.password}',
+        '${request.body.usertype}'
         );
         `
-        console.log(sql)
+        await connection.query(`SELECT * FROM Users WHERE UserName='${request.body.username}';`,(err, results, fields)=>{
+            const [ query ] = results
 
-        await connection.query(sql,(err, results, fields)=>{
-            return response.json(results)
-
+            if(query == undefined || query == null){
+                connection.query(sql,(err, results, fields)=>{
+                return response.json( {status: 'Usuário criado'})
+                })
+            }else {
+                return response.json({status: 'Usuário já existente'})
+            }
         })
     },
     async update (request, response) {   
         const sql = `
         UPDATE Users SET 
         UserName = '${request.body.username}',
-        UserPassword = '${request.body.password}'
+        UserPassword = '${request.body.password}',
         WHERE 
             UserName='${request.body.username}' AND
             UserPassword = '${request.body.oldPassword}';
         `
-        console.log(sql)
         
         await connection.query(sql,(err, results, fields)=>{
             return response.json(results)
         })
 
-    },
+    },  
     async delete (request, response){
         const sql = ` DELETE FROM Users 
         WHERE UserName='${request.body.UserName}' AND

@@ -19,6 +19,7 @@ html, body, #root, #containerLogin {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 #box-login {
     width: 500px;
@@ -80,3 +81,7 @@ a {
     text-decoration: none;
 }
 
+span {
+    color: #fff;
+    font-size: small;
+}

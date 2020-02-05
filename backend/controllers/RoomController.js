@@ -19,7 +19,6 @@ module.exports = {
 
         await connection.query(sql,(err, results, fields)=>{
             connection.query(` INSERT INTO Floors (NumberFloor, RoomsID ) VALUES( '${request.body.floor}','${results.insertId}');`,(err, results, fields)=>{
-                console.log(results)
             })
         })
 
@@ -33,7 +32,6 @@ module.exports = {
         WHERE 
             NumberRoom='${request.body.room}';
         `
-        console.log(sql)
         await connection.query(sql,(err, results, fields)=>{
             return response.json(results)
         })

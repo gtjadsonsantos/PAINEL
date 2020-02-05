@@ -1,7 +1,7 @@
 import api from '../../services/api'
 
 async function handleProvisioningDatabase(){
-    api.post('/tables')
+    api.post('/provisioning')
 }
 
 export default handleProvisioningDatabase

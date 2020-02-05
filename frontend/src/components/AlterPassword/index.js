@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import api from '../../services/api'
-
+import Themes from '../../global/Themes'
 
 import './style.css'
 
@@ -10,15 +10,20 @@ function AlterPassword() {
   const [ verifyPassword, setVerifyPassword] = useState('')
 
     async function handleAlterPassword(){
-      const response = await api.post('/update/user',{
-        username: localStorage.getItem('username'),
-        oldPassword: localStorage.getItem('password'),
-        password 
-      })
-      if(response.status === 200){
+      
+      if (password !== '' && verifyPassword !== ''){
+
+      const response = await api.post('/update/user',{ username: sessionStorage.getItem('username'), oldPassword: sessionStorage.getItem('password'), password  })
+
+      if(!response.data){
         document.querySelector('#submit').innerText = 'Senha Alterada'
+        document.getElementById('submit').style.cssText = Themes.button.validated
       }else {
         document.querySelector('#submit').innerText = `Error: ${response.status}`
+        document.getElementById('submit').style.cssText = Themes.button.error
+        }
+      }else {
+        document.querySelector('#incorret').innerText = "Preencher todos os campos!!"
       }
     }
 

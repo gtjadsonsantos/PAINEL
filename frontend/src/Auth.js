@@ -1,6 +1,6 @@
 
 function isAuthenticated () {
-    const status = localStorage.getItem('status')
+    const status = sessionStorage.getItem('status')
     return status
 }
 
