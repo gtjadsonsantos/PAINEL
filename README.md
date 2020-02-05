@@ -46,3 +46,6 @@ RODE O COMANDO ABAIXO
 `Username`: admin
 `Password`: admin
 
+
+
+![](frontend/public/logo.png)
