@@ -33,7 +33,7 @@ ACESSE A PASTA `backend` DO PROJETO
 ACESSE A PASTA `fronend` DO PROJETO
 
 ```yml
-   yarn build && yarn server
+   yarn install && yarn build && yarn server
 ```
 
 
