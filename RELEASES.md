@@ -18,10 +18,11 @@
 **Observação**: Se você fizer o provisinamento do banco de dados, pelo arquivo `provisioning.sql`, não clique no botão para provisionar o banco de dados
 a ação irá duplicar o usuário administrador e assim o servidor irá para de funcionar;
 
-- `solução de contorno`: exluir o registro adicional do usuário que foi duplicado
+- `solução de contorno`: excluir o registro adicional do usuário que foi duplicado
 
 ## PROXÍMA VERSÃO
 
-* Atualização da view quando quando realizando um upload de imagem ao servidor
+[ x ]Atualização da view quando quando realizando um upload de imagem ao servidor
 * Informação de data e horário
 * Cotação de moedas
+* Adicionar o ORM ao projeto

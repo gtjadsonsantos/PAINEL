@@ -18,6 +18,11 @@ function CreateUser() {
       if(response.data.status === 'Usuário criado'){
           document.querySelector('#submit').innerText = 'Usuário Criado'
           document.getElementById('submit').style.cssText = Themes.button.validated
+
+        setInterval(()=>{
+          document.querySelector('#submit').innerText = 'Enviar'
+          document.getElementById('submit').style.cssText = Themes.button.reset
+        },300)
          
       }else {
         document.querySelector('#submit').innerText = `${response.data.status}`
