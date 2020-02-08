@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
+import io from 'socket.io-client';
 import api from '../../services/api'
 import Themes from '../../global/Themes'
+import config from '../../config'
 
 import './style.css'
+
+const socket = io(`${config.backend.url}`)
+
 
 function UpdateRoom() {
     const [room, setRoom] = useState('')  
@@ -18,11 +23,19 @@ function UpdateRoom() {
             
             sessionStorage.setItem('update', Math.floor())
 
-            const response =  api.post('/update/room', data)
-
+            const response = await api.post('/update/room', data)
+         
             if(response.status === 200){
                 document.querySelector('#submit').innerText = 'Sala Atualizada'
                 document.getElementById('submit').style.cssText = Themes.button.validated
+
+                socket.emit('send-image',  { data: 'send-image' } )
+
+                setInterval(()=>{
+                    document.querySelector('#submit').innerText = 'Enviar'
+                    document.getElementById('submit').style.cssText = Themes.button.reset
+                  },300)
+                  
             }else {
                 document.querySelector('#submit').innerText = `Error: ${response.status}`
                 document.getElementById('submit').style.cssText = Themes.button.error

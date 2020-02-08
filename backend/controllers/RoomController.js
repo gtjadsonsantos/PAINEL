@@ -19,6 +19,7 @@ module.exports = {
 
         await connection.query(sql,(err, results, fields)=>{
             connection.query(` INSERT INTO Floors (NumberFloor, RoomsID ) VALUES( '${request.body.floor}','${results.insertId}');`,(err, results, fields)=>{
+                return response.json({results})
             })
         })
 

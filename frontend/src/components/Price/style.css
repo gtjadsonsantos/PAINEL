@@ -1,0 +1,20 @@
+.containerPrice {
+    width: 100%;
+    height: 90%;
+}
+.containerPrice header {
+    height: 110px !important;
+    width: 100%;
+    padding: 0;
+    margin: 0 0 0 0;
+}
+.containerPrice section {
+    display: flex;
+    color: rgb(0, 0, 0);
+}
+.containerPrice section img { 
+    width: 20px !important;
+    height: 20px !important;
+    margin: 0 25px 0 0 !important;
+    
+}

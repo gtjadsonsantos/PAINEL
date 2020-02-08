@@ -1,11 +1,14 @@
 import React, {useState, useEffect} from 'react';
-
+import io from 'socket.io-client';
 import api from '../../services/api'
 import config from '../../config'
+import Weather from '../Weather'
 
 import './style.css';
 
-  function Sessao() {
+const socket = io(`${config.backend.url}`)
+
+function Sessao() {
     const [floor1, setFloor1] = useState([])
     const [floor2, setFloor2] = useState([])
     const [floor3, setFloor3] = useState([])
@@ -17,7 +20,7 @@ import './style.css';
     const [floor9, setFloor9] = useState([])
     const [floor10, setFloor10] = useState([])
     const [floor11, setFloor11] = useState([])
-
+    const [showWeather, setShowWeather] = useState(false)
     const url = config.backend.url
 
     useEffect(()=>{
@@ -33,7 +36,6 @@ import './style.css';
         const res_floor9 = await api.get('/floors/9');
         const res_floor10 = await api.get('/floors/10');
         const res_floor11 = await api.get('/floors/11');
-        
         setFloor1(res_floor1.data)
         setFloor2(res_floor2.data)
         setFloor3(res_floor3.data)
@@ -45,12 +47,27 @@ import './style.css';
         setFloor9(res_floor9.data)
         setFloor10(res_floor10.data)
         setFloor11(res_floor11.data)
-
       }
       getDatas()
-  },[])
+     },[])
 
+    useEffect(()=>{
+    socket.on('update', obj =>{
+      if(obj.action === "update-window"){
+          window.location.reload()
+      }
+    })
+    },[])
 
+    setTimeout(()=>{
+        if (showWeather === false){
+            setShowWeather(true)   
+            document.getElementById('containerInfo').style.display = 'flex';
+        }else {
+           setShowWeather(false)  
+           document.getElementById('containerInfo').style.display = 'none'; 
+        }
+    }, 60000)
   return (
     <>
       <div id="container" >
@@ -59,7 +76,7 @@ import './style.css';
            {
              floor1.map(item => ( 
               <>
-                <img className="imageCostumer" alt={item.NameImage} key={item.RoomID} id={item.NumberRoom} src={`${url}/${item.NameImage}`} />  
+                <img key={item.RoomID} className="imageCostumer" alt={item.NameImage} id={item.NumberRoom} src={`${url}/${item.NameImage}`} />  
                <li className="numberRoom" >{item.NumberRoom}</li>
               </>
              ))
@@ -70,7 +87,7 @@ import './style.css';
            {
              floor2.map(item => ( 
               <>
-                <img className="imageCostumer" alt={item.NameImage} key={item.RoomID} id={item.NumberRoom} src={`${url}/${item.NameImage}`} />  
+                <img key={item.RoomID} className="imageCostumer" alt={item.NameImage} id={item.NumberRoom} src={`${url}/${item.NameImage}`} />  
                <li className="numberRoom" >{item.NumberRoom}</li>
               </>
              ))
@@ -81,7 +98,7 @@ import './style.css';
            {
              floor3.map(item => ( 
               <>
-                <img className="imageCostumer" alt={item.NameImage} key={item.RoomID} id={item.NumberRoom} src={`${url}/${item.NameImage}`} />  
+                <img key={item.RoomID} className="imageCostumer" alt={item.NameImage} id={item.NumberRoom} src={`${url}/${item.NameImage}`} />  
                <li className="numberRoom" >{item.NumberRoom}</li>
               </>
              ))
@@ -92,7 +109,7 @@ import './style.css';
            {
              floor4.map(item => ( 
               <>
-                <img className="imageCostumer" alt={item.NameImage} key={item.RoomID} id={item.NumberRoom} src={`${url}/${item.NameImage}`} />  
+                <img key={item.RoomID} className="imageCostumer" alt={item.NameImage} id={item.NumberRoom} src={`${url}/${item.NameImage}`} />  
                <li className="numberRoom" >{item.NumberRoom}</li>
               </>
              ))
@@ -103,7 +120,7 @@ import './style.css';
            {
              floor5.map(item => ( 
               <>
-                <img className="imageCostumer" alt={item.NameImage} key={item.RoomID} id={item.NumberRoom} src={`${url}/${item.NameImage}`} />  
+                <img key={item.RoomID} className="imageCostumer" alt={item.NameImage} id={item.NumberRoom} src={`${url}/${item.NameImage}`} />  
                <li className="numberRoom" >{item.NumberRoom}</li>
               </>
              ))
@@ -114,7 +131,7 @@ import './style.css';
            {
              floor6.map(item => ( 
               <>
-                <img className="imageCostumer" alt={item.NameImage} key={item.RoomID} id={item.NumberRoom} src={`${url}/${item.NameImage}`} />  
+                <img key={item.RoomID} className="imageCostumer" alt={item.NameImage} id={item.NumberRoom} src={`${url}/${item.NameImage}`} />  
                <li className="numberRoom" >{item.NumberRoom}</li>
               </>
              ))
@@ -125,7 +142,7 @@ import './style.css';
            {
              floor7.map(item => ( 
               <>
-                <img className="imageCostumer" alt={item.NameImage} key={item.RoomID} id={item.NumberRoom} src={`${url}/${item.NameImage}`} />  
+                <img key={item.RoomID} className="imageCostumer" alt={item.NameImage} id={item.NumberRoom} src={`${url}/${item.NameImage}`} />  
                <li className="numberRoom" >{item.NumberRoom}</li>
               </>
              ))
@@ -136,7 +153,7 @@ import './style.css';
            {
              floor8.map(item => ( 
               <>
-                <img className="imageCostumer" alt={item.NameImage} key={item.RoomID} id={item.NumberRoom} src={`${url}/${item.NameImage}`} />  
+                <img key={item.RoomID} className="imageCostumer" alt={item.NameImage} id={item.NumberRoom} src={`${url}/${item.NameImage}`} />  
                <li className="numberRoom" >{item.NumberRoom}</li>
               </>
              ))
@@ -147,7 +164,7 @@ import './style.css';
            {
              floor9.map(item => ( 
               <>
-                <img className="imageCostumer" alt={item.NameImage} key={item.RoomID} id={item.NumberRoom} src={`${url}/${item.NameImage}`} />  
+                <img key={item.RoomID} className="imageCostumer" alt={item.NameImage} id={item.NumberRoom} src={`${url}/${item.NameImage}`} />  
                <li className="numberRoom" >{item.NumberRoom}</li>
               </>
              ))
@@ -158,7 +175,7 @@ import './style.css';
            {
              floor10.map(item => ( 
               <>
-                <img className="imageCostumer" alt={item.NameImage} key={item.RoomID} id={item.NumberRoom} src={`${url}/${item.NameImage}`} />  
+                <img key={item.RoomID} className="imageCostumer" alt={item.NameImage} id={item.NumberRoom} src={`${url}/${item.NameImage}`} />  
                <li className="numberRoom" >{item.NumberRoom}</li>
               </>
              ))
@@ -169,13 +186,14 @@ import './style.css';
            {
              floor11.map(item => ( 
               <>
-                <img className="imageCostumer" alt={item.NameImage} key={item.RoomID} id={item.NumberRoom} src={`${url}/${item.NameImage}`} />  
+                <img key={item.RoomID} className="imageCostumer" alt={item.NameImage} id={item.NumberRoom} src={`${url}/${item.NameImage}`} />  
                <li className="numberRoom" >{item.NumberRoom}</li>
-              </>
+              </> 
              ))
            }
         </ul>
       </div>
+      <Weather />
     </>
   );
 }

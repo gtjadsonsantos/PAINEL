@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
+import io from 'socket.io-client'
 import api from '../../services/api'
 import Themes from '../../global/Themes'
+import config from '../../config'
 
 import './style.css'
 
+const socket = io(`${config.backend.url}`)
 
 function AddRoom() {
     const [ room, setRoom ] = useState('')
@@ -18,12 +21,20 @@ function AddRoom() {
             data.append('room', room)
             data.append('floor', floor)
 
-            const response = api.post('/room', data)
+            const response = await api.post('/room', data)
 
             if(response.status === 200){
                 document.querySelector('#submit').innerText = 'Sala Adicionada'
                 document.getElementById('submit').style.cssText = Themes.button.validated
-            
+
+                socket.emit('send-image',  { data: 'send-image' } )
+
+                setInterval(()=>{
+                  document.querySelector('#submit').innerText = 'Enviar'
+                  document.getElementById('submit').style.cssText = Themes.button.reset
+                },300)
+
+
             }else {
               document.querySelector('#submit').innerText = `Error: ${(await response).status}`
               document.getElementById('submit').style.cssText = Themes.button.error

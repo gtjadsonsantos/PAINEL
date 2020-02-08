@@ -4,7 +4,6 @@ module.exports = {
     async index (request,response) {
         const sql = ` SELECT * FROM Users; `
         await connection.query(sql,(err, results, fields)=>{
-            console.log(results)
              results.forEach(user => {
                 if (user.UserName == request.body.username && user.UserPassword == request.body.password ){
                     return response.json(user)     

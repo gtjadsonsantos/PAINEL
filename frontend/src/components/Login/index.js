@@ -1,6 +1,6 @@
-import React, { useState, createContext, useEffect} from 'react';
+import React, { useState, useEffect} from 'react';
 
-import history from '../../history'
+import history from '../../global/history'
 import api from '../../services/api'
 import './style.css'
 
