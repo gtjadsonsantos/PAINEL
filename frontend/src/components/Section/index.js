@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import io from 'socket.io-client';
- 
 import api from '../../services/api'
 import config from '../../config'
+import Weather from '../Weather'
 
 import './style.css';
 
@@ -20,7 +20,7 @@ function Sessao() {
     const [floor9, setFloor9] = useState([])
     const [floor10, setFloor10] = useState([])
     const [floor11, setFloor11] = useState([])
-    const [weather, setWeather] = useState({})
+    const [showWeather, setShowWeather] = useState(false)
     const url = config.backend.url
 
     useEffect(()=>{
@@ -36,9 +36,6 @@ function Sessao() {
         const res_floor9 = await api.get('/floors/9');
         const res_floor10 = await api.get('/floors/10');
         const res_floor11 = await api.get('/floors/11');
-        const res_weather = await api.get(`http://api.hgbrasil.com/weather?key=41901a83&city_name=Florianópolis&locale=pt`);
-
-        
         setFloor1(res_floor1.data)
         setFloor2(res_floor2.data)
         setFloor3(res_floor3.data)
@@ -50,21 +47,27 @@ function Sessao() {
         setFloor9(res_floor9.data)
         setFloor10(res_floor10.data)
         setFloor11(res_floor11.data)
-        setWeather(res_weather.data)
-
       }
       getDatas()
-      console.log(weather)
-  },[])
+     },[])
 
-  useEffect(()=>{
+    useEffect(()=>{
     socket.on('update', obj =>{
       if(obj.action === "update-window"){
           window.location.reload()
       }
     })
-  },[])
+    },[])
 
+    setTimeout(()=>{
+        if (showWeather === false){
+            setShowWeather(true)   
+            document.getElementById('containerInfo').style.display = 'flex';
+        }else {
+           setShowWeather(false)  
+           document.getElementById('containerInfo').style.display = 'none'; 
+        }
+    }, 60000)
   return (
     <>
       <div id="container" >
@@ -190,39 +193,7 @@ function Sessao() {
            }
         </ul>
       </div>
-      <div className="containerInfo">
-        <div className="containerHours">
-           <header>
-             <h2>{`${weather} - SC`}</h2>
-             <p>quinta-feira, 09:00</p>
-             <p>Chuvas com trovoadas</p>
-           </header>
-           <main className="contianerMain">
-           <div>
-              <img id="condicion-img" src={`${config.backend.url}/rain_light.png`} alt=""/>
-              <p id="max-temperature">25º</p>
-            </div>
-           </main>
-           <footer>
-             <ul>
-               <p>dia da semana</p>
-               <img src={`${config.backend.url}/rain_light.png`}  alt=""/>
-               <div>
-                <p>27º</p>
-                <p>23º</p>
-               </div>
-             </ul>
-             <ul>
-               <p>dia da semana</p>
-               <img src={`${config.backend.url}/rain_light.png`}  alt=""/>
-               <div>
-                <p>27º</p>
-                <p>23º</p>
-               </div>
-             </ul>
-           </footer>
-        </div>
-      </div>
+      <Weather />
     </>
   );
 }

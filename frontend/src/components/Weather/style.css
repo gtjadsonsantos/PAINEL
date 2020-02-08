@@ -1,0 +1,120 @@
+.containerInfo {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(73, 73, 73, 0.89);
+    animation: showinfo  0s;
+    transition: visible 1s ease;
+  
+  }
+  @keyframes showinfo {
+    from {
+      visibility: hidden;
+    }
+    to {
+      visibility: visible;
+    }
+  }
+  .containerHours header {
+    display: flex;
+    flex-direction: column;
+  }
+  .containerHours header h2 {
+    font-size: 24px;
+    color: rgb(174, 174, 174);
+    width: 100%;
+    font-family:  'arial', sans-serif ;
+    text-align: left;
+  }
+  .containerHours header p {
+    font-size: 14px;
+    width: 100%;
+    color: rgb(135, 135, 135);
+  }
+  .containerHours header {
+    margin-top: 15px;
+    height: 100px;
+    border-radius: 0;
+  }
+  .containerHours {
+    width: 55%;
+    border-radius: 1em;
+    height: 75%;
+    background-color: #fff;
+  } 
+  .containerCondicion { 
+    display: flex;
+    flex-direction: row;
+  
+  }
+  .contianerMain div{
+    width: 40%;
+    flex-direction: row;
+  }
+  .contianerMain {
+    height: 170px;
+     display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .contianerMain div img {
+    margin-left: 10px;
+    width: 64px;
+    height: 64px;
+  }
+  #max-temperature {
+    font-size: 40px;
+    width: 20px !important;
+    margin: 0;
+  }
+  .containerHours footer {
+    display: flex;
+    height: 170px;
+    padding-top: 5px;
+    flex-wrap: wrap;
+    align-content: center;
+    flex-direction: row;
+  }
+  .containerHours footer ul { 
+    width: 50px;
+    margin-left: 18px;
+    height: 90px;
+  }
+  .containerHours footer ul div {
+    display: flex;
+    font-size: 10px;
+  }
+  .containerHours footer ul p {
+    text-align: center;
+  }
+  .containerHours footer ul div {
+    display: flex;
+  }
+  .containerHours footer ul div p:nth-child(odd){
+    color: rgb(106, 106, 106);
+  }
+  .containerHours footer ul div p:nth-child(even){
+    color: rgb(164, 164, 164);
+  }
+  #condicion {
+    margin-top: 10px;
+  }
+  
+  
+  
+  
+  
+  /* Device Mobile*/
+  
+  @media only screen and (max-width: 615px){
+        .containerHours {
+          height: 85%;
+        }
+        .containerInfo {
+          display: none;
+        }
+  }

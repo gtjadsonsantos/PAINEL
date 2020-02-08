@@ -20,9 +20,8 @@ a ação irá duplicar o usuário administrador e assim o servidor irá para de 
 
 - `solução de contorno`: excluir o registro adicional do usuário que foi duplicado
 
-## PROXÍMA VERSÃO
+## VERSÃO 1.0.2
 
-[ x ]Atualização da view quando quando realizando um upload de imagem ao servidor
+* Atualização da view quando quando realizando um upload de imagem ao servidor 
 * Informação de data e horário
-* Cotação de moedas
-* Adicionar o ORM ao projeto
+* Cotação de moedas 
