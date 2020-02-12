@@ -3,9 +3,9 @@ const connection = require('../database/connection')
 module.exports = {
     async index (reques,response) {
         const sql = ` SELECT * FROM Rooms; `
-        await connection.query(sql,(err, results, fields)=>{
-             return response.json(results)
-        })
+
+        const [ results ] = await connection.promise().query(sql)
+        return response.json(results)
     },
     async store (request, response) {
         const sql = `
@@ -15,14 +15,16 @@ module.exports = {
             ) VALUES(
                 '${request.body.room}',
                 '${request.file.filename}');
+
+            
         `
+        const [ results ] = await connection.promise().query(sql)
 
-        await connection.query(sql,(err, results, fields)=>{
-            connection.query(` INSERT INTO Floors (NumberFloor, RoomsID ) VALUES( '${request.body.floor}','${results.insertId}');`,(err, results, fields)=>{
-                return response.json({results})
-            })
-        })
+        const  [fields ] = await connection.promise().query(`INSERT INTO Floors (NumberFloor, RoomsID ) VALUES( '${request.body.floor}','${results.insertId}');`)
+        
+        return response.json({ fields })
 
+        
 
     },
     async update (request, response) {   
@@ -33,18 +35,18 @@ module.exports = {
         WHERE 
             NumberRoom='${request.body.room}';
         `
-        await connection.query(sql,(err, results, fields)=>{
-            return response.json(results)
-        })
+        const [ results ] = await connection.promise().query(sql)
+        
+        return response.json(results)
 },
 async delete (request, response) {   
     const sql = ` 
     DELETE FROM Rooms WHERE NumberRoom='${request.body.NumberRoom}';
     
     `
-    await connection.query(sql,(err, results, fields)=>{
-        return response.json(results)
-    })
+    const [ results ] = await connection.promise().query(sql)
+        
+    return response.json(results)
 
 }
 }

@@ -22,6 +22,6 @@ a ação irá duplicar o usuário administrador e assim o servidor irá para de 
 
 ## VERSÃO 1.0.2
 
-* Atualização da view quando quando realizando um upload de imagem ao servidor 
+* Atualização da view quando realizada uma ação de upload de imagem ao servidor
 * Informação de data e horário
-* Cotação de moedas 
+* Cotação de moedas

@@ -8,10 +8,9 @@ async function SchemaUsers () {
         UserPassword VARCHAR(255) NOT NULL,
         UserType VARCHAR(255) NOT NULL);`
         
-    await connection.query(sql,(err, results, fields)=>{
-        console.log(results)
-        connection.query("INSERT INTO Users (UserName, UserPassword, UserType ) VALUES ('admin','admin','administrator');")
-    })
+    await connection.promise().query(sql);
+    await connection.promise().query("INSERT INTO Users (UserName, UserPassword, UserType ) VALUES ('admin','admin','administrator');");
+
 
 }
 async function SchemaRooms() {
@@ -23,9 +22,7 @@ async function SchemaRooms() {
     );
     `
     
-    await connection.query(sql,(err, results, fields)=>{
-        console.log(results)
-    })
+    await connection.promise().query(sql);
 
 }
 async function SchemaFloors() {
@@ -38,9 +35,7 @@ async function SchemaFloors() {
     );
     `
     
-    await connection.query(sql,(err, results, fields)=>{
-        console.log(results)
-    })
+    await connection.promise().query(sql);
 
 }
 

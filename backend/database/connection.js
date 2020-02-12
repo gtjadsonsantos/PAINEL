@@ -6,5 +6,5 @@ const connection = mysql.createConnection({
     database: 'test'
 })
 
-module.exports = connection
 
+module.exports = connection

@@ -3,19 +3,22 @@ const connection = require('../database/connection')
 module.exports = {
     async index (request,response) {
         const sql = ` SELECT * FROM Users; `
-        await connection.query(sql,(err, results, fields)=>{
-             results.forEach(user => {
-                if (user.UserName == request.body.username && user.UserPassword == request.body.password ){
-                    return response.json(user)     
-                }
-             });
+
+        const [ results ] = await connection.promise().query(sql)
+
+        results.forEach(user => {
+            if (user.UserName == request.body.username && user.UserPassword == request.body.password ){
+                return response.json(user)     
+            }
         })
+
+    
     },
     async indexAll (request,response) {
         const sql = ` SELECT * FROM Users; `
-        await connection.query(sql,(err, results, fields)=>{
-            return response.json(results)  
-        })
+
+        const [ results ] = await connection.promise().query(sql)
+        return response.json(results)
     },
     async store (request, response) {
         const sql = `
@@ -30,31 +33,29 @@ module.exports = {
         '${request.body.usertype}'
         );
         `
-        await connection.query(`SELECT * FROM Users WHERE UserName='${request.body.username}';`,(err, results, fields)=>{
-            const [ query ] = results
+        const [ results ] = await connection.promise().query(`SELECT * FROM Users WHERE UserName='${request.body.username}';`)
+        const [ query ] = results
+        
+        if(query == undefined || query == null){
+            await connection.promise().query(sql)
+            return response.json( {status: 'Usuário criado'})
+        }else {
+            return response.json({status: 'Usuário já existente'})
+        }
 
-            if(query == undefined || query == null){
-                connection.query(sql,(err, results, fields)=>{
-                return response.json( {status: 'Usuário criado'})
-                })
-            }else {
-                return response.json({status: 'Usuário já existente'})
-            }
-        })
     },
     async update (request, response) {   
         const sql = `
         UPDATE Users SET 
         UserName = '${request.body.username}',
-        UserPassword = '${request.body.password}',
+        UserPassword = '${request.body.password}'
         WHERE 
             UserName='${request.body.username}' AND
-            UserPassword = '${request.body.oldPassword}';
+            UserPassword= '${request.body.oldPassword}';
         `
+        const [ results ] = await connection.promise().query(sql)
         
-        await connection.query(sql,(err, results, fields)=>{
-            return response.json(results)
-        })
+        return response.json(results)
 
     },  
     async delete (request, response){
@@ -62,8 +63,8 @@ module.exports = {
         WHERE UserName='${request.body.UserName}' AND
         UserPassword='${request.body.UserPassword}' `
 
-        await connection.query(sql,(err, results, fields)=>{
-            return response.json(results)
-        })
+        const [ results ] = await connection.promise().query(sql)
+        
+        return response.json(results)
     }
 }

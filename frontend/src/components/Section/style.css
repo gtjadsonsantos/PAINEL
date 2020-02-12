@@ -28,8 +28,8 @@ html, body, #root {
 
 
 .title {
-  margin-bottom: 25px;
-  font-size: 15px;
+  margin-bottom: 13px;
+  font-size: 20px;
   color: #000;
   font-weight: 900;
   height: 35px;
@@ -39,7 +39,7 @@ html, body, #root {
 .imageCostumer {
   width: 95%;
   margin: auto;
-  height: 30px ;
+  height: 5% ;
 }
 
 .numberRoom {

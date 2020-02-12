@@ -26,22 +26,22 @@ function UpdateRoom() {
             const response = await api.post('/update/room', data)
          
             if(response.status === 200){
-                document.querySelector('#submit').innerText = 'Sala Atualizada'
+                document.getElementById('submit').innerText = 'Sala Atualizada'
                 document.getElementById('submit').style.cssText = Themes.button.validated
 
                 socket.emit('send-image',  { data: 'send-image' } )
 
                 setInterval(()=>{
-                    document.querySelector('#submit').innerText = 'Enviar'
+                    document.getElementById('submit').innerText = 'Enviar'
                     document.getElementById('submit').style.cssText = Themes.button.reset
                   },300)
                   
             }else {
-                document.querySelector('#submit').innerText = `Error: ${response.status}`
+                document.getElementById('submit').innerText = `Error: ${response.status}`
                 document.getElementById('submit').style.cssText = Themes.button.error
                 }
         }else{
-            document.querySelector('#incorret').innerText = "Preencher todos os campos!!"
+            document.getElementById('incorret').innerText = "Preencher todos os campos!!"
         }
     }
     return (
