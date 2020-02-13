@@ -2,17 +2,12 @@ const connection = require('../database/connection')
 
 module.exports = {
     async index (request,response) {
-        const sql = ` SELECT * FROM Users; `
+        const sql = ` SELECT * FROM Users WHERE UserName='${request.body.username}' AND UserPassword='${request.body.password}' LIMIT 1;`
 
         const [ results ] = await connection.promise().query(sql)
+        return response.json(results[0]);
+        
 
-        results.forEach(user => {
-            if (user.UserName == request.body.username && user.UserPassword == request.body.password ){
-                return response.json(user)     
-            }
-        })
-
-    
     },
     async indexAll (request,response) {
         const sql = ` SELECT * FROM Users; `
