@@ -2,19 +2,28 @@
     width: 100%;
     height: 90%;
 }
-.containerPrice header {
+.containerPrice {
     height: 110px !important;
     width: 100%;
     padding: 0;
     margin: 0 0 0 0;
 }
-.containerPrice section {
-    display: flex;
-    color: rgb(0, 0, 0);
+.containerPrice p{ 
+    margin-top: 5px;
+    font-size: small;
 }
-.containerPrice section img { 
-    width: 20px !important;
-    height: 20px !important;
-    margin: 0 25px 0 0 !important;
-    
+.containerPrice h2 {
+    color: #000;
+    margin-top: 14px;
+}
+.containerPrice div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.high {
+    color: rgb(175, 4, 4);
+}
+.low {
+    color: rgb(13, 126, 18);
 }

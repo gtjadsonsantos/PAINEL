@@ -42,7 +42,8 @@ function Administration() {
               <li id="fields-2" onClick={()=> setValueAction(2)} > Usuários </li>
               <li id="fields-3" onClick={()=> setValueAction(3)} >Adicionar Sala</li> 
               <li id="fields-4" onClick={()=> setValueAction(4)} >Atualizar Sala</li>
-              <Link to="/view"><li> Visualizar Painel </li></Link>
+              <Link to="/view-1"><li> Visualizar Painel 1 </li></Link>
+              <Link to="/view-2"><li> Visualizar Painel 2 </li></Link>
               <li id="fields-5" onClick={()=> handleProvisioningDatabase()}   >Provisionar Banco de Dados</li>
               <li id="fields-6" onClick={()=> LogoutSystem()}>Sair</li>
             </ul>

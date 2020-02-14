@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import config from '../../config'
 import axios from 'axios'
 import './style.css'
 
@@ -17,14 +16,12 @@ function Price() {
 return (
     <>
       <div className="containerPrice">
-        <header>
             <h2>{ price.name  }</h2>
-            <p>Atualizado em: { price.create_date }</p>
-        </header>
-        <section>
-            <img src={`${config.backend.url}/dolar.png`} alt=""/>
-            <p>{ price.high }</p>
-        </section>
+            <p>Atualização : { price.create_date }</p>
+            <div>
+              <p><strong className="high">Alta</strong> {price.high}</p>
+              <p><strong className="low">Baixa</strong> {price.low}</p>
+            </div>
       </div>
     </>
     )

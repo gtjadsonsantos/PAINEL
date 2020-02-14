@@ -54,7 +54,7 @@ function Weather(){
                      console.log(err);
                  } else {
                    const repo_yahoo = JSON.parse(data)
-                   document.getElementById('condicion').innerHTML = `${repo_yahoo.forecasts[0].text}`
+                   //document.getElementById('condicion').innerHTML = `${repo_yahoo.forecasts[0].text}`
                    setForecast(repo_yahoo.forecasts)
                    setFirstForecast(repo_yahoo.forecasts[0].code)
                  }
@@ -68,23 +68,15 @@ function Weather(){
          setDate(Time())
        }, 1000)
     return (
-        <>  
-        <div className="containerInfo" id='containerInfo'>
-          <div className="containerHours">
-            <header>
-              <h2>Florianópolis -  SC</h2>
-              <p id="date">{date}</p>
-              <p id='condicion'></p>
-           </header>
-           <main className="contianerMain">
-            <div className='containerCondicion'>
-               <img id="condicion-img" src={`http://l.yimg.com/a/i/us/we/52/${firstForecast}.gif`} alt=""/>
-               <p id="max-temperature">25º</p>
-             </div>
-              <Price /> 
-           </main>
-           <footer>
-             {
+      <>  
+        <div className="containerWeather" >
+          <header>
+              <h1>Horário</h1>
+              <p>{date}</p>
+          </header>
+             <Price />
+          <footer>
+          {
                forecast.map(item=> (
 
                 <ul>
@@ -98,9 +90,8 @@ function Weather(){
                ))
              }
           </footer>
-          </div>
         </div>
-    </>
+      </>
     )
 }
 

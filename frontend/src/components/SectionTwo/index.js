@@ -2,40 +2,41 @@ import React, {useState, useEffect} from 'react';
 import io from 'socket.io-client';
 import api from '../../services/api'
 import config from '../../config'
+import Weather from '../Weather'
 
 import './style.css';
 
 const socket = io(`${config.backend.url}`)
 
-function Sessao() {
-    const [floor1, setFloor1] = useState([])
-    const [floor2, setFloor2] = useState([])
-    const [floor3, setFloor3] = useState([])
-    const [floor4, setFloor4] = useState([])
-    const [floor5, setFloor5] = useState([])
-    const [floor6, setFloor6] = useState([])
-    const [floor7, setFloor7] = useState([])
+function SectionTwo() {
+    const [floor8, setFloor8] = useState([])
+    const [floor9, setFloor9] = useState([])
+    const [floor10, setFloor10] = useState([])
+    const [floor11, setFloor11] = useState([])
+    const [floor12, setFloor12] = useState([])
+    const [floor13, setFloor13] = useState([])
+    const [floor14, setFloor14] = useState([])
     const url = config.backend.url
 
     useEffect(()=>{
      async function getDatas (){
         
-        const res_floor1 = await api.get('/floors/1');
-        const res_floor2 = await api.get('/floors/2');
-        const res_floor3 = await api.get('/floors/3');
-        const res_floor4 = await api.get('/floors/4');
-        const res_floor5 = await api.get('/floors/5');
-        const res_floor6 = await api.get('/floors/6');
-        const res_floor7 = await api.get('/floors/7');
+        const res_floor1 = await api.get('/floors/8');
+        const res_floor2 = await api.get('/floors/9');
+        const res_floor3 = await api.get('/floors/10');
+        const res_floor4 = await api.get('/floors/11');
+        const res_floor5 = await api.get('/floors/12');
+        const res_floor6 = await api.get('/floors/13');
+        const res_floor7 = await api.get('/floors/14');
       
         
-        setFloor1(res_floor1.data)
-        setFloor2(res_floor2.data)
-        setFloor3(res_floor3.data)
-        setFloor4(res_floor4.data)
-        setFloor5(res_floor5.data)
-        setFloor6(res_floor6.data)
-        setFloor7(res_floor7.data)
+        setFloor8(res_floor1.data)
+        setFloor9(res_floor2.data)
+        setFloor10(res_floor3.data)
+        setFloor11(res_floor4.data)
+        setFloor12(res_floor5.data)
+        setFloor13(res_floor6.data)
+        setFloor14(res_floor7.data)
       }
       getDatas()
      },[])
@@ -51,9 +52,9 @@ function Sessao() {
     <>
       <div id="container" >
         <ul className="floors" >
-          <h2 className="title darkblue" >1º Andar</h2>
+          <h2 className="title darkblue" >8º Andar</h2>
            {
-             floor1.map(item => ( 
+             floor8.map(item => ( 
               <>
                 <img key={item.RoomID} className="imageCostumer" alt={item.NameImage} id={item.NumberRoom} src={`${url}/${item.NameImage}`} />  
                <li className="numberRoom" >{item.NumberRoom}</li>
@@ -62,9 +63,9 @@ function Sessao() {
            }
         </ul>
         <ul className="floors" >
-          <h2 className="title blue" >2º Andar</h2>
+          <h2 className="title blue" >9º Andar</h2>
            {
-             floor2.map(item => ( 
+             floor9.map(item => ( 
               <>
                 <img key={item.RoomID} className="imageCostumer" alt={item.NameImage} id={item.NumberRoom} src={`${url}/${item.NameImage}`} />  
                <li className="numberRoom" >{item.NumberRoom}</li>
@@ -73,9 +74,9 @@ function Sessao() {
            }
         </ul>
         <ul className="floors" >
-          <h2 className="title darkblue" >3º Andar</h2>
+          <h2 className="title darkblue" >10º Andar</h2>
            {
-             floor3.map(item => ( 
+             floor10.map(item => ( 
               <>
                 <img key={item.RoomID} className="imageCostumer" alt={item.NameImage} id={item.NumberRoom} src={`${url}/${item.NameImage}`} />  
                <li className="numberRoom" >{item.NumberRoom}</li>
@@ -84,9 +85,9 @@ function Sessao() {
            }
         </ul>
         <ul className="floors" >
-          <h2 className="title blue" >4º Andar</h2>
+          <h2 className="title blue" >11º Andar</h2>
            {
-             floor4.map(item => ( 
+             floor11.map(item => ( 
               <>
                 <img key={item.RoomID} className="imageCostumer" alt={item.NameImage} id={item.NumberRoom} src={`${url}/${item.NameImage}`} />  
                <li className="numberRoom" >{item.NumberRoom}</li>
@@ -95,9 +96,9 @@ function Sessao() {
            }
         </ul>
         <ul className="floors" >
-          <h2 className="title darkblue" >5º Andar</h2>
+          <h2 className="title darkblue" >12º Andar</h2>
            {
-             floor5.map(item => ( 
+             floor12.map(item => ( 
               <>
                 <img key={item.RoomID} className="imageCostumer" alt={item.NameImage} id={item.NumberRoom} src={`${url}/${item.NameImage}`} />  
                <li className="numberRoom" >{item.NumberRoom}</li>
@@ -106,9 +107,9 @@ function Sessao() {
            }
         </ul>
         <ul className="floors" >
-          <h2 className="title blue" >6º Andar</h2>
+          <h2 className="title blue" >13º Andar</h2>
            {
-             floor6.map(item => ( 
+             floor13.map(item => ( 
               <>
                 <img key={item.RoomID} className="imageCostumer" alt={item.NameImage} id={item.NumberRoom} src={`${url}/${item.NameImage}`} />  
                <li className="numberRoom" >{item.NumberRoom}</li>
@@ -117,9 +118,9 @@ function Sessao() {
            }
         </ul>
         <ul className="floors" >
-          <h2 className="title darkblue" >7º Andar</h2>
+          <h2 className="title darkblue" >14º Andar</h2>
            {
-             floor7.map(item => ( 
+             floor14.map(item => ( 
               <>
                 <img key={item.RoomID} className="imageCostumer" alt={item.NameImage} id={item.NumberRoom} src={`${url}/${item.NameImage}`} />  
                <li className="numberRoom" >{item.NumberRoom}</li>
@@ -128,8 +129,9 @@ function Sessao() {
            }
         </ul>
       </div>
+      <Weather  />    
     </>
   );
 }
 
-export default Sessao;
+export default SectionTwo;
