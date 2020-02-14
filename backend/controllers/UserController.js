@@ -3,7 +3,7 @@ const connection = require('../database/connection')
 module.exports = {
     async index (request,response) {
         const sql = ` SELECT * FROM Users WHERE UserName='${request.body.username}' AND UserPassword='${request.body.password}' LIMIT 1;`
-
+        
         const [ results ] = await connection.promise().query(sql)
         return response.json(results[0]);
         
