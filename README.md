@@ -5,7 +5,7 @@
 
 
 
-A PROPOSTA DESSA APLICAÇÃO É TORNAR SIMPLES A IDENTIFICAÇÃO DAS EMPRESAS PRESENTES EM EMPREENDIMENTOS QUE SÃO COMERCIAIS.S 
+A PROPOSTA DESSA APLICAÇÃO É TORNAR SIMPLES A IDENTIFICAÇÃO DAS EMPRESAS PRESENTES EM EMPREENDIMENTOS QUE SÃO COMERCIAIS 
 
 ### REQUISITOS 
 
@@ -15,7 +15,6 @@ A PROPOSTA DESSA APLICAÇÃO É TORNAR SIMPLES A IDENTIFICAÇÃO DAS EMPRESAS PR
 
 [MYSQL](https://www.apachefriends.org/pt_br/download.html)
 
-[CURL](https://curl.haxx.se/download.html)
 
 ## PARA COMEÇAR 
 
@@ -34,7 +33,7 @@ ACESSE A PASTA `backend` DO PROJETO
 ACESSE A PASTA `fronend` DO PROJETO
 
 ```yml
-   yarn server
+   yarn install && yarn build && yarn server
 ```
 
 
