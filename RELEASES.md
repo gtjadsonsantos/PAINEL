@@ -33,3 +33,4 @@ a ação irá duplicar o usuário administrador e assim o servidor irá para de 
 * Estilizado as informação de horário, cotação do dolar
 * `BUG`: Problema de servidor crachando.
 * Adicionado campo para acesso a segunda view  do painel, na página admnistração. 
+* Ajustado a interface para ser responsiva

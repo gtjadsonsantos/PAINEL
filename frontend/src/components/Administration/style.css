@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
 #containerAdministration {
     height: 100%;
@@ -32,6 +33,7 @@
     border-radius: 0.5em;
     height: 50px;
     text-align: start;
+    font-family: 'Roboto',sans-serif;
     background: rgb(19, 18, 23);
     font-size: small;
     color: #fff;
@@ -43,4 +45,61 @@
     width: 60%;
     max-width: 630px;
     height: 480px;
+}
+
+#continerTopToMobile, #list-menu {
+    display: none;
+}
+
+@media only screen  and (max-width: 599px){
+    #continerTopToMobile {
+        display: flex;
+        width: 100%;
+        height: 60px;
+        background: #fff;
+        position: absolute;
+        flex-direction: row;
+        align-items: center;
+        background: rgb(253, 253, 253);
+    }
+    #contianerCreateUser {
+        border: none !important;
+    }
+    #buttonTopMenu {
+        color: #fff;
+        width: 30px;
+        height: 20px;
+        margin-left: 5px;
+        cursor: pointer;
+    }
+    #containerFunctional {
+        width: 100%;
+    }
+    #containerNavigation {
+        display: none;
+    }
+    #list-menu {
+        position: fixed;
+        background: rgb(255, 255, 255);
+        display: block;
+        top: 60px;
+        width: 300px;
+        height: 100%;
+        left: -300px;
+        transition: all 0.25s;
+        -webkit-transition: all 0.25s;
+    }
+    #list-menu li {
+        width: 100%;
+        display: block;
+        font-size: medium;
+        text-align: left;
+        color: rgb(1, 1, 46);
+        font-weight: bold;
+        font-family: 'Roboto',sans-serif;
+        margin-top: 8px;
+        line-height: 40px;
+        margin-left: 10px;
+        height: 40px;
+    }
 }

@@ -1,0 +1,14 @@
+@media only screen and (max-width: 599px){
+    .floors {
+      width: 411px;
+    }
+    .imageCostumer {
+      width: 60%;
+    }
+    .numberRoom {
+      width: 30%;
+    }
+    .containerWeather {
+        display: none;
+    }
+  }

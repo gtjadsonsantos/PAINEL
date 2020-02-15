@@ -1,10 +1,13 @@
-const connection = require('../database/connection')
+const mysql = require('mysql2')
+const database = require('../database/connection')
 
 module.exports = {
     async index (reques,response) {
         const sql = ` SELECT * FROM Rooms; `
 
-        const [ results ] = await connection.promise().query(sql)
+        const connection = await mysql.createConnection(database)
+        const [ results ] = await connection.promise().execute(sql)
+        connection.end();
         return response.json(results)
     },
     async store (request, response) {
@@ -18,10 +21,10 @@ module.exports = {
 
             
         `
-        const [ results ] = await connection.promise().query(sql)
-
-        const  [fields ] = await connection.promise().query(`INSERT INTO Floors (NumberFloor, RoomsID ) VALUES( '${request.body.floor}','${results.insertId}');`)
-        
+        const connection = await mysql.createConnection(database)
+        const [ results ] = await connection.promise().execute(sql)
+        const  [fields ] = await connection.promise().execute(`INSERT INTO Floors (NumberFloor, RoomsID ) VALUES( '${request.body.floor}','${results.insertId}');`)
+        connection.end();
         return response.json({ fields })
 
         
@@ -35,8 +38,9 @@ module.exports = {
         WHERE 
             NumberRoom='${request.body.room}';
         `
-        const [ results ] = await connection.promise().query(sql)
-        
+        const connection = await mysql.createConnection(database)
+        const [ results ] = await connection.promise().execute(sql)
+        connection.end();
         return response.json(results)
 },
 async delete (request, response) {   
@@ -44,8 +48,9 @@ async delete (request, response) {
     DELETE FROM Rooms WHERE NumberRoom='${request.body.NumberRoom}';
     
     `
-    const [ results ] = await connection.promise().query(sql)
-        
+    const connection = await mysql.createConnection(database)
+    const [ results ] = await connection.promise().execute(sql)
+    connection.end();
     return response.json(results)
 
 }

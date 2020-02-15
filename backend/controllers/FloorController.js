@@ -1,10 +1,13 @@
-const connection = require('../database/connection')
+const mysql = require('mysql2')
+const database = require('../database/connection')
 
 module.exports = {
     async index (request,response) {
         const sql = `SELECT * FROM Rooms LEFT JOIN Floors on Floors.FloorsID = Rooms.RoomsID WHERE NumberFloor = ${request.params.id} ; `
       
-        const [ results ] = await connection.promise().query(sql)
+        const connection = await mysql.createConnection(database)
+        const [ results ] = await connection.promise().execute(sql)
+        connection.end()
         
         return response.json(results)
 
@@ -12,8 +15,10 @@ module.exports = {
     async store (request, response) {
         const sql = `INSERT INTO Floors (NumberFloor, RoomsID) VALUES ('${request.body.NumberFloor}', '${request.body.RoomsID}');`
 
-        const [ results ] = await connection.promise().query(sql)
-        
+        const connection = await mysql.createConnection(database)
+        const [ results ] = await connection.promise().execute(sql)
+        connection.end()
+
         return response.json(results)
     },
     async update (request, response) {   
@@ -23,7 +28,10 @@ module.exports = {
         WHERE 
         NumberFloor='${request.body.NumberFloor}'
         `
-        const [ results ] = await connection.promise().query(sql)
+        const connection = await mysql.createConnection(database)
+        const [ results ] = await connection.promise().execute(sql)
+        connection.end()
+        
         return response.json(results)
 
     },
@@ -31,7 +39,10 @@ module.exports = {
         const sql = ` DELETE FROM Floors 
         WHERE NumberFloor='${request.body.NumberFloor}';`
 
-        const [ results ] = await connection.promise().query(sql)
+        const connection = await mysql.createConnection(database)
+        const [ results ] = await connection.promise().execute(sql)
+        connection.end()
+        
         return response.json(results)
     }
 }
