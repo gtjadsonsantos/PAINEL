@@ -13,10 +13,19 @@ h2 {
     width: 200px;
 }
 .item-list {
-    color: #fff;
+    color: #000;
     display: block;
     text-align: center;
     height: 30px;
     font-weight: bold;
     
+}
+
+@media only screen and (max-width: 599px){
+    #contianerListUsers {
+        width: 100%;
+    } 
+    #contianerListUsers #list {
+        width: 100%;
+    }
 }

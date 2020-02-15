@@ -22,6 +22,15 @@ a ação irá duplicar o usuário administrador e assim o servidor irá para de 
 
 ## VERSÃO 1.0.2
 
-* Atualização da view quando quando realizando um upload de imagem ao servidor 
+* Atualização da view quando realizada uma ação de upload de imagem ao servidor
 * Informação de data e horário
-* Cotação de moedas 
+* Cotação de moedas
+
+
+## VERSÃO 1.0.3 
+
+* Adicinado segunda view para conter mais andares no painel
+* Estilizado as informação de horário, cotação do dolar
+* `BUG`: Problema de servidor crachando.
+* Adicionado campo para acesso a segunda view  do painel, na página admnistração. 
+* Ajustado a interface para ser responsiva

@@ -414,3 +414,126 @@ INSERT INTO Floors (NumberFloor, RoomsID) VALUES ('11', '120');
 
 INSERT INTO Rooms (NumberRoom, NameImage ) VALUES ('1111', 'logo-beco-castelo.png');
 INSERT INTO Floors (NumberFloor, RoomsID) VALUES ('11', '121');
+
+/*12º ANDAR */
+
+INSERT INTO Rooms (NumberRoom, NameImage ) VALUES ('1201', 'logo-beco-castelo.png');
+INSERT INTO Floors (NumberFloor, RoomsID) VALUES ('12', '122');
+
+INSERT INTO Rooms (NumberRoom, NameImage ) VALUES ('1102', 'logo-beco-castelo.png');
+INSERT INTO Floors (NumberFloor, RoomsID) VALUES ('12', '123');
+
+INSERT INTO Rooms (NumberRoom, NameImage ) VALUES ('1203', 'logo-beco-castelo.png');
+INSERT INTO Floors (NumberFloor, RoomsID) VALUES ('12', '124');
+
+INSERT INTO Rooms (NumberRoom, NameImage ) VALUES ('1204', 'logo-beco-castelo.png');
+INSERT INTO Floors (NumberFloor, RoomsID) VALUES ('12', '125');
+
+INSERT INTO Rooms (NumberRoom, NameImage ) VALUES ('1205', 'logo-beco-castelo.png');
+INSERT INTO Floors (NumberFloor, RoomsID) VALUES ('12', '126');
+
+INSERT INTO Rooms (NumberRoom, NameImage ) VALUES ('1206', 'logo-beco-castelo.png');
+INSERT INTO Floors (NumberFloor, RoomsID) VALUES ('12', '127');
+
+INSERT INTO Rooms (NumberRoom, NameImage ) VALUES ('1207', 'logo-beco-castelo.png');
+INSERT INTO Floors (NumberFloor, RoomsID) VALUES ('12', '128');
+
+INSERT INTO Rooms (NumberRoom, NameImage ) VALUES ('1208', 'logo-beco-castelo.png');
+INSERT INTO Floors (NumberFloor, RoomsID) VALUES ('12', '129');
+
+INSERT INTO Rooms (NumberRoom, NameImage ) VALUES ('1209', 'logo-beco-castelo.png');
+INSERT INTO Floors (NumberFloor, RoomsID) VALUES ('12', '130');
+
+INSERT INTO Rooms (NumberRoom, NameImage ) VALUES ('1210', 'logo-beco-castelo.png');
+INSERT INTO Floors (NumberFloor, RoomsID) VALUES ('12', '131');
+
+INSERT INTO Rooms (NumberRoom, NameImage ) VALUES ('1211', 'logo-beco-castelo.png');
+INSERT INTO Floors (NumberFloor, RoomsID) VALUES ('12', '132');
+
+
+/*13º ANDAR */
+
+INSERT INTO Rooms (NumberRoom, NameImage ) VALUES ('1301', 'logo-beco-castelo.png');
+INSERT INTO Floors (NumberFloor, RoomsID) VALUES ('13', '133');
+
+INSERT INTO Rooms (NumberRoom, NameImage ) VALUES ('1102', 'logo-beco-castelo.png');
+INSERT INTO Floors (NumberFloor, RoomsID) VALUES ('13', '134');
+
+INSERT INTO Rooms (NumberRoom, NameImage ) VALUES ('1303', 'logo-beco-castelo.png');
+INSERT INTO Floors (NumberFloor, RoomsID) VALUES ('13', '135');
+
+INSERT INTO Rooms (NumberRoom, NameImage ) VALUES ('1304', 'logo-beco-castelo.png');
+INSERT INTO Floors (NumberFloor, RoomsID) VALUES ('13', '136');
+
+INSERT INTO Rooms (NumberRoom, NameImage ) VALUES ('1305', 'logo-beco-castelo.png');
+INSERT INTO Floors (NumberFloor, RoomsID) VALUES ('13', '137');
+
+INSERT INTO Rooms (NumberRoom, NameImage ) VALUES ('1306', 'logo-beco-castelo.png');
+INSERT INTO Floors (NumberFloor, RoomsID) VALUES ('13', '138');
+
+INSERT INTO Rooms (NumberRoom, NameImage ) VALUES ('1307', 'logo-beco-castelo.png');
+INSERT INTO Floors (NumberFloor, RoomsID) VALUES ('13', '139');
+
+INSERT INTO Rooms (NumberRoom, NameImage ) VALUES ('1308', 'logo-beco-castelo.png');
+INSERT INTO Floors (NumberFloor, RoomsID) VALUES ('13', '140');
+
+INSERT INTO Rooms (NumberRoom, NameImage ) VALUES ('1309', 'logo-beco-castelo.png');
+INSERT INTO Floors (NumberFloor, RoomsID) VALUES ('13', '141');
+
+INSERT INTO Rooms (NumberRoom, NameImage ) VALUES ('1310', 'logo-beco-castelo.png');
+INSERT INTO Floors (NumberFloor, RoomsID) VALUES ('13', '142');
+
+INSERT INTO Rooms (NumberRoom, NameImage ) VALUES ('1311', 'logo-beco-castelo.png');
+INSERT INTO Floors (NumberFloor, RoomsID) VALUES ('13', '143');
+
+/*14º ANDAR */
+
+INSERT INTO Rooms (NumberRoom, NameImage ) VALUES ('1401', 'logo-beco-castelo.png');
+INSERT INTO Floors (NumberFloor, RoomsID) VALUES ('14', '144');
+
+INSERT INTO Rooms (NumberRoom, NameImage ) VALUES ('1402', 'logo-beco-castelo.png');
+INSERT INTO Floors (NumberFloor, RoomsID) VALUES ('14', '145');
+
+INSERT INTO Rooms (NumberRoom, NameImage ) VALUES ('1403', 'logo-beco-castelo.png');
+INSERT INTO Floors (NumberFloor, RoomsID) VALUES ('14', '146');
+
+INSERT INTO Rooms (NumberRoom, NameImage ) VALUES ('1404', 'logo-beco-castelo.png');
+INSERT INTO Floors (NumberFloor, RoomsID) VALUES ('14', '147');
+
+INSERT INTO Rooms (NumberRoom, NameImage ) VALUES ('1405', 'logo-beco-castelo.png');
+INSERT INTO Floors (NumberFloor, RoomsID) VALUES ('14', '148');
+
+INSERT INTO Rooms (NumberRoom, NameImage ) VALUES ('1406', 'logo-beco-castelo.png');
+INSERT INTO Floors (NumberFloor, RoomsID) VALUES ('14', '149');
+
+INSERT INTO Rooms (NumberRoom, NameImage ) VALUES ('1407', 'logo-beco-castelo.png');
+INSERT INTO Floors (NumberFloor, RoomsID) VALUES ('14', '150');
+
+INSERT INTO Rooms (NumberRoom, NameImage ) VALUES ('1408', 'logo-beco-castelo.png');
+INSERT INTO Floors (NumberFloor, RoomsID) VALUES ('14', '151');
+
+INSERT INTO Rooms (NumberRoom, NameImage ) VALUES ('1409', 'logo-beco-castelo.png');
+INSERT INTO Floors (NumberFloor, RoomsID) VALUES ('14', '152');
+
+INSERT INTO Rooms (NumberRoom, NameImage ) VALUES ('1410', 'logo-beco-castelo.png');
+INSERT INTO Floors (NumberFloor, RoomsID) VALUES ('14', '153');
+
+INSERT INTO Rooms (NumberRoom, NameImage ) VALUES ('1411', 'logo-beco-castelo.png');
+INSERT INTO Floors (NumberFloor, RoomsID) VALUES ('14', '154');
+
+/*15º ANDAR */
+
+INSERT INTO Rooms (NumberRoom, NameImage ) VALUES ('1501', 'logo-beco-castelo.png');
+INSERT INTO Floors (NumberFloor, RoomsID) VALUES ('15', '155');
+
+INSERT INTO Rooms (NumberRoom, NameImage ) VALUES ('1102', 'logo-beco-castelo.png');
+INSERT INTO Floors (NumberFloor, RoomsID) VALUES ('15', '156');
+
+INSERT INTO Rooms (NumberRoom, NameImage ) VALUES ('1503', 'logo-beco-castelo.png');
+INSERT INTO Floors (NumberFloor, RoomsID) VALUES ('15', '157');
+
+INSERT INTO Rooms (NumberRoom, NameImage ) VALUES ('1504', 'logo-beco-castelo.png');
+INSERT INTO Floors (NumberFloor, RoomsID) VALUES ('15', '158');
+
+INSERT INTO Rooms (NumberRoom, NameImage ) VALUES ('1505', 'logo-beco-castelo.png');
+INSERT INTO Floors (NumberFloor, RoomsID) VALUES ('15', '159');

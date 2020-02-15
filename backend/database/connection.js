@@ -1,10 +1,10 @@
-const mysql = require('mysql2')
 
-const connection = mysql.createConnection({
+const database = {
     host: 'localhost',
     user: 'root',
-    database: 'test'
-})
+    database: 'test',
+    port: '3306'
 
-module.exports = connection
+}
 
+module.exports = database

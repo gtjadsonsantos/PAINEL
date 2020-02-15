@@ -16,20 +16,20 @@ function CreateUser() {
       const response = await api.post('/user',{username,password,usertype })
   
       if(response.data.status === 'Usuário criado'){
-          document.querySelector('#submit').innerText = 'Usuário Criado'
+          document.getElementById('submit').innerText = 'Usuário Criado'
           document.getElementById('submit').style.cssText = Themes.button.validated
 
         setInterval(()=>{
-          document.querySelector('#submit').innerText = 'Enviar'
+          document.getElementById('submit').innerText = 'Enviar'
           document.getElementById('submit').style.cssText = Themes.button.reset
         },300)
          
       }else {
-        document.querySelector('#submit').innerText = `${response.data.status}`
+        document.getElementById('submit').innerText = `${response.data.status}`
         document.getElementById('submit').style.cssText = Themes.button.error
         }
       }else{
-        document.querySelector('#incorret').innerText = "Preencher todos os campos!!"
+        document.getElementById('#incorret').innerText = "Preencher todos os campos!!"
       }
     }
     return (
