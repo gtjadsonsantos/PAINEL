@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import OAuth from 'oauth'
-import config from '../../config'
 import Price from '../Price'
 import './style.css'  
 
@@ -21,7 +20,6 @@ function Time() {
 
 function Weather(){
     const [forecast, setForecast ] = useState([])
-    const [ firstForecast, setFirstForecast ] = useState({})
 
     const [ date, setDate ] = useState('')
     useEffect(()=>{
@@ -56,7 +54,6 @@ function Weather(){
                    const repo_yahoo = JSON.parse(data)
                    //document.getElementById('condicion').innerHTML = `${repo_yahoo.forecasts[0].text}`
                    setForecast(repo_yahoo.forecasts)
-                   setFirstForecast(repo_yahoo.forecasts[0].code)
                  }
              }
           );

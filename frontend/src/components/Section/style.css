@@ -37,18 +37,18 @@ html, body, #root {
 }
 
 .title {
-  margin-bottom: 13px;
+  padding-bottom: 13px;
   width: 100%;
   font-size: 20px;
   color: #fff;
   font-weight: 900;
-  height: 35px;
+  height: 45px;
   text-align: center;
-  line-height: 35px;
+  line-height: 45px;
 }
 
 .imageCostumer {
-  width: 80%;
+  width: 70%;
   height: 5%;
 }
 
