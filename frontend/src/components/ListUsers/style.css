@@ -10,10 +10,10 @@ h2 {
 
 }
 #list {
-    width: 200px;
+    width: 300px;
 }
 .item-list {
-    color: #000;
+    color: #fff;
     display: block;
     text-align: center;
     height: 30px;

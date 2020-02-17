@@ -41,7 +41,7 @@ function CreateUser() {
           {
             ((password === verifyPassword) && 
              (password !== '') && 
-             (verifyPassword !== '') && 
+             (verifyPassword !== '') &&
              (usertype !== '')
             ) 
             ? <p id="verify">Senha correta</p>:<p id="incorret">Senha Incorreta</p> 

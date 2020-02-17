@@ -1,4 +1,5 @@
-const connection = require('../database/connection')
+const mysql = require('mysql2')
+const database = require('../database/connection')
 
 async function SchemaUsers () {
     const sql = `
@@ -8,9 +9,10 @@ async function SchemaUsers () {
         UserPassword VARCHAR(255) NOT NULL,
         UserType VARCHAR(255) NOT NULL);`
         
-    await connection.promise().query(sql);
-    await connection.promise().query("INSERT INTO Users (UserName, UserPassword, UserType ) VALUES ('admin','admin','administrator');");
-
+    const connection = await mysql.createConnection(database)
+    await connection.promise().execute(sql)
+    await connection.promise().execute("INSERT INTO Users (UserName, UserPassword, UserType ) VALUES ('admin','admin','administrator');")
+    connection.end();
 
 }
 async function SchemaRooms() {
@@ -21,8 +23,9 @@ async function SchemaRooms() {
         NameImage VARCHAR(100)
     );
     `
-    
+    const connection = await mysql.createConnection(database)
     await connection.promise().query(sql);
+    connection.end();
 
 }
 async function SchemaFloors() {
@@ -34,8 +37,9 @@ async function SchemaFloors() {
         FOREIGN KEY(RoomsID) REFERENCES Rooms(RoomsID)ON DELETE CASCADE ON UPDATE CASCADE
     );
     `
-    
+    const connection = await mysql.createConnection(database)
     await connection.promise().query(sql);
+    connection.end();
 
 }
 

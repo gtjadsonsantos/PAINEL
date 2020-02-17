@@ -1,8 +1,8 @@
 import React, { useState} from 'react';
 import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
 
-export default function Init({navigation}) {
-    const [address, setAddress] = useState('')
+export default function Init({navigation}){
+    const [address, setAddress] = useState('');
   return (
     <View style={styles.container}>
       <TextInput placeholder="Painel URL"  autoCapitalize="none" style={styles.input}  onChangeText={text => setAddress(text)} />
@@ -19,13 +19,13 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'center'
   },
   input:{
     width: 300,
     height: 30,
     borderColor: '#000',
-    borderBottomWidth: 1,
+    borderBottomWidth: 1
   },
   text: {
     width: 300,
@@ -37,10 +37,10 @@ const styles = StyleSheet.create({
     display: 'flex',
     height: 100,
     width: 100,
-    paddingTop: 40,
+    paddingTop: 40
   },
   button:{
-    flex: 1,
+    flex: 1
   }
 });
 

@@ -44,7 +44,7 @@ function Auth() {
       <div id="containerLogin">
         <div id="box-login">
           <header>
-              <h1>Login</h1>          
+              <h2>Login</h2>          
           </header>
           <main>
             <input type="text" placeholder="Usuario" onChange={username => setUsername(username.target.value)} autoFocus required />
