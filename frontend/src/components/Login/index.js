@@ -2,6 +2,7 @@ import React, { useState, useEffect} from 'react';
 
 import history from '../../global/history'
 import api from '../../services/api'
+import crypto from '../../global/crypto'
 import './style.css'
 
 function Login() {
@@ -27,7 +28,7 @@ function Auth() {
      .then(resp => { 
        const { UserName, UserPassword , UserType} = resp.data
 
-       if(username === UserName && password === UserPassword){
+       if(username === UserName && password === crypto._decrypt('aes-256-ctr', password, UserPassword)){
          sessionStorage.setItem('status', true)
          sessionStorage.setItem('usertype',UserType)
          history.push('/admin')

@@ -29,7 +29,7 @@ ACESSE A PASTA `backend` DO PROJETO
     yarn install && yarn start 
 ```
 
-ACESSE A PASTA `fronend` DO PROJETO
+ACESSE A PASTA `frontend` DO PROJETO
 
 ```yml
    yarn install && yarn build && yarn server

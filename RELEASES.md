@@ -34,8 +34,4 @@ a ação irá duplicar o usuário administrador e assim o servidor irá para de 
 * `BUG`: Problema de servidor crachando.
 * Adicionado campo para acesso a segunda view  do painel, na página admnistração. 
 * Ajustado a interface para ser responsiva
-
-
-## VERSÃO 1.0.4
-
 * Criado aplicativo mobile
