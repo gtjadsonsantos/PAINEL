@@ -1,9 +1,10 @@
 const mysql = require('mysql2')
 const database = require('../database/connection')
+const crypto = require('../utils/crypto')
 
 module.exports = {
     async index (request,response) {
-        const sql = ` SELECT * FROM Users WHERE UserName='${request.body.username}' AND UserPassword='${request.body.password}' LIMIT 1;`
+        const sql = ` SELECT * FROM Users WHERE UserName='${request.body.username}' AND UserPassword='${crypto._crypto('aes-256-ctr',request.body.password)}' LIMIT 1;`
         
        
        const connection = await mysql.createConnection(database)
@@ -20,7 +21,7 @@ module.exports = {
         connection.end();
         return response.json(results)
     },
-    async store (request, response) {
+    async store (request, response) { 
         const sql = `
         INSERT INTO Users 
         (UserName,
@@ -29,7 +30,7 @@ module.exports = {
         )
         VALUES (
         '${request.body.username}',
-        '${request.body.password}',
+        '${crypto._crypto('aes-256-ctr',request.body.password)}',
         '${request.body.usertype}'
         );
         `
@@ -51,10 +52,10 @@ module.exports = {
         const sql = `
         UPDATE Users SET 
         UserName = '${request.body.username}',
-        UserPassword = '${request.body.password}'
+        UserPassword = '${crypto._crypto('aes-256-ctr',request.body.password)}'
         WHERE 
             UserName='${request.body.username}' AND
-            UserPassword= '${request.body.oldPassword}';
+            UserPassword= '${crypto._crypto('aes-256-ctr',request.body.oldPassword)}';
         `
         const connection = await mysql.createConnection(database)
         const [ results ] = await connection.promise().execute(sql)
@@ -63,9 +64,7 @@ module.exports = {
 
     },  
     async delete (request, response){
-        const sql = ` DELETE FROM Users 
-        WHERE UserName='${request.body.UserName}' AND
-        UserPassword='${request.body.UserPassword}' `
+        const sql = `DELETE FROM Users WHERE UserName='${request.body.UserName}';`
 
         const connection = await mysql.createConnection(database)
         const [ results ] = await connection.promise().execute(sql)

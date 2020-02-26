@@ -9,13 +9,13 @@ const RoomController  = require('./controllers/RoomController')
 
 const routes = Router()
 
+async function Provisionig () {
+    await SchemaUsers()
+    await SchemaRooms()
+    await SchemaFloors()
+}
+Provisionig()
 
-routes.post('/provisioning', (req,res)=>{
-    SchemaUsers()
-    SchemaRooms()
-    SchemaFloors()
-    res.json({status: 'Database Provisionig'})
-})
 routes.post('/user', UserController.store)
 routes.post('/user/auth', UserController.index )
 routes.get('/users', UserController.indexAll)

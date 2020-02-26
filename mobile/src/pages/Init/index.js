@@ -2,10 +2,10 @@ import React, { useState} from 'react';
 import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
 
 export default function Init({navigation}){
-    const [address, setAddress] = useState('');
+    const [address, setAddress] = useState('http://painel.local');
   return (
     <View style={styles.container}>
-      <TextInput placeholder="Painel URL"  autoCapitalize="none" style={styles.input}  onChangeText={text => setAddress(text)} />
+      <TextInput placeholder="Painel URL"  autoCapitalize="none" style={styles.input} value={address}  onChangeText={text => setAddress(text)} />
       <Text style={styles.text}>http://example.painel.com:8080</Text>
       <View style={styles.containerButton}>
         <Button style={styles.button}title="Entrar" onPress={()=> navigation.navigate('Login',{url_aplication: address})} />

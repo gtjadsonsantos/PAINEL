@@ -3,7 +3,7 @@ const database = require('../database/connection')
 
 module.exports = {
     async index (request,response) {
-        const sql = `SELECT * FROM Rooms LEFT JOIN Floors on Floors.FloorsID = Rooms.RoomsID WHERE NumberFloor = ${request.params.id} ; `
+        const sql = `SELECT * FROM Rooms LEFT JOIN Floors on Floors.FloorsID = Rooms.RoomsID WHERE NumberFloor = ${request.params.id} ORDER BY Rooms.NumberRoom ASC; `
       
         const connection = await mysql.createConnection(database)
         const [ results ] = await connection.promise().execute(sql)
