@@ -7,7 +7,7 @@ import './style.css';
 
 const socket = io(`${config.backend.url}`)
 
-function Sessao() {
+function Sessao_1() {
     const [floor1, setFloor1] = useState([])
     const [floor2, setFloor2] = useState([])
     const [floor3, setFloor3] = useState([])
@@ -132,4 +132,4 @@ function Sessao() {
   );
 }
 
-export default Sessao;
+export default Sessao_1;

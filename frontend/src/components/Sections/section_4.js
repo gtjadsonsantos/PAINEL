@@ -2,41 +2,40 @@ import React, {useState, useEffect} from 'react';
 import io from 'socket.io-client';
 import api from '../../services/api'
 import config from '../../config'
-import Weather from '../Weather'
 
 import './style.css';
 
 const socket = io(`${config.backend.url}`)
 
-function SectionTwo() {
-    const [floor8, setFloor8] = useState([])
-    const [floor9, setFloor9] = useState([])
-    const [floor10, setFloor10] = useState([])
-    const [floor11, setFloor11] = useState([])
-    const [floor12, setFloor12] = useState([])
-    const [floor13, setFloor13] = useState([])
-    const [floor14, setFloor14] = useState([])
+function Section_4() {
+    const [floor22, setFloor22] = useState([])
+    const [floor23, setFloor23] = useState([])
+    const [floor24, setFloor24] = useState([])
+    const [floor25, setFloor25] = useState([])
+    const [floor26, setFloor26] = useState([])
+    const [floor27, setFloor27] = useState([])
+    const [floor28, setFloor28] = useState([])
     const url = config.backend.url
 
     useEffect(()=>{
      async function getDatas (){
         
-        const res_floor1 = await api.get('/floors/8');
-        const res_floor2 = await api.get('/floors/9');
-        const res_floor3 = await api.get('/floors/10');
-        const res_floor4 = await api.get('/floors/11');
-        const res_floor5 = await api.get('/floors/12');
-        const res_floor6 = await api.get('/floors/13');
-        const res_floor7 = await api.get('/floors/14');
+        const res_floor22 = await api.get('/floors/22');
+        const res_floor23 = await api.get('/floors/23');
+        const res_floor24 = await api.get('/floors/24');
+        const res_floor25 = await api.get('/floors/25');
+        const res_floor26 = await api.get('/floors/26');
+        const res_floor27 = await api.get('/floors/27');
+        const res_floor28 = await api.get('/floors/28');
       
         
-        setFloor8(res_floor1.data)
-        setFloor9(res_floor2.data)
-        setFloor10(res_floor3.data)
-        setFloor11(res_floor4.data)
-        setFloor12(res_floor5.data)
-        setFloor13(res_floor6.data)
-        setFloor14(res_floor7.data)
+        setFloor22(res_floor22.data)
+        setFloor23(res_floor23.data)
+        setFloor24(res_floor24.data)
+        setFloor25(res_floor25.data)
+        setFloor26(res_floor26.data)
+        setFloor27(res_floor27.data)
+        setFloor28(res_floor28.data)
       }
       getDatas()
      },[])
@@ -52,9 +51,9 @@ function SectionTwo() {
     <>
       <div id="container" >
         <ul className="floors" >
-          <h2 className="title darkblue" >8º Andar</h2>
+          <h2 className="title darkblue" >22º Andar</h2>
            {
-             floor8.map(item => ( 
+             floor22.map(item => ( 
               <>
                 <img key={item.RoomID} className="imageCostumer" alt={item.NameImage} id={item.NumberRoom} src={`${url}/${item.NameImage}`} />  
                <li className="numberRoom" >{item.NumberRoom}</li>
@@ -63,9 +62,9 @@ function SectionTwo() {
            }
         </ul>
         <ul className="floors" >
-          <h2 className="title blue" >9º Andar</h2>
+          <h2 className="title blue" >23º Andar</h2>
            {
-             floor9.map(item => ( 
+             floor23.map(item => ( 
               <>
                 <img key={item.RoomID} className="imageCostumer" alt={item.NameImage} id={item.NumberRoom} src={`${url}/${item.NameImage}`} />  
                <li className="numberRoom" >{item.NumberRoom}</li>
@@ -74,9 +73,9 @@ function SectionTwo() {
            }
         </ul>
         <ul className="floors" >
-          <h2 className="title darkblue" >10º Andar</h2>
+          <h2 className="title darkblue" >24º Andar</h2>
            {
-             floor10.map(item => ( 
+             floor24.map(item => ( 
               <>
                 <img key={item.RoomID} className="imageCostumer" alt={item.NameImage} id={item.NumberRoom} src={`${url}/${item.NameImage}`} />  
                <li className="numberRoom" >{item.NumberRoom}</li>
@@ -85,9 +84,9 @@ function SectionTwo() {
            }
         </ul>
         <ul className="floors" >
-          <h2 className="title blue" >11º Andar</h2>
+          <h2 className="title blue" >25º Andar</h2>
            {
-             floor11.map(item => ( 
+             floor25.map(item => ( 
               <>
                 <img key={item.RoomID} className="imageCostumer" alt={item.NameImage} id={item.NumberRoom} src={`${url}/${item.NameImage}`} />  
                <li className="numberRoom" >{item.NumberRoom}</li>
@@ -96,9 +95,9 @@ function SectionTwo() {
            }
         </ul>
         <ul className="floors" >
-          <h2 className="title darkblue" >12º Andar</h2>
+          <h2 className="title darkblue" >26º Andar</h2>
            {
-             floor12.map(item => ( 
+             floor26.map(item => ( 
               <>
                 <img key={item.RoomID} className="imageCostumer" alt={item.NameImage} id={item.NumberRoom} src={`${url}/${item.NameImage}`} />  
                <li className="numberRoom" >{item.NumberRoom}</li>
@@ -107,9 +106,9 @@ function SectionTwo() {
            }
         </ul>
         <ul className="floors" >
-          <h2 className="title blue" >13º Andar</h2>
+          <h2 className="title blue" >27º Andar</h2>
            {
-             floor13.map(item => ( 
+             floor27.map(item => ( 
               <>
                 <img key={item.RoomID} className="imageCostumer" alt={item.NameImage} id={item.NumberRoom} src={`${url}/${item.NameImage}`} />  
                <li className="numberRoom" >{item.NumberRoom}</li>
@@ -118,9 +117,9 @@ function SectionTwo() {
            }
         </ul>
         <ul className="floors" >
-          <h2 className="title darkblue" >14º Andar</h2>
+          <h2 className="title darkblue" >28º Andar</h2>
            {
-             floor14.map(item => ( 
+             floor28.map(item => ( 
               <>
                 <img key={item.RoomID} className="imageCostumer" alt={item.NameImage} id={item.NumberRoom} src={`${url}/${item.NameImage}`} />  
                <li className="numberRoom" >{item.NumberRoom}</li>
@@ -129,9 +128,8 @@ function SectionTwo() {
            }
         </ul>
       </div>
-      <Weather  />    
     </>
   );
 }
 
-export default SectionTwo;
+export default Section_4;

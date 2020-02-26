@@ -51,7 +51,30 @@
 #continerTopToMobile, #list-menu {
     display: none;
 }
-
+.subMenu ul{ 
+    display: none !important;
+    position: absolute;
+    width: 200px !important;
+    margin-left: 220px;
+    margin-top: 25px;
+    background: #fff;
+    flex-direction: column;
+}
+.subMenu {
+    text-align: left;
+    display: flex;
+    justify-content: center;
+    border-radius: none !important;
+    padding-left: 10px;
+    font-size: small    ;
+    flex-direction: column;
+    font-family: 'Roboto',sans-serif;
+    font-weight: bolder;
+    height: 50px;
+}
+.subMenu:hover > ul {
+    display: flex !important;
+}
 @media only screen  and (max-width: 599px){
     #continerTopToMobile {
         display: flex;

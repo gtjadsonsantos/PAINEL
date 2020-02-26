@@ -35,3 +35,9 @@ a ação irá duplicar o usuário administrador e assim o servidor irá para de 
 * Adicionado campo para acesso a segunda view  do painel, na página admnistração. 
 * Ajustado a interface para ser responsiva
 * Criado aplicativo mobile
+
+## VERSÃO 1.0.4
+
+* Adicionado 5 view, a aplicação suporte `35` andares
+* Adicionado funcionalidade de deletar uma sala
+* Adicionado funcionalidade de deletar um usuário

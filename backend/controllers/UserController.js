@@ -52,10 +52,10 @@ module.exports = {
         const sql = `
         UPDATE Users SET 
         UserName = '${request.body.username}',
-        UserPassword = '${request.body.password}'
+        UserPassword = '${crypto._crypto('aes-256-ctr',request.body.password)}'
         WHERE 
             UserName='${request.body.username}' AND
-            UserPassword= '${request.body.oldPassword}';
+            UserPassword= '${crypto._crypto('aes-256-ctr',request.body.oldPassword)}';
         `
         const connection = await mysql.createConnection(database)
         const [ results ] = await connection.promise().execute(sql)
@@ -64,9 +64,7 @@ module.exports = {
 
     },  
     async delete (request, response){
-        const sql = ` DELETE FROM Users 
-        WHERE UserName='${request.body.UserName}' AND
-        UserPassword='${request.body.UserPassword}' `
+        const sql = `DELETE FROM Users WHERE UserName='${request.body.UserName}';`
 
         const connection = await mysql.createConnection(database)
         const [ results ] = await connection.promise().execute(sql)

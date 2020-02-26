@@ -76,11 +76,15 @@ Copie o conteúdo do arquivo `PAINEL/provisioning.sql`, cole e execute
     </tr>
     <tr>
         <td><img style="width:300px; height:500px"  src="mobile/assets/splash.png"></td>
+    </tr>
+    <tr>
          <td><img style="width:300px; height:500px"  src="frontend/public/login-mobile.png"></td>
     </tr>
      <tr>
-        <td><img style="width:300px; height:500px"  src="frontend/public/admin-mobile.png"></td>
         <td><img style="width:300px; height:500px"  src="frontend/public/view-mobile.png"></td>
+    </tr>
+    <tr>
+        <td><img style="width:300px; height:500px"  src="frontend/public/admin-mobile.png"></td>
     </tr>
 </table>
 

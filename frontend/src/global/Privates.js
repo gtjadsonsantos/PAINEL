@@ -4,6 +4,7 @@ function  blockAdministrativeFields(){
     document.getElementById('fields-3').remove()
     document.getElementById('fields-4').remove()
     document.getElementById('fields-5').remove()
+    document.getElementById('fields-6').remove()
 
 
 
@@ -12,6 +13,7 @@ function  blockAdministrativeFields(){
     document.getElementById('fields-mobile-2').remove()
     document.getElementById('fields-mobile-3').remove()
     document.getElementById('fields-mobile-5').remove()
+    document.getElementById('fields-mobile-6').remove()
 }
 
 

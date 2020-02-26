@@ -1,0 +1,26 @@
+
+#contianerDeleteUser {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 40px;
+    padding-left: 20px;
+    border-left: 0.1px solid #000;
+}
+
+#contianerDeleteUser h2 { 
+    text-align: start;
+}
+
+#contianerDeleteUser div {
+    width: 100%;
+    height: 150px;
+    display: flex;
+    justify-content: left;
+    align-items: flex-end;
+}
+
+#contianerDeleteUser div button {
+    margin: 0;
+}
