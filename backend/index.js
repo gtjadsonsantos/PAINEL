@@ -25,7 +25,7 @@ app.use(express.static(path.join('imgs')))
 
 
 server.listen(3333, ()=>{
-    console.log('http://0.0.0.0:3333')
+    console.log("http://0.0.0.0:3333")
 })     
 
 module.exports = server
