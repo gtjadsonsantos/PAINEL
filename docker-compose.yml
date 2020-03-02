@@ -21,7 +21,7 @@ services:
       - ./backend:/home/node/PAINEL/backend
     ports:
       - "3333:3333"
-    command: "npm install && npm run start"
+    command: "yarn start"
 
   frontend:
       container_name: frontend
@@ -33,4 +33,4 @@ services:
         - ./frontend:/home/node/PAINEL/frontend
       ports:
         - "8080:8080"
-      command: "npm install && npm build && npm run server"
+      command: "yarn server"
