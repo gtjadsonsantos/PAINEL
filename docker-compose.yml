@@ -1,0 +1,36 @@
+version: '3.1'
+services:
+  db:
+    container_name: mysql
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password 
+    ports: 
+        - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: 'root'
+      MYSQL_DATABASE: test
+    restart: always
+    
+  backend:
+    container_name: backend 
+    image: "node"
+    working_dir: /home/node/PAINEL/backend
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - ./backend:/home/node/PAINEL/backend
+    ports:
+      - "3333:3333"
+    command: "npm install && npm run start"
+
+  frontend:
+      container_name: frontend
+      image: "node"
+      working_dir: /home/node/PAINEL/frontend
+      environment:
+        - NODE_ENV=production
+      volumes:
+        - ./frontend:/home/node/PAINEL/frontend
+      ports:
+        - "8080:8080"
+      command: "npm install && npm build && npm run server"

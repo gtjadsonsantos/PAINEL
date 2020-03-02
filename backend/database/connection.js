@@ -1,7 +1,8 @@
 
 const database = {
-    host: 'localhost',
+    host: '0.0.0.0',
     user: 'root',
+    password: 'root',
     database: 'test',
     port: '3306'
 
