@@ -20,6 +20,12 @@ A PROPOSTA DESSA APLICAÇÃO É TORNAR SIMPLES A IDENTIFICAÇÃO DAS EMPRESAS PR
 
 ## PARA COMEÇAR 
 
+Faça o download do repositório
+
+```
+    git clone https://github.com/jadson179/PAINEL.git
+```
+
 Acesse a pasta do projeto 
 
 Rode o comando baixo:

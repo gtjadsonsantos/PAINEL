@@ -24,6 +24,6 @@ app.get('/admin', function(req, res) {
 
 
 server.listen(8080,()=>{
-  console.log(`http://0.0.0.0:8080`)
+  console.log("http://0.0.0.0:8080")
   console.log('Owner: https://github.com/jadson179')
 });
