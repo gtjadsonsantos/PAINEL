@@ -27,7 +27,7 @@ CREATE TABLE IF NOT EXISTS Floors (
     );
 /* 1º ANDAR  */
 
-INSERT INTO Users (UserName, UserPassword, UserType ) VALUES ('admin','4180f75431','administrator');
+INSERT INTO Users (UserName, UserPassword, UserType ) VALUES ('admin','admin','administrator');
 
 INSERT INTO Rooms (NumberRoom, NameImage ) VALUES ('101', 'logo-beco-castelo.png');
 INSERT INTO Floors (NumberFloor, RoomsID) VALUES ('1', '1');

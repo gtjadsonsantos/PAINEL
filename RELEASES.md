@@ -41,3 +41,9 @@ a ação irá duplicar o usuário administrador e assim o servidor irá para de 
 * Adicionado 5 view, a aplicação suporte `35` andares
 * Adicionado funcionalidade de deletar uma sala
 * Adicionado funcionalidade de deletar um usuário
+* Provisionamento do banco de dados, quando o backend subir
+
+## VERSÃO 1.0.5 
+
+* Empacotamento da aplicação em container docker
+* Att passo a passo pra uso da aplicação apartir do docker

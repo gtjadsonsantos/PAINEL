@@ -4,11 +4,12 @@ const crypto = require('../utils/crypto')
 
 module.exports = {
     async index (request,response) {
-        const sql = ` SELECT * FROM Users WHERE UserName='${request.body.username}' AND UserPassword='${crypto._crypto('aes-256-ctr',request.body.password)}' LIMIT 1;`
+        const sql = ` SELECT * FROM Users WHERE UserName='${request.body.username}' AND UserPassword='${request.body.password}' LIMIT 1;`
         
        
        const connection = await mysql.createConnection(database)
        const [ results ] = await connection.promise().execute(sql)
+       console.log(sql)
        connection.end();
        return response.json(results[0]);
 
@@ -30,7 +31,7 @@ module.exports = {
         )
         VALUES (
         '${request.body.username}',
-        '${crypto._crypto('aes-256-ctr',request.body.password)}',
+        '${request.body.password}',
         '${request.body.usertype}'
         );
         `
@@ -52,10 +53,10 @@ module.exports = {
         const sql = `
         UPDATE Users SET 
         UserName = '${request.body.username}',
-        UserPassword = '${crypto._crypto('aes-256-ctr',request.body.password)}'
+        UserPassword = '${request.body.password}'
         WHERE 
             UserName='${request.body.username}' AND
-            UserPassword= '${crypto._crypto('aes-256-ctr',request.body.oldPassword)}';
+            UserPassword= '${request.body.oldPassword}';
         `
         const connection = await mysql.createConnection(database)
         const [ results ] = await connection.promise().execute(sql)

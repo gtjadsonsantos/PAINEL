@@ -14,7 +14,7 @@ function DeleteUser() {
             const response = await api.post('/delete/user', {UserName: user})
 
             if(response.status === 200){
-                document.getElementById('submit').innerText = 'Sala Deletada'
+                document.getElementById('submit').innerText = 'Usuário Deletado'
                 document.getElementById('submit').style.cssText = Themes.button.validated
 
 
@@ -25,7 +25,7 @@ function DeleteUser() {
 
 
             }else {
-              document.getElementById('submit').innerText = `Error: ${(await response).status}`
+              document.getElementById('submit').innerText = `Error: ${response.status}`
               document.getElementById('submit').style.cssText = Themes.button.error
             }
       }else {

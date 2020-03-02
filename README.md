@@ -12,35 +12,24 @@ A PROPOSTA DESSA APLICAÇÃO É TORNAR SIMPLES A IDENTIFICAÇÃO DAS EMPRESAS PR
 
 [NPM](https://www.npmjs.com/get-npm) ou [YARN](https://classic.yarnpkg.com/en/docs/install/#debian-stable)
 
-[MYSQL](https://www.apachefriends.org/pt_br/download.html)
+[Docker](https://docs.docker.com/install/)
+
+[Docker Compose](https://docs.docker.com/compose/)
+
 
 
 ## PARA COMEÇAR 
 
-INICIE O BANCO DE DADOS 
+Acesse a pasta do projeto 
 
-```yml
-    sudo /opt/lampp/./xampp startmysql 
+Rode o comando baixo:
+
+```shell
+docker-compose up
+
 ```
+e acesse http://0.0.0.0:8080
 
-ACESSE A PASTA `backend` DO PROJETO
-
-```yml
-    yarn install && yarn start 
-```
-
-ACESSE A PASTA `frontend` DO PROJETO
-
-```yml
-   yarn install && yarn build && yarn server
-```
-
-
-### CRIAÇÃO DO USUÁRIO ADMINISTRADOR E PROVISONAMENTO DO BANCO
-
-Acesse a interface do seu banco mysql http://`seuendereçoip`/phpmyadmin/
-
-Copie o conteúdo do arquivo `PAINEL/provisioning.sql`, cole e execute 
 
 ### AUTENTICAÇÃO INICIAL
 
