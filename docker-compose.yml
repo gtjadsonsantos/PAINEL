@@ -28,6 +28,8 @@ services:
     command: "yarn start"
     links: 
         - db
+    depends_on: 
+        - db
 
   frontend:
       container_name: frontend
@@ -40,4 +42,8 @@ services:
       ports:
         - "8080:8080"
       command: "yarn server"
+      depends_on: 
+          - db
+          - backend
+
 

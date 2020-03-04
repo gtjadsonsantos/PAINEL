@@ -47,3 +47,13 @@ a ação irá duplicar o usuário administrador e assim o servidor irá para de 
 
 * Empacotamento da aplicação em container docker
 * Att passo a passo pra uso da aplicação apartir do docker
+
+
+
+Sobre a dica que você @Anderson me deu usando o depends_on, está sendo usando para garantir que cada container seja seja iniciado, se seu dependente estiver de pé.
+
+Mas, ainda não resolve....  o problema é que backend tenta acessar um banco via drive(socket mysql), mas o mesmo ainda não responde de imediato(demora em torno de 50 seg) para ficar comunicável.
+
+Analisando o tamanho do volume criado para salvar os arquivos padrões do mysql é de " 176 M ", uma vez que esses arquivos já estão criados na raiz do projeto, não gera mais conflitos. 
+
+Não é a forma mais eficiente, porém é eficaz!  
