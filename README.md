@@ -34,7 +34,11 @@ Rode o comando baixo:
 docker-compose up
 
 ```
-e acesse http://0.0.0.0:8080
+Comando para provisionamento
+
+```shell
+    docker exec -i mysql sh -c 'exec mysql -uroot -p"root"' < provisioning.sql
+```
 
 
 ### AUTENTICAÇÃO INICIAL

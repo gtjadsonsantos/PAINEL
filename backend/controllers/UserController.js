@@ -1,6 +1,5 @@
 const mysql = require('mysql2')
 const database = require('../database/connection')
-const crypto = require('../utils/crypto')
 
 module.exports = {
     async index (request,response) {
