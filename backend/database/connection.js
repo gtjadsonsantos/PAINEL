@@ -1,6 +1,6 @@
 
 const database = {
-    host: '0.0.0.0',
+    host: 'db',
     user: 'root',
     password: 'root',
     database: 'test',

@@ -11,7 +11,7 @@ async function SchemaUsers () {
         
     const connection = await mysql.createConnection(database)
     await connection.promise().execute(sql)
-    await connection.promise().execute("INSERT INTO Users (UserName, UserPassword, UserType ) SELECT 'admin','4180f75431','administrator' WHERE NOT EXISTS (SELECT 2 FROM Users WHERE Users.UserName = 'admin' LIMIT 1);")
+    await connection.promise().execute("INSERT INTO Users (UserName, UserPassword, UserType ) SELECT 'admin','admin','administrator' WHERE NOT EXISTS (SELECT 2 FROM Users WHERE Users.UserName = 'admin' LIMIT 1);")
     connection.end();
 
 }
@@ -43,8 +43,10 @@ async function SchemaFloors() {
 
 }
 
-module.exports = { 
+module.exports = {
+    SchemaUsers,
     SchemaFloors,
-    SchemaRooms,
-    SchemaUsers
+    SchemaRooms
 }
+
+

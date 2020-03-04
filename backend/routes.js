@@ -16,6 +16,7 @@ async function Provisionig () {
 }
 Provisionig()
 
+
 routes.post('/user', UserController.store)
 routes.post('/user/auth', UserController.index )
 routes.get('/users', UserController.indexAll)
