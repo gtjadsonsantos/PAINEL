@@ -30,7 +30,7 @@ services:
         - db
     depends_on: 
         - db
-
+        
   frontend:
       container_name: frontend
       image: "node"
@@ -45,5 +45,3 @@ services:
       depends_on: 
           - db
           - backend
-
-
