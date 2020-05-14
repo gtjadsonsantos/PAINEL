@@ -3,7 +3,7 @@ exports.up = function(knex) {
       table.increments('FloorID')
       table.string('NumberFloor').notNullable()
       table.integer('RoomID').notNullable()
-      table.foreign('RoomID').references('Users.UserID')
+      table.foreign('RoomID').references('Rooms.RoomID')
 
   })
 };
