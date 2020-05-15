@@ -1,47 +1,54 @@
-const mysql = require('mysql2')
 const database = require('../database/connection')
 
 module.exports = {
-    async index (request,response) {
-        const sql = `SELECT * FROM Rooms LEFT JOIN Floors on Floors.FloorsID = Rooms.RoomsID WHERE NumberFloor = ${request.params.id} ORDER BY Rooms.NumberRoom ASC; `
-      
-        const connection = await mysql.createConnection(database)
-        const [ results ] = await connection.promise().execute(sql)
-        connection.end()
-        
+    async index (request,response) {       
+
+        const results = await database('Floors')
+        .select('*')
+        .join('Rooms', 'Floors.RoomID', 'Rooms.RoomID')
+        .where('NumberFloor','=', request.params.id)
+        .orderBy('Rooms.NumberRoom','asc')
+       
         return response.json(results)
 
     },
     async store (request, response) {
-        const sql = `INSERT INTO Floors (NumberFloor, RoomsID) VALUES ('${request.body.NumberFloor}', '${request.body.RoomsID}');`
 
-        const connection = await mysql.createConnection(database)
-        const [ results ] = await connection.promise().execute(sql)
-        connection.end()
+        const [{qtdfloors}] = await database('Floors')
+        .count('*',{as: 'qtdfloors'})
+        .where('NumberFloor','=', request.body.numberfloor)
 
-        return response.json(results)
+        console.log(qtdfloors)
+
+        if(qtdfloors == 0){
+            await database('Floors')
+            .insert({
+                NumberFloor: request.body.numberfloor,
+                RoomID: request.body.roomid
+            })
+
+            return response.json({status: "Success in create floor"})
+        }else{
+            return response.json({status: "Faild in create floor"})
+        }
+
     },
     async update (request, response) {   
-        const sql = `
-        UPDATE Floors SET 
-        NumberFloor='${request.body.newNumberFloor}'
-        WHERE 
-        NumberFloor='${request.body.NumberFloor}'
-        `
-        const connection = await mysql.createConnection(database)
-        const [ results ] = await connection.promise().execute(sql)
-        connection.end()
+
+        const results = await database('Floors')
+        .update({
+            NumberFloor:request.body.newnumberfloor,
+        })
+        .where('NumberFloor','=',request.body.numberfloor)
         
         return response.json(results)
 
     },
     async delete (request, response){
-        const sql = ` DELETE FROM Floors 
-        WHERE NumberFloor='${request.body.NumberFloor}';`
-
-        const connection = await mysql.createConnection(database)
-        const [ results ] = await connection.promise().execute(sql)
-        connection.end()
+       
+        const results = await database('Floors')
+        .where('NumberFloor','=',request.body.numberfloor)
+        .del()
         
         return response.json(results)
     }

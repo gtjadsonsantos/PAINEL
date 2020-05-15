@@ -47,3 +47,11 @@ a ação irá duplicar o usuário administrador e assim o servidor irá para de 
 
 * Empacotamento da aplicação em container docker
 * Att passo a passo pra uso da aplicação apartir do docker
+
+
+## VERSÂO 1.0.6
+
+* Criado documentação das rotas da api do backend
+* Migrado banco de dados mysql para usar sqlite
+* Inserido knex para gerenciamento das query's e conexões com o banco de dados
+* Inserido autenticação das rotas com jwt 
