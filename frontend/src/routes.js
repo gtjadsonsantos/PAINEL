@@ -9,10 +9,11 @@ import Section_3 from './components/Sections/section_3'
 import Section_4 from './components/Sections/section_4'
 import Section_5 from './components/Sections/section_5'
 import Administration from './components/Administration'
+import isAuthenticated from './global/Auth'
 
 const PrivateRoute =  ({component: Component, ...rest })=> (
     <Route {...rest} render={props => (
-            sessionStorage.getItem('status') ?(
+            isAuthenticated() ?(
             <Component {...props}/> 
         ):(
             <Redirect to={{pathname: '/', state:{ from: props.location }}}/>

@@ -13,6 +13,7 @@ module.exports = {
         .count('RoomID',{as: 'qtdrooms'})
         .where('NumberRoom','=', request.body.room)
 
+        console.log(qtdrooms)
         if(qtdrooms == 0){
             await database('Rooms')
             .insert({

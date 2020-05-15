@@ -6,7 +6,6 @@ module.exports = {
         const results = await database('Floors')
         .select('*')
         .join('Rooms', 'Floors.RoomID', 'Rooms.RoomID')
-        .where('NumberFloor','=', request.params.id)
         .orderBy('Rooms.NumberRoom','asc')
        
         return response.json(results)

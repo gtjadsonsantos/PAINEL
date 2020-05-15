@@ -5,24 +5,28 @@ const {secretToken} = require('../config')
 
 module.exports = {
     async index (request,response) {
-        
-        const results = await database('Users')
-        .select('*')
-        .where('UserName','=',request.body.username)
-        .where('UserPassword','=',request.body.password)
-        .limit(1)
+       
+        if(request.body.username != '' && request.body.password != ''){
 
-        const token = results[0].UserID >= 1 ?
-        jwt.sign(results[0],secretToken,{ expiresIn: '1h' })
-        :
-        undefined    
+            const results = await database('Users')
+            .select('*')
+            .where('UserName','=',request.body.username)
+            .where('UserPassword','=',request.body.password)
+            .limit(1)
+
+             
+            const token = results[0] != undefined ?
+            jwt.sign(results[0],secretToken,{ expiresIn: '1h' })
+            :
+            undefined    
     
-       if(token != undefined){
-        return response.json({results,token});
-       }else{
-        res.send({ status: "not authorized" })
-       }
+            if(token != undefined){
+             return response.json({results,token});
+            }else{
+             response.send({ status: "not authorized" })
+            }
 
+        }
     },
     async indexAll (request,response) {
     

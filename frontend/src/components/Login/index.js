@@ -23,19 +23,17 @@ function Login() {
       
   },[])
 async function Auth() { 
-    const {data} = await api.post('/user/auth', { username, password })
-    
-    const {UserName, UserPassword, UserType} = data[0]
-    
-    if(username === UserName && password === UserPassword){
+    if(username !== '' && password !== ''){
+      const {data} = await api.post('/user/auth', { username, password })
 
-      console.log(username,UserName,password,UserPassword)
-      sessionStorage.setItem('status', true)
-      sessionStorage.setItem('usertype',UserType)
-      history.push('/admin')
-    }
+      if(data.token) { 
+        sessionStorage.setItem('token',data.token)
+        history.push('/admin')
+      }else {
+        console.log(data)
+      }
+    } 
   }
-
     return (
       <>
       <div id="containerLogin">

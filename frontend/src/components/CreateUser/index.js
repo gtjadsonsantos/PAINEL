@@ -13,25 +13,22 @@ function CreateUser() {
 
     async function handleCreateUser(){
       if (username !== ''  && password !=='' && usertype !== '' && usertype !== 'void'){
-      const response = await api.post('/user',{username,password,usertype })
-  
-      if(response.data.status === 'Usuário criado'){
-          document.getElementById('submit').innerText = 'Usuário Criado'
-          document.getElementById('submit').style.cssText = Themes.button.validated
-
-        setInterval(()=>{
-          document.getElementById('submit').innerText = 'Enviar'
-          document.getElementById('submit').style.cssText = Themes.button.reset
-        },300)
-         
-      }else {
-        document.getElementById('submit').innerText = `${response.data.status}`
-        document.getElementById('submit').style.cssText = Themes.button.error
+      const response = await api.post('/user',
+      {
+        username,
+        password,
+        usertype 
+      },{
+        headers: {
+          authorization:`Bearer ${sessionStorage.getItem('token')}`
         }
+      })
+
       }else{
         document.getElementById('#incorret').innerText = "Preencher todos os campos!!"
       }
     }
+    
     return (
       <div id="contianerCreateUser">
           <h2 className="titleCreateUser" >Criar Usuário</h2>
@@ -48,7 +45,7 @@ function CreateUser() {
           }
           <select className="options-admin inputs"required  onChange={event => setUserType(event.target.value)} >
             <option value="void">Selecione o tipo da conta</option>
-            <option value="administrator">Admin</option>
+            <option value="admin">Admin</option>
             <option value="comum">Comum</option>
           </select>
           <div>

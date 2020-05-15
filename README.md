@@ -6,6 +6,16 @@
 
 A PROPOSTA DESSA APLICAÇÃO É TORNAR SIMPLES A IDENTIFICAÇÃO DAS EMPRESAS PRESENTES EM EMPREENDIMENTOS QUE SÃO COMERCIAIS 
 
+# FUNCIONALIDADES 
+
+- Jsom Web Token 
+- Upload de imagens
+- Provisionamento
+
+# MOTIVO
+
+Fornecer uma ambiente simples para gerenciamento de salas.
+
 ### REQUISITOS 
 
 [NODEJS > 12.14.1](https://nodejs.org/en/)
@@ -34,11 +44,7 @@ Rode o comando baixo:
 docker-compose up
 
 ```
-Comando para provisionamento
 
-```shell
-    docker exec -i mysql sh -c 'exec mysql -uroot -p"root"' < provisioning.sql
-```
 
 
 ### AUTENTICAÇÃO INICIAL
@@ -48,54 +54,21 @@ Comando para provisionamento
 `Password`: admin
 
 
-### SKETCHES
+### SKETCHE
 
-#### WEB 
-
-<table>
-    <tr>
-        <td><img style="width=100%; height=300px"  src="frontend/public/login.png"></td>
-    </tr>
-    <tr>
-        <td><img style="width=100%; height=300px"  src="frontend/public/admin-web.png"></td>
-    </tr>
-     <tr>
-        <td><img style="width=100%; height=300px"  src="frontend/public/view-1.png"></td>
-    </tr>
-     <tr>
-        <td><img style="width=100%; height=300px"  src="frontend/public/view-2.png"></td>
-    </tr>
-</table>
-
-### MOBILE 
-
-<table>
-    <tr>
-        <td><img style="width:200px; height:400px"  src="mobile/assets/icon.png"></td>
-    </tr>
-    <tr>
-        <td><img style="width:300px; height:500px"  src="mobile/assets/splash.png"></td>
-    </tr>
-    <tr>
-         <td><img style="width:300px; height:500px"  src="frontend/public/login-mobile.png"></td>
-    </tr>
-     <tr>
-        <td><img style="width:300px; height:500px"  src="frontend/public/view-mobile.png"></td>
-    </tr>
-    <tr>
-        <td><img style="width:300px; height:500px"  src="frontend/public/admin-mobile.png"></td>
-    </tr>
-</table>
 
 
 `apk:` [address](https://exp-shell-app-assets.s3.us-west-1.amazonaws.com/android/%40jadson179/Painel-5aad65f531a9401dbcda37fd677efc24-signed.apk)
 
-# CONTRIBUIDORES 
+
+# Licença 
+
+Esse projeto usa a licença MIT license - veja o arquivo LICENSE para mais detalhes
+
+# AUTOR
 
 <table>
-    <tr>
-        <td><a href="https://github.com/jadson179"><img width="100" src="https://avatars2.githubusercontent.com/u/42282908?s=460&v=4" /></a></td>
-    </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/jadson179"><img src="https://avatars0.githubusercontent.com/u/42282908?s=460&u=79ce909209ebf14da91a2d2517c9b0f9e378a4e1&v=4" width="100px;" alt=""/><br /><sub><b>Jadson Santos</b></sub></a><br /><a href="https://github.com/jadson179/PAINEL/commits?author=jadson179" title="Code">💻</a> <a href="https://github.com/jadson179" title="Design">🎨</a></td>
+  <tr>
 </table>
-
-![](frontend/public/logo.png)

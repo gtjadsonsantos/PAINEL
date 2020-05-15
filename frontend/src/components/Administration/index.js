@@ -24,18 +24,6 @@ function Administration() {
     const [ valueAction, setValueAction] = useState(0)
     const [stateSidebar, setStateSidebar] = useState(0)
 
-    useEffect(()=>{
-      function handlePermission(){
-         
-        if(sessionStorage.getItem('usertype') !== "administrator"){
-          setAction([<UpdateRoom/>])
-          blockAdministrativeFields()
-          document.getElementById('fields-0').innerText = 'Atualizar Sala'
-        }
-          
-      }
-      handlePermission()
-    },[])
     function handleSidebar(){
   
       if(stateSidebar === 1){
