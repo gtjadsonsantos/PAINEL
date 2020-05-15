@@ -13,7 +13,7 @@ function AlterPassword() {
       
       if (password !== '' && verifyPassword !== ''){
 
-      const response = await api.post('/update/user',{ username: sessionStorage.getItem('username'), oldPassword: sessionStorage.getItem('password'), password  })
+      const response = await api.put('/user',{ username: sessionStorage.getItem('username'), oldPassword: sessionStorage.getItem('password'), password  })
 
       if(response.data){
         document.getElementById('submit').innerText = 'Senha Alterada'

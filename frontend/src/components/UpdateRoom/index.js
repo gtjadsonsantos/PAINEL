@@ -23,7 +23,7 @@ function UpdateRoom() {
             
             sessionStorage.setItem('update', Math.floor())
 
-            const response = await api.post('/update/room', data)
+            const response = await api.put('/room', data)
          
             if(response.status === 200){
                 document.getElementById('submit').innerText = 'Sala Atualizada'

@@ -13,7 +13,7 @@ function DeleteRoom() {
 
     async function handleDeleteRoom (){
       if (room !== ''){
-            const response = await api.post('/delete/room', {NumberRoom: room})
+            const response = await api.delete('/room', {NumberRoom: room})
 
             if(response.status === 200){
                 document.getElementById('submit').innerText = 'Sala Deletada'

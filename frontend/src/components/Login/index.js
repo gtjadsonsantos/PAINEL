@@ -22,22 +22,18 @@ function Login() {
     github()
       
   },[])
-function Auth() { 
-     api.post('/user/auth', { username, password })
-     .then(resp => { 
-       const { UserName, UserPassword , UserType} = resp.data
-       console.log(UserName, UserPassword)
+async function Auth() { 
+    const {data} = await api.post('/user/auth', { username, password })
+    
+    const {UserName, UserPassword, UserType} = data[0]
+    
+    if(username === UserName && password === UserPassword){
 
-       if(username === UserName && password === UserPassword){
-         sessionStorage.setItem('status', true)
-         sessionStorage.setItem('usertype',UserType)
-         history.push('/admin')
-       }
-     })
-     .catch(error =>{
-       console.log(error)
-     })
-  
+      console.log(username,UserName,password,UserPassword)
+      sessionStorage.setItem('status', true)
+      sessionStorage.setItem('usertype',UserType)
+      history.push('/admin')
+    }
   }
 
     return (

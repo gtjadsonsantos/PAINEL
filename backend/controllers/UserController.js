@@ -1,5 +1,7 @@
 
 const database = require('../database/connection')
+const jwt = require('jsonwebtoken')
+const {secretToken} = require('../config')
 
 module.exports = {
     async index (request,response) {
@@ -9,8 +11,17 @@ module.exports = {
         .where('UserName','=',request.body.username)
         .where('UserPassword','=',request.body.password)
         .limit(1)
+
+        const token = results[0].UserID >= 1 ?
+        jwt.sign(results[0],secretToken,{ expiresIn: '1h' })
+        :
+        undefined    
     
-       return response.json(results);
+       if(token != undefined){
+        return response.json({results,token});
+       }else{
+        res.send({ status: "not authorized" })
+       }
 
     },
     async indexAll (request,response) {
