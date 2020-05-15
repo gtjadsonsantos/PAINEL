@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import io from 'socket.io-client';
 import api from '../../services/api'
-import Themes from '../../global/Themes'
 import config from '../../config'
 
 import './style.css'
@@ -21,25 +20,20 @@ function UpdateRoom() {
             data.append('file',file,file.name)
             data.append('room', room)
             
-            sessionStorage.setItem('update', Math.floor())
-
-            const response = await api.put('/room', data)
+            const response = await api.put('/room', 
+            data,
+            {
+                headers: {
+                    authorization: `Bearer ${sessionStorage.getItem('token')}`
+                }
+            })
          
             if(response.status === 200){
-                document.getElementById('submit').innerText = 'Sala Atualizada'
-                document.getElementById('submit').style.cssText = Themes.button.validated
-
+               
                 socket.emit('send-image',  { data: 'send-image' } )
-
-                setInterval(()=>{
-                    document.getElementById('submit').innerText = 'Enviar'
-                    document.getElementById('submit').style.cssText = Themes.button.reset
-                  },300)
                   
-            }else {
-                document.getElementById('submit').innerText = `Error: ${response.status}`
-                document.getElementById('submit').style.cssText = Themes.button.error
-                }
+            }
+
         }else{
             document.getElementById('incorret').innerText = "Preencher todos os campos!!"
         }

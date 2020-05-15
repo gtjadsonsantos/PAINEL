@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom'
 import './style.css'
 import CreateUser from '../CreateUser'
@@ -9,7 +9,6 @@ import UpdateRoom from '../UpdateRoom'
 import LogoutSystem from '../Logout'
 import DeleteRoom from '../DeleteRoom'
 import DeleteUser from '../DeleteUser'
-import blockAdministrativeFields from '../../global/Privates'
 
 function Administration() {
     const [action, setAction] = useState([
@@ -48,11 +47,7 @@ function Administration() {
           <li id="fields-mobile-3" onClick={()=> setValueAction(3)}>Adicionar Sala</li> 
           <li id="fields-mobile-4" onClick={()=> setValueAction(4)}>Atualizar Sala</li>
           <li id="fields-mobile-5" onClick={()=> setValueAction(5)}>Deletar Sala</li>
-          <Link to="/view-1"><li> Visualizar Painel 1 </li></Link>
-          <Link to="/view-2"><li> Visualizar Painel 2 </li></Link>
-          <Link to="/view-3"><li> Visualizar Painel 3 </li></Link>
-          <Link to="/view-4"><li> Visualizar Painel 4 </li></Link>
-          <Link to="/view-5"><li> Visualizar Painel 5 </li></Link>
+          <Link to="/view"><li> Visualizar Painel </li></Link>
           <li onClick={()=> LogoutSystem()}>Sair</li>
         </ul>
         <div id="containerAdministration">
@@ -72,14 +67,8 @@ function Administration() {
                   <li id="fields-5" onClick={()=> setValueAction(5)} >Deletar Sala</li>
                 </ul>
               </ul>
-              <ul className="subMenu"> Visualizar
-                <ul>
-                  <Link to="/view-1"><li> Visualizar Painel 1 </li></Link>
-                  <Link to="/view-2"><li> Visualizar Painel 2 </li></Link>
-                  <Link to="/view-3"><li> Visualizar Painel 3 </li></Link>
-                  <Link to="/view-4"><li> Visualizar Painel 4 </li></Link>
-                  <Link to="/view-5"><li> Visualizar Painel 5 </li></Link>
-                </ul>
+              <ul className="subMenu">
+                <Link to="/view">Visualizar Painel</Link>
               </ul>
 
               <li id="fields-2" onClick={()=> setValueAction(2)} > Usuários </li>

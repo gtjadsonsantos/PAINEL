@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import api from '../../services/api'
-import Themes from '../../global/Themes'
 
 import './style.css'
 
@@ -38,7 +37,7 @@ function CreateUser() {
           {
             ((password === verifyPassword) && 
              (password !== '') && 
-             (verifyPassword !== '') &&
+             (verifyPassword !== '') ||
              (usertype !== '')
             ) 
             ? <p id="verify">Senha correta</p>:<p id="incorret">Senha Incorreta</p> 

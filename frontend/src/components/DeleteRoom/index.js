@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import io from 'socket.io-client'
 import api from '../../services/api'
-import Themes from '../../global/Themes'
 import config from '../../config'
 
 import './style.css'

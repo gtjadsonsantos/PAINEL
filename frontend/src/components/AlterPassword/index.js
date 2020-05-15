@@ -11,7 +11,7 @@ function AlterPassword() {
 
     if (password !== '' && verifyPassword !== '') {
 
-      const response = await api.put('/user', {
+       await api.put('/user', {
         username: sessionStorage.getItem('username'),
         oldPassword: sessionStorage.getItem('password'),
         password

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
 import api from '../../services/api'
-import Themes from '../../global/Themes'
 
 import './style.css'
 

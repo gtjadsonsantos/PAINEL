@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import io from 'socket.io-client'
 import api from '../../services/api'
-import Themes from '../../global/Themes'
 import config from '../../config'
 
 import './style.css'
@@ -27,14 +26,12 @@ function AddRoom() {
         }
       })
 
-      if (response.status === 200) {
+      if (response.data.status == "Success in create room" ) {
 
         socket.emit('send-image', { data: 'send-image' })
 
       }
 
-    } else {
-      document.getElementById('#incorret').innerText = "Preencher todos os campos!!"
     }
 
   }
