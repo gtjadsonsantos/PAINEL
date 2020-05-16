@@ -1,4 +1,5 @@
 const database = require('../database/connection')
+const deleteFiles = require('../utils/deleteFiles')
 
 module.exports = {
     async index (reques,response) {
@@ -13,7 +14,6 @@ module.exports = {
         .count('RoomID',{as: 'qtdrooms'})
         .where('NumberRoom','=', request.body.room)
 
-        console.log(qtdrooms)
         if(qtdrooms == 0){
             await database('Rooms')
             .insert({
@@ -30,6 +30,11 @@ module.exports = {
                 NumberFloor:request.body.numberfloor,
                 RoomID: RoomID
             })
+
+            return response.send({status: "Success in create room"})
+        }else {
+            return response.send({status: "Faild in create room"})
+
         }
 
 
@@ -46,6 +51,17 @@ module.exports = {
         return response.json(results)
 },
 async delete (request, response) {   
+
+    try {
+        const [{NameImage}] = await database('Rooms')
+        .select('NameImage')
+        .where('NumberRoom','=',request.body.room)
+        
+        deleteFiles(NameImage)
+
+    } catch (error) {
+        console.log(error)
+    }
 
     const results = await database('Rooms')
     .where('NumberRoom','=', request.body.room)

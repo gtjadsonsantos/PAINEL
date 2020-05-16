@@ -1,23 +1,8 @@
 version: "3.7"
 services:
-  db:
-    image: mysql:latest
-    container_name: mysql
-    hostname: database
-    volumes: 
-        - ./database:/var/lib/mysql
-        - ./provisioning.sql:/provisioning.sql
-    ports: 
-        - "3306:3306"
-    environment:
-      MYSQL_ROOT_PASSWORD: "root"
-      MYSQL_DATABASE: "test"
-    command: --default-authentication-plugin=mysql_native_password
-    restart: always
-
   backend:
     container_name: backend 
-    image: "node"
+    image: node:12.16.3
     working_dir: /home/node/PAINEL/backend
     environment:
       - NODE_ENV=production
@@ -26,14 +11,10 @@ services:
     ports:
       - "3333:3333"
     command: "yarn start"
-    links: 
-        - db
-    depends_on: 
-        - db
         
   frontend:
       container_name: frontend
-      image: "node"
+      image: node:12.16.3
       working_dir: /home/node/PAINEL/frontend
       environment:
         - NODE_ENV=production
@@ -43,5 +24,4 @@ services:
         - "8080:8080"
       command: "yarn server"
       depends_on: 
-          - db
           - backend
