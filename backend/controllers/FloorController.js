@@ -10,7 +10,7 @@ module.exports = {
 
         const query = await database('Floors')
             .distinct('NumberFloor')
-
+            
         return response.json({ results, query })
 
     },
