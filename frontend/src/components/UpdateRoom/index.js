@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import io from 'socket.io-client';
 import api from '../../services/api'
 import config from '../../config'
+import handleActionAlert from '../../global/handleActionAlert'
 
 import './style.css'
 
@@ -16,26 +17,25 @@ function UpdateRoom() {
     
         if (room !== '' && file !== ''){
 
-            const data = new FormData()
-            data.append('file',file,file.name)
-            data.append('room', room)
+            const form = new FormData()
+            form.append('file',file,file.name)
+            form.append('room', room)
             
-            const response = await api.put('/room', 
-            data,
+            const {data} = await api.put('/room', 
+            form,
             {
                 headers: {
                     authorization: `Bearer ${sessionStorage.getItem('token')}`
                 }
             })
          
-            if(response.status === 200){
+            if(data === 1){
                
                 socket.emit('send-image',  { data: 'send-image' } )
-                  
+                handleActionAlert("Sucesso em Atualizar Sala",'flex','green')                
+            }else {
+                handleActionAlert("Falha em Atualizar Sala",'flex','red')
             }
-
-        }else{
-            document.getElementById('incorret').innerText = "Preencher todos os campos!!"
         }
     }
     return (
@@ -45,7 +45,7 @@ function UpdateRoom() {
          <input type="file" name="file" onChange={value => setFile(value.target.files[0])} />
          <p id="incorret"></p>
          <div>
-             <button id="submit" onClick={handleUpdateRoom} >Enviar</button>
+             <button className="buttons" onClick={handleUpdateRoom} >Enviar</button>
          </div>
       </div>    
     );

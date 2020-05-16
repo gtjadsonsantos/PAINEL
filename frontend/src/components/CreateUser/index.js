@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import api from '../../services/api'
 
+import handleActionAlert from '../../global/handleActionAlert'
+
 import './style.css'
 
 
@@ -10,21 +12,26 @@ function CreateUser() {
     const [ verifyPassword, setVerifyPassword ] = useState('')
     const [usertype, setUserType] = useState('')
 
+
     async function handleCreateUser(){
       if (username !== ''  && password !=='' && usertype !== '' && usertype !== 'void'){
-      const response = await api.post('/user',
-      {
-        username,
-        password,
-        usertype 
-      },{
-        headers: {
-          authorization:`Bearer ${sessionStorage.getItem('token')}`
-        }
-      })
+      const {data} = await api.post('/user',
+        {
+          username,
+          password,
+          usertype 
+        },{
+          headers: {
+            authorization:`Bearer ${sessionStorage.getItem('token')}`
+          }
+        })
 
-      }else{
-        document.getElementById('#incorret').innerText = "Preencher todos os campos!!"
+        if(data.status === "Success in create user"){
+          handleActionAlert("Sucesso em Criar Usuário",'flex','green')
+        }else{
+          handleActionAlert("Falha em Criar Usuário",'flex','red')
+        }
+      
       }
     }
     
@@ -48,7 +55,7 @@ function CreateUser() {
             <option value="comum">Comum</option>
           </select>
           <div>
-            <button id="submit" onClick={handleCreateUser}>Enviar</button>
+            <button className="buttons"  id="submit" onClick={handleCreateUser}>Enviar</button>
           </div>
       </div>
     );

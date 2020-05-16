@@ -1,3 +1,7 @@
 :root{
-    --primary-background-color: rgb(4, 1, 44)
+    --primary-background-color: #000e55;
+    --actionalert-background-color: rgb(0, 87, 3);
+    --button-background-color: #079fd6;
+    --inputs-border-color: rgb(144, 144, 144);
 }
+

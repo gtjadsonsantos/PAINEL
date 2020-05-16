@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import io from 'socket.io-client'
 import api from '../../services/api'
 import config from '../../config'
+import handleActionAlert from '../../global/handleActionAlert'
 
 import './style.css'
 
@@ -12,7 +13,7 @@ function DeleteRoom() {
 
   async function handleDeleteRoom() {
     if (room !== '') {
-      const response = await api.delete('/room', {
+      const {data} = await api.delete('/room', {
         data: {
           room: room
         },
@@ -21,12 +22,13 @@ function DeleteRoom() {
         }
       })
 
-      if (response.status === 200) {
+      if (data === 1) {
         socket.emit('send-image', { data: 'send-image' })
+        handleActionAlert("Sucesso em Deletar Sala",'flex','green')
+      }else {
+        handleActionAlert("Falha em Deletar Sala",'flex','red')
       }
 
-    } else {
-      document.getElementById('incorret').innerText = "Preencher todos os campos!!"
     }
 
   }
@@ -36,7 +38,7 @@ function DeleteRoom() {
       <input className='inputs' type="text" placeholder="Númbero da sala" onChange={value => setRoom(value.target.value)} />
       <p id="incorret"></p>
       <div>
-        <button id="submit" onClick={handleDeleteRoom} >Enviar</button>
+        <button className="buttons"  onClick={handleDeleteRoom} >Enviar</button>
       </div>
     </div>
   );

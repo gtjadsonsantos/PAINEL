@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import io from 'socket.io-client'
 import api from '../../services/api'
 import config from '../../config'
+import handleActionAlert from '../../global/handleActionAlert'
 
 import './style.css'
 
@@ -15,21 +16,24 @@ function AddRoom() {
   async function handleAddRoom() {
 
     if (room !== '' && floor !== '' && file !== '') {
-      const data = new FormData()
-      data.append('file', file, file.name)
-      data.append('room', room)
-      data.append('numberfloor', floor)
+      const form = new FormData()
+      form.append('file', file, file.name)
+      form.append('room', room)
+      form.append('numberfloor', floor)
 
-      const response = await api.post('/room', data, {
+      const {data} = await api.post('/room', form, {
         headers: {
           authorization: `Bearer ${sessionStorage.getItem('token')}`
         }
       })
 
-      if (response.data.status == "Success in create room" ) {
+      if (data.status === "Success in create room" ) {
 
         socket.emit('send-image', { data: 'send-image' })
+        handleActionAlert("Sucesso em Criar Sala",'flex','green')
 
+      }else {
+          handleActionAlert("Falha em Criar Sala",'flex','red')
       }
 
     }
@@ -44,7 +48,7 @@ function AddRoom() {
       <input type="file" name="file" onChange={value => setFile(value.target.files[0])} />
       <p id="incorret"></p>
       <div>
-        <button id="submit" onClick={handleAddRoom} >Enviar</button>
+        <button className="buttons"  onClick={handleAddRoom} >Enviar</button>
       </div>
     </div>
   );

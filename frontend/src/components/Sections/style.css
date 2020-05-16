@@ -17,7 +17,7 @@ html, body, #root, #container  {
   background: rgb(9, 87, 160);
 }
 .darkblue {
-  background: rgb(3, 5, 104);
+  background: var(--primary-background-color);
 }
 
 #container {

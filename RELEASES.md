@@ -55,3 +55,8 @@ a ação irá duplicar o usuário administrador e assim o servidor irá para de 
 * Migrado banco de dados mysql para usar sqlite
 * Inserido knex para gerenciamento das query's e conexões com o banco de dados
 * Inserido autenticação das rotas com jwt
+* Mensagem de interações conforme executado ações no sistema
+
+
+- Logs de ações da aplicação
+- Layout

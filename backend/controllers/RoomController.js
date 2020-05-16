@@ -41,6 +41,20 @@ module.exports = {
     },
     async update (request, response) {   
 
+        try {
+            const queryReult = await database('Rooms')
+            .select('NameImage')
+            .where('NumberRoom','=',request.body.room)
+            
+            if(queryReult[0]){
+                deleteFiles(queryReult[0].NameImage)
+    
+            }
+    
+        } catch (error) {
+            console.log(error)
+        }
+
         const results = await database('Rooms')
         .update({
             NameImage: request.file.filename,
@@ -53,14 +67,20 @@ module.exports = {
 async delete (request, response) {   
 
     try {
-        const [{NameImage}] = await database('Rooms')
+        const queryReult = await database('Rooms')
         .select('NameImage')
         .where('NumberRoom','=',request.body.room)
         
-        deleteFiles(NameImage)
+        if(queryReult[0]){
+            deleteFiles(queryReult[0].NameImage)
+
+        }
+
+
 
     } catch (error) {
         console.log(error)
+
     }
 
     const results = await database('Rooms')

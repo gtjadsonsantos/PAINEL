@@ -46,7 +46,7 @@ async function Auth() {
             <input type="password" placeholder="Senha" onChange={password => setPassword(password.target.value)} required />
           </main>
           <div id="area-buttons">
-          <button onClick={Auth}>Acessar</button>
+          <button className="buttons" onClick={Auth}>Acessar</button>
           </div>
         </div>
         <span>

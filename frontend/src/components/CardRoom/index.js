@@ -7,7 +7,7 @@ function CardRoom({ floor }) {
         <>
             {
                 floor.map(room => (
-                    <li className="containerRoom">
+                    <li key={room.RoomID} className="containerRoom">
                         <label className="numberCostumer" >{room.NumberRoom}</label>
                         <img className="imageCostumer" src={`${config.backend.url}/${room.NameImage}`} alt={`${room.NumberRoom}`}/>
                     </li>

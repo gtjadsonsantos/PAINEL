@@ -9,9 +9,10 @@ import UpdateRoom from '../UpdateRoom'
 import LogoutSystem from '../Logout'
 import DeleteRoom from '../DeleteRoom'
 import DeleteUser from '../DeleteUser'
+import ActionAlert from '../ActionAlert/index'
 
 function Administration() {
-    const [action, setAction] = useState([
+    const action = [
       <CreateUser />,
       <AlterPassword/>,
       <ListUsers />,
@@ -19,34 +20,20 @@ function Administration() {
       <UpdateRoom/>,
       <DeleteRoom />,
       <DeleteUser/>
-    ])
+    ]
     const [ valueAction, setValueAction] = useState(0)
-    const [stateSidebar, setStateSidebar] = useState(0)
-
-    function handleSidebar(){
-  
-      if(stateSidebar === 1){
-        document.getElementById('list-menu').style.left = '-300px';
-        setStateSidebar(0)
-      }else {
-        document.getElementById('list-menu').style.left = '-0px';
-        setStateSidebar(1)
-      }
-
-    }
+    
     return (
         <>
-        <div id="continerTopToMobile">
-        <svg id="buttonTopMenu" onClick={()=> handleSidebar()}  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 6h-24v-4h24v4zm0 4h-24v4h24v-4zm0 8h-24v4h24v-4z"/></svg>
-        </div>
+        <ActionAlert />
         <ul id="list-menu">
           <li id="fields-mobile-0" onClick={()=> setValueAction(0)}> Criar Usuário </li>
           <li id="fields-mobile-1" onClick={()=> setValueAction(1)}> Alterar Senha </li>
           <li id="fields-mobile-6" onClick={()=> setValueAction(6)}> Deletar Usuario </li>
           <li id="fields-mobile-2" onClick={()=> setValueAction(2)}> Usuários </li>
-          <li id="fields-mobile-3" onClick={()=> setValueAction(3)}>Adicionar Sala</li> 
-          <li id="fields-mobile-4" onClick={()=> setValueAction(4)}>Atualizar Sala</li>
-          <li id="fields-mobile-5" onClick={()=> setValueAction(5)}>Deletar Sala</li>
+          <li id="fields-mobile-3" onClick={()=> setValueAction(3)}> Adicionar Sala</li> 
+          <li id="fields-mobile-4" onClick={()=> setValueAction(4)}> Alterar Sala</li>
+          <li id="fields-mobile-5" onClick={()=> setValueAction(5)}> Deletar Sala</li>
           <Link to="/view"><li> Visualizar Painel </li></Link>
           <li onClick={()=> LogoutSystem()}>Sair</li>
         </ul>
@@ -55,16 +42,16 @@ function Administration() {
             <ul>
               <ul className="subMenu"> Usuario
                 <ul>
-                  <li id="fields-0" onClick={()=> setValueAction(0)} > Criar Usuário</li>
-                  <li id="fields-1" onClick={()=> setValueAction(1)} > Alterar Senha </li>
+                  <li id="fields-0" onClick={()=> setValueAction(0)}> Criar Usuário</li>
+                  <li id="fields-1" onClick={()=> setValueAction(1)}> Alterar Senha </li>
                   <li id="fields-6" onClick={()=> setValueAction(6)}> Deletar Usuario </li>
                 </ul>
               </ul>
               <ul className="subMenu"> Sala
                 <ul>
-                  <li id="fields-3" onClick={()=> setValueAction(3)} >Adicionar Sala</li> 
-                  <li id="fields-4" onClick={()=> setValueAction(4)} >Atualizar Sala</li>
-                  <li id="fields-5" onClick={()=> setValueAction(5)} >Deletar Sala</li>
+                  <li id="fields-3" onClick={()=> setValueAction(3)}> Adicionar Sala</li> 
+                  <li id="fields-4" onClick={()=> setValueAction(4)}> Alterar Sala</li>
+                  <li id="fields-5" onClick={()=> setValueAction(5)}> Deletar Sala</li>
                 </ul>
               </ul>
               <ul className="subMenu">
