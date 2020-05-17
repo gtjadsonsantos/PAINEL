@@ -1,25 +1,35 @@
 <h1 align="center"> PAINEL DE SALAS</h1>
 
-<p align="center">
-  <img width="360" height="300"  src="/images/picture-notebook-with-panel.svg">
+<p align="center" style="display: flex; flex-direction: row; align-content: center; justify-content: center; ">
+  <img style="position: absolute; top: 107px;" width="299" height="199" src="https://github.com/jadson179/PAINEL/blob/develop/images/ezgif.com-video-to-gif.gif?raw=true">
+  <img width="460" height="300"  src="https://github.com/jadson179/PAINEL/raw/develop/images/picture-notebook-with-panel.svg?sanitize=true">
 </p>
 
 
-A PROPOSTA DESSA APLICAÇÃO É TORNAR SIMPLES A IDENTIFICAÇÃO DAS EMPRESAS PRESENTES EM EMPREENDIMENTOS QUE SÃO COMERCIAIS 
+
+
+
+**Chat: __[WhatsApp](https://api.whatsapp.com/send?phone=5548999328092)**
+
 
 # FUNCIONALIDADES 
 
-- Jsom Web Token 
-- Upload de imagens
-- Provisionamento
-- Multi-Platorma(`web`,`mobile`)
-- 
+- Json Web Token 🤩
+- Upload de imagens 🤩
+- Provisionamento 🤩
+- Multi-Platorma(`web`,`mobile`) 🤩
+
+
+# APLICATIVOS 
+
+- [ANDROID](https://exp-shell-app-assets.s3.us-west-1.amazonaws.com/android/%40jadson179/halls-panel-5333fa33f6c947c6959f869a65f5f203-signed.apk)
+
 
 
 
 # MOTIVO
 
-Fornecer uma ambiente simples para gerenciamento de salas.
+A proposta desta aplicação é tornar simples o gerenciamento de salas, para empreendimento comerciais. 
 
 ### REQUISITOS 
 
@@ -57,16 +67,13 @@ docker-compose up
 `Password`: admin
 
 
-### SKETCHE
-
-
 
 `apk:` [address](https://exp-shell-app-assets.s3.us-west-1.amazonaws.com/android/%40jadson179/Painel-5aad65f531a9401dbcda37fd677efc24-signed.apk)
 
 
-# Licença 
+## Licença 📝
 
-Esse projeto usa a licença MIT license - veja o arquivo LICENSE para mais detalhes
+Esse projeto usa a licença MIT license - veja o arquivo [LICENSE](LICENSE) para mais detalhes
 
 # AUTOR
 
