@@ -3,6 +3,7 @@
 # By @jadson179
 #
 # Script to do backup  client data
+# Copy file with name painel.desktop to path $HOME/.config/autostart/
 
 
 NODE_VERSION=v12.16.3
