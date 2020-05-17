@@ -1,7 +1,6 @@
 <h1 align="center"> PAINEL DE SALAS</h1>
 
 <p align="center" style="display: flex; flex-direction: row; align-content: center; justify-content: center; ">
-  <img style="position: absolute; top: 107px;" width="299" height="199" src="https://github.com/jadson179/PAINEL/blob/develop/images/ezgif.com-video-to-gif.gif?raw=true">
   <img width="460" height="300"  src="https://github.com/jadson179/PAINEL/raw/develop/images/picture-notebook-with-panel.svg?sanitize=true">
 </p>
 
