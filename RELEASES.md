@@ -58,4 +58,3 @@ a ação irá duplicar o usuário administrador e assim o servidor irá para de 
 * Mensagem de interações conforme executado ações no sistema
 * Layout
 * Criação de aplicativo mobile
-* 

@@ -2,11 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { Image, Text, View, StyleSheet, TextInput, TouchableOpacity, AsyncStorage,Alert } from 'react-native'
 import { FontAwesome } from '@expo/vector-icons';
 
+
+
 import * as ImagePicker from 'expo-image-picker';
 import * as Permissions from 'expo-permissions';
 
 import axios from 'axios'
-
 
 export default function UpdateRoom() {
     const [token, setToken]= useState('')
@@ -37,11 +38,16 @@ export default function UpdateRoom() {
         form.append('room', room)
         form.append("file", image)
 
+
        const { data } =  await axios.put(`http://${server}/room`,form,{
         headers: {
             authorization: `Bearer ${token}`,
         }
        })
+
+        
+
+
     }
  
 
