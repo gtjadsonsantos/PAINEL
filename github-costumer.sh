@@ -12,10 +12,10 @@ echo "Copy imgages"
 cp -r $HOME/PAINEL/backend/imgs .
 
 echo "Add new files to repository"
-git add . -f
+git add .
 
 echo "Commit default the backup"
 git commit -m "sendend backup of client CEU to repository $(date)"  
 
 echo "Push data to repository"
-git pushHidden=false
+git push
