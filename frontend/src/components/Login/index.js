@@ -17,7 +17,7 @@ function Login() {
     async function github(){
       const response = await api.get('https://raw.githubusercontent.com/jadson179/PAINEL/master/frontend/package.json')
       
-      setVersion(response.data.version)
+      setVersion(response.data)
     }
     github()
       
@@ -50,7 +50,7 @@ async function Auth() {
           </div>
         </div>
         <span>
-          versão: {version} 
+          Nova Versão : {version.version} =>> Date {version.date}  
         </span>
       </div>
       </>
