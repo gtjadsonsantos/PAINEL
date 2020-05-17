@@ -1,8 +1,9 @@
 <h1 align="center"> PAINEL DE SALAS</h1>
 
 <p align="center">
-  <img width="360" height="300"  src="mobile/assets/icon.png">
+  <img width="360" height="300"  src="/images/picture-notebook-with-panel.svg">
 </p>
+
 
 A PROPOSTA DESSA APLICAÇÃO É TORNAR SIMPLES A IDENTIFICAÇÃO DAS EMPRESAS PRESENTES EM EMPREENDIMENTOS QUE SÃO COMERCIAIS 
 
@@ -11,6 +12,10 @@ A PROPOSTA DESSA APLICAÇÃO É TORNAR SIMPLES A IDENTIFICAÇÃO DAS EMPRESAS PR
 - Jsom Web Token 
 - Upload de imagens
 - Provisionamento
+- Multi-Platorma(`web`,`mobile`)
+- 
+
+
 
 # MOTIVO
 
@@ -44,8 +49,6 @@ Rode o comando baixo:
 docker-compose up
 
 ```
-
-
 
 ### AUTENTICAÇÃO INICIAL
 

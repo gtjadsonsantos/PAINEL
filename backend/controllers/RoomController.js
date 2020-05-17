@@ -18,7 +18,7 @@ module.exports = {
             await database('Rooms')
             .insert({
                 NumberRoom: request.body.room,
-                NameImage: request.file.filename
+                NameImage: String(request.file.filename).replace(/\s/g,'-')
             })
             
             const [{ RoomID }] = await database('Rooms')
@@ -57,7 +57,7 @@ module.exports = {
 
         const results = await database('Rooms')
         .update({
-            NameImage: request.file.filename,
+            NameImage: String(request.file.filename).replace(/\s/g,'-'),
         })
         .where('NumberRoom','=',request.body.room)
 

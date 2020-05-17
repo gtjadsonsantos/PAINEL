@@ -1,6 +1,6 @@
 const config = {
     backend: {
-	    url: 'http://0.0.0.0:3333'
+	    url: 'http://192.168.0.21:3333'
     }
 
 }
