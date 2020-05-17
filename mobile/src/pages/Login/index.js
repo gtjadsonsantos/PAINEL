@@ -14,7 +14,7 @@ export default function Login({navigation}) {
                 setServer(result)
             }
         })  
-    },[])
+    },[password,username,server])
 
     async function handleLogin() {
         const { data } = await axios.post(`http://${server}/user/auth`, { username, password })

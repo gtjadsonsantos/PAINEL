@@ -1,3 +1,8 @@
+<p align="center">
+<img src="https://camo.githubusercontent.com/13c4e50d88df7178ae1882a203ed57b641674f94/68747470733a2f2f63646e2e7261776769742e636f6d2f73696e647265736f726875732f617765736f6d652f643733303566333864323966656437386661383536353265336136336531353464643865383832392f6d656469612f62616467652e737667">
+
+</p>
+
 <h1 align="center"> PAINEL DE SALAS</h1>
 
 <p align="center" style="display: flex; flex-direction: row; align-content: center; justify-content: center; ">
@@ -13,18 +18,14 @@
 
 # FUNCIONALIDADES 
 
-- Json Web Token 🤩
-- Upload de imagens 🤩
-- Provisionamento 🤩
-- Multi-Platorma(`web`,`mobile`) 🤩
-
+- **Json Web Token** 🤩
+- **Upload de imagens** 🤩
+- **Provisionamento** 🤩
+- **Multi-Platorma(`web`,`mobile`)** 🤩
 
 # APLICATIVOS 
 
 - [ANDROID](https://exp-shell-app-assets.s3.us-west-1.amazonaws.com/android/%40jadson179/halls-panel-5333fa33f6c947c6959f869a65f5f203-signed.apk)
-
-
-
 
 # MOTIVO
 
@@ -42,33 +43,55 @@ A proposta desta aplicação é tornar simples o gerenciamento de salas, para em
 
 
 
-## PARA COMEÇAR 
+## PARA COMEÇAR 🚀 
 
 Faça o download do repositório
 
+```bash
+    git clone https://github.com/jadson179/PAINEL.git 
 ```
-    git clone https://github.com/jadson179/PAINEL.git
+
+Instale as dependências `backend`
+
+```bash
+  cd ./backend && yarn install && npx knex migrate:latest && npx knex seed:run --specific=002_users.js
 ```
 
-Acesse a pasta do projeto 
+Instale as dependências `frontend`
 
-Rode o comando baixo:
+```bash
+    cd ./frontend && yarn install && sudo yarn build
+```
 
-```shell
-docker-compose up
+Configure o endereço ip ou dominio do servidor(`backend`) no frontend
+
+```bash
+  cd ./frontend && vim config.js
 
 ```
+
+Configure a chave de encriptação dos tokens da aplicação no backend
+
+```bash
+  cd ./backend && vim config.js
+```
+
+Retorne a raiz do projeto e suba o container da aplicação
+
+```bash
+  sudo docker-compose up
+``` 
+
 
 ### AUTENTICAÇÃO INICIAL
 
-`Username`: admin
-
-`Password`: admin
-
+- `username`: admin
+- `password`: admin
 
 
-`apk:` [address](https://exp-shell-app-assets.s3.us-west-1.amazonaws.com/android/%40jadson179/Painel-5aad65f531a9401dbcda37fd677efc24-signed.apk)
+# DOCUMENTÇÃO 
 
+- [DOC BACKEND](https://jadson179.github.io/PAINEL/docs/index.html)
 
 ## Licença 📝
 

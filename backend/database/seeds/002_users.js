@@ -9,3 +9,5 @@ exports.seed = function(knex) {
       ]);
     });
 };
+
+// Example {UserID: 1, UserName: 'admin',UserPassword:'admin',UserType:'admin'},

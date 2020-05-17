@@ -6,7 +6,10 @@ async function deleteFiles(filename) {
     try {
         await fs.unlinkSync(path.resolve('imgs',filename))
     }catch( err ){
-        console.log(err)
+        
+        if(err){
+            console.log("não foi possível entrar imagem")
+        }
     }
 }
 

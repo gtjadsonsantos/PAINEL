@@ -37,4 +37,4 @@ echo "Clone respository"
 
 cd $HOME
 
-git clone REMOTE_REPOSITORY${NAME_COSTUMER}.git
+git clone ${REMOTE_REPOSITORY}${NAME_COSTUMER}.git

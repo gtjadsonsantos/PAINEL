@@ -6,10 +6,10 @@
 # Change the file configuration for your environment 
 
 echo "Copy database"
-cp -r $HOME/Downloads/repositories/PAINEL2/backend/database/database.db .
+cp -r $HOME/PAINEL/backend/database/database.db .
 
 echo "Copy imgages"                         
-cp -r $HOME/Downloads/repositories/PAINEL2/backend/imgs .
+cp -r $HOME/PAINEL/backend/imgs .
 
 echo "Add new files to repository"
 git add . -f
