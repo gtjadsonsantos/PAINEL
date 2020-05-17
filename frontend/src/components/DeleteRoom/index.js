@@ -1,51 +1,47 @@
 import React, { useState } from 'react';
 import io from 'socket.io-client'
 import api from '../../services/api'
-import Themes from '../../global/Themes'
 import config from '../../config'
+import handleActionAlert from '../../global/handleActionAlert'
 
 import './style.css'
 
 const socket = io(`${config.backend.url}`)
 
 function DeleteRoom() {
-    const [ room, setRoom ] = useState('')
+  const [room, setRoom] = useState('')
 
-    async function handleDeleteRoom (){
-      if (room !== ''){
-            const response = await api.delete('/room', {NumberRoom: room})
+  async function handleDeleteRoom() {
+    if (room !== '') {
+      const {data} = await api.delete('/room', {
+        data: {
+          room: room
+        },
+        headers: {
+          authorization: `Bearer ${sessionStorage.getItem('token')}`
+        }
+      })
 
-            if(response.status === 200){
-                document.getElementById('submit').innerText = 'Sala Deletada'
-                document.getElementById('submit').style.cssText = Themes.button.validated
-
-                socket.emit('send-image',  { data: 'send-image' } )
-
-                setInterval(()=>{
-                  document.getElementById('submit').innerText = 'Enviar'
-                  document.getElementById('submit').style.cssText = Themes.button.reset
-                },300)
-
-
-            }else {
-              document.getElementById('submit').innerText = `Error: ${response.status}`
-              document.getElementById('submit').style.cssText = Themes.button.error
-            }
+      if (data === 1) {
+        socket.emit('send-image', { data: 'send-image' })
+        handleActionAlert("Sucesso em Deletar Sala",'flex','green')
       }else {
-        document.getElementById('incorret').innerText = "Preencher todos os campos!!"
+        handleActionAlert("Falha em Deletar Sala",'flex','red')
       }
-        
+
     }
-    return (
-      <div id="contianerDeleteRoom">
-         <h2>Deletar Sala</h2>
-         <input className='inputs' type="text" placeholder="Númbero da sala" onChange={value => setRoom(value.target.value)} />
-         <p id="incorret"></p>
-         <div>
-             <button id="submit" onClick={handleDeleteRoom} >Enviar</button>
-         </div>
-      </div>    
-    );
+
+  }
+  return (
+    <div id="contianerDeleteRoom">
+      <h2>Deletar Sala</h2>
+      <input className='inputs' type="text" placeholder="Númbero da sala" onChange={value => setRoom(value.target.value)} />
+      <p id="incorret"></p>
+      <div>
+        <button className="buttons"  onClick={handleDeleteRoom} >Enviar</button>
+      </div>
+    </div>
+  );
 }
 
 export default DeleteRoom;

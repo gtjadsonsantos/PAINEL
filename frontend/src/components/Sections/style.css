@@ -6,8 +6,7 @@
   font-family: 'Roboto', sans-serif;
 }
 
-html, body, #root {
-  max-height: 1400px;
+html, body, #root, #container  {
   height:100%;
   width: 100%;
   overflow-x: visible;
@@ -18,24 +17,21 @@ html, body, #root {
   background: rgb(9, 87, 160);
 }
 .darkblue {
-  background: rgb(3, 5, 104);
+  background: var(--primary-background-color);
 }
 
 #container {
-  height: 100%;
   display: flex;
-  flex: 1;
+  flex-direction: row;
   background-color: #fff;
+  overflow: auto;
   
 }
 .floors {
-  width: 15%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-.floors:nth-child(odd){
-    color: rgb(255, 255, 255);
 }
 
 .title {
@@ -50,20 +46,22 @@ html, body, #root {
 }
 
 .imageCostumer {
-  width: 70%;
-  height: 5%;
+  width: 130px;
+  height: 60px;
+  margin-bottom: 5px;
+  image-resolution: 300dpi;
+}
+.numberCostumer {
+  color: rgb(9, 0, 78);
+  font-weight: 600;
 }
 
-.numberRoom {
-  color: #fff;
-  text-align: center;
-  background-color: rgb(117, 117, 117);
-  border-radius: 1em;
-  width: 50%;
-  font-size: small;
-  display: block;
-  margin: auto;
+.containerRoom {
+  display: flex;
+  flex-direction: column;
+  margin: 0px 0px 5px 5px;
 }
+
 
 @media only screen and (max-width: 599px){
   .floors {

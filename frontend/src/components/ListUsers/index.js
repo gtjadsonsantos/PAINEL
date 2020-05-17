@@ -11,7 +11,11 @@ function ListUsers() {
 
     useEffect(()=>{
         async function handleListUsers(){
-            const response = await api.get('/users')
+            const response = await api.get('/users',{
+            headers: {
+                authorization:`Bearer ${sessionStorage.getItem('token')}`
+                }
+            })
             setUsers(response.data)
         }
         handleListUsers()

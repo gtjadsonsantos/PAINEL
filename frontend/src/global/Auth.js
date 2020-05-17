@@ -1,7 +1,7 @@
 
 function isAuthenticated () {
-    const status = sessionStorage.getItem('status')
-    return status
+    const token = sessionStorage.getItem('token')
+    return token
 }
 
 export default isAuthenticated

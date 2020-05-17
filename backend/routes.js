@@ -18,7 +18,7 @@ routes.delete('/user',validate,validateusertype, UserController.delete)
 
 // Routes to floors
 routes.post('/floor',validate, FloorController.store)
-routes.get('/floors/:id',validate, FloorController.index )
+routes.get('/floors', FloorController.index )
 routes.put('/floor',validate, FloorController.update)
 routes.delete('/floor',validate, FloorController.delete)
 

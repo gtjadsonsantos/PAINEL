@@ -1,48 +1,44 @@
 import React, { useState } from 'react';
 
+import handleActionAlert from '../../global/handleActionAlert'
 import api from '../../services/api'
-import Themes from '../../global/Themes'
 
 import './style.css'
 
 
 function DeleteUser() {
-    const [ user, setUser ] = useState('')
+  const [user, setUser] = useState('')
 
-    async function handleDeleteUser (){
-      if (user !== ''){
-            const response = await api.post('/delete/user', {UserName: user})
+  async function handleDeleteUser() {
+    if (user !== '') {
+      const {data} = await api.delete('/user', {
+        data: {
+          username: user
+        },
+        headers: {
+          authorization: `Bearer ${sessionStorage.getItem('token')}`
+        }
+      })
 
-            if(response.status === 200){
-                document.getElementById('submit').innerText = 'Usuário Deletado'
-                document.getElementById('submit').style.cssText = Themes.button.validated
-
-
-                setInterval(()=>{
-                  document.getElementById('submit').innerText = 'Enviar'
-                  document.getElementById('submit').style.cssText = Themes.button.reset
-                },300)
-
-
-            }else {
-              document.getElementById('submit').innerText = `Error: ${response.status}`
-              document.getElementById('submit').style.cssText = Themes.button.error
-            }
-      }else {
-        document.getElementById('incorret').innerText = 'Preencher todos os campos!!'
+      if(data === 1 ){
+        handleActionAlert("Sucesso em Deletar Usuário",'flex','green')
+      }else{
+        handleActionAlert("Falha em Deletar Usuário",'flex','red')
       }
-        
-    }
-    return (
-      <div id="contianerDeleteUser">
-         <h2>Deletar Usuario</h2>
-         <input className='inputs' type="text" placeholder="Nome do usuário" onChange={value => setUser(value.target.value)} />
-         <p id="incorret"></p>
-         <div>
-             <button id="submit" onClick={handleDeleteUser} >Enviar</button>
-         </div>
-      </div>    
-    );
+
+    } 
+
+  }
+  return (
+    <div id="contianerDeleteUser">
+      <h2>Deletar Usuario</h2>
+      <input className='inputs' type="text" placeholder="Nome do usuário" onChange={value => setUser(value.target.value)} />
+      <p id="incorret"></p>
+      <div>
+        <button className="buttons"  onClick={handleDeleteUser} >Enviar</button>
+      </div>
+    </div>
+  );
 }
 
 export default DeleteUser;

@@ -10,19 +10,7 @@ app.get('/', function(req, res) {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
-app.get('/view-1', function(req, res) {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
-});
-app.get('/view-2', function(req, res) {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
-});
-app.get('/view-3', function(req, res) {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
-});
-app.get('/view-4', function(req, res) {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
-});
-app.get('/view-5', function(req, res) {
+app.get('/view', function(req, res) {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 

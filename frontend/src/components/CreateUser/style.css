@@ -13,7 +13,7 @@
     border: 0.1px solid #000;
     border-width: 1px;
     border-style: solid;
-    border-color: rgb(37, 36, 44);
+    border-color: var(--inputs-border-color);
     color: #000;
 }
 

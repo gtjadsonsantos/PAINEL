@@ -1,9 +1,7 @@
 {
   "expo": {
     "name": "Painel de Salas",
-    "slug": "Painel",
-    "privacy": "public",
-    "sdkVersion": "36.0.0",
+    "slug": "halls-panel",
     "platforms": [
       "ios",
       "android",
@@ -15,7 +13,7 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#000320"
+      "backgroundColor": "#000720"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -27,8 +25,7 @@
       "supportsTablet": true
     },
     "android": {
-      "package": "com.enigma.painel",
-      "versionCode": 1
+      "package": "com.jadsonsantos.hallspanel"
     }
   }
 }

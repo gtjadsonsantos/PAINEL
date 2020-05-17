@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import api from '../../services/api'
-import Themes from '../../global/Themes'
+
+import handleActionAlert from '../../global/handleActionAlert'
 
 import './style.css'
 
@@ -11,27 +12,29 @@ function CreateUser() {
     const [ verifyPassword, setVerifyPassword ] = useState('')
     const [usertype, setUserType] = useState('')
 
+
     async function handleCreateUser(){
       if (username !== ''  && password !=='' && usertype !== '' && usertype !== 'void'){
-      const response = await api.post('/user',{username,password,usertype })
-  
-      if(response.data.status === 'Usuário criado'){
-          document.getElementById('submit').innerText = 'Usuário Criado'
-          document.getElementById('submit').style.cssText = Themes.button.validated
+      const {data} = await api.post('/user',
+        {
+          username,
+          password,
+          usertype 
+        },{
+          headers: {
+            authorization:`Bearer ${sessionStorage.getItem('token')}`
+          }
+        })
 
-        setInterval(()=>{
-          document.getElementById('submit').innerText = 'Enviar'
-          document.getElementById('submit').style.cssText = Themes.button.reset
-        },300)
-         
-      }else {
-        document.getElementById('submit').innerText = `${response.data.status}`
-        document.getElementById('submit').style.cssText = Themes.button.error
+        if(data.status === "Success in create user"){
+          handleActionAlert("Sucesso em Criar Usuário",'flex','green')
+        }else{
+          handleActionAlert("Falha em Criar Usuário",'flex','red')
         }
-      }else{
-        document.getElementById('#incorret').innerText = "Preencher todos os campos!!"
+      
       }
     }
+    
     return (
       <div id="contianerCreateUser">
           <h2 className="titleCreateUser" >Criar Usuário</h2>
@@ -41,18 +44,18 @@ function CreateUser() {
           {
             ((password === verifyPassword) && 
              (password !== '') && 
-             (verifyPassword !== '') &&
+             (verifyPassword !== '') ||
              (usertype !== '')
             ) 
             ? <p id="verify">Senha correta</p>:<p id="incorret">Senha Incorreta</p> 
           }
           <select className="options-admin inputs"required  onChange={event => setUserType(event.target.value)} >
             <option value="void">Selecione o tipo da conta</option>
-            <option value="administrator">Admin</option>
+            <option value="admin">Admin</option>
             <option value="comum">Comum</option>
           </select>
           <div>
-            <button id="submit" onClick={handleCreateUser}>Enviar</button>
+            <button className="buttons"  id="submit" onClick={handleCreateUser}>Enviar</button>
           </div>
       </div>
     );

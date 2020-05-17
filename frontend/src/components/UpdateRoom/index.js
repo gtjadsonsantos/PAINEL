@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import io from 'socket.io-client';
 import api from '../../services/api'
-import Themes from '../../global/Themes'
 import config from '../../config'
+import handleActionAlert from '../../global/handleActionAlert'
 
 import './style.css'
 
@@ -17,31 +17,25 @@ function UpdateRoom() {
     
         if (room !== '' && file !== ''){
 
-            const data = new FormData()
-            data.append('file',file,file.name)
-            data.append('room', room)
-            
-            sessionStorage.setItem('update', Math.floor())
-
-            const response = await api.put('/room', data)
-         
-            if(response.status === 200){
-                document.getElementById('submit').innerText = 'Sala Atualizada'
-                document.getElementById('submit').style.cssText = Themes.button.validated
-
-                socket.emit('send-image',  { data: 'send-image' } )
-
-                setInterval(()=>{
-                    document.getElementById('submit').innerText = 'Enviar'
-                    document.getElementById('submit').style.cssText = Themes.button.reset
-                  },300)
-                  
-            }else {
-                document.getElementById('submit').innerText = `Error: ${response.status}`
-                document.getElementById('submit').style.cssText = Themes.button.error
+            const form = new FormData()
+            form.append('file',file,file.name)
+            form.append('room', room)
+            console.log(file)
+            const {data} = await api.put('/room', 
+            form,
+            {
+                headers: {
+                    authorization: `Bearer ${sessionStorage.getItem('token')}`
                 }
-        }else{
-            document.getElementById('incorret').innerText = "Preencher todos os campos!!"
+            })
+         
+            if(data === 1){
+               
+                socket.emit('send-image',  { data: 'send-image' } )
+                handleActionAlert("Sucesso em Atualizar Sala",'flex','green')                
+            }else {
+                handleActionAlert("Falha em Atualizar Sala",'flex','red')
+            }
         }
     }
     return (
@@ -51,7 +45,7 @@ function UpdateRoom() {
          <input type="file" name="file" onChange={value => setFile(value.target.files[0])} />
          <p id="incorret"></p>
          <div>
-             <button id="submit" onClick={handleUpdateRoom} >Enviar</button>
+             <button className="buttons" onClick={handleUpdateRoom} >Enviar</button>
          </div>
       </div>    
     );

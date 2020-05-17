@@ -1,0 +1,28 @@
+.containerActionAlert {
+    position: absolute;
+    width: 200px;
+    height: 50px;
+    right: 5px;
+    background: var(--actionalert-background-color);
+    animation: showalert 3s;
+    border-radius: 0.3em;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.containerActionAlert p {
+    color: aliceblue;
+}
+
+@keyframes showalert {
+    from {
+        top: 0px;
+        opacity: 0;
+    }
+    to {
+        top: 50px;
+        opacity: 1;
+
+    }
+}
