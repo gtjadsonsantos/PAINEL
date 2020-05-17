@@ -81,9 +81,6 @@ Retorne a raiz do projeto e suba o container da aplicação
 ```bash
   sudo docker-compose up
 ``` 
-Acesse: 
-
-http://0.0.0.0:8080
 
 `Acesse`: http://0.0.0.0:8080
 
