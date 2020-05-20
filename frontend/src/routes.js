@@ -6,10 +6,10 @@ import Login from './components/Login'
 import Section from './components/Sections/section'
 import Administration from './components/Administration/index2'
 import isAuthenticated from './global/Auth'
-//isAuthenticated()
+
 const PrivateRoute =  ({component: Component, ...rest })=> (
     <Route {...rest} render={props => (
-             true?(
+        isAuthenticated()?(
             <Component {...props}/> 
         ):(
             <Redirect to={{pathname: '/', state:{ from: props.location }}}/>

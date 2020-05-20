@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom'
 import './style2.css'
 import CreateUser from '../CreateUser'
 import AlterPassword from '../AlterPassword'

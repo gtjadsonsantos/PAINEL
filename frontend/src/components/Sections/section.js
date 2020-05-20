@@ -36,7 +36,7 @@ function Sessao() {
           ordernFloor.map(floor => (
             <ul className="floors" >
               <h2 className="title darkblue" >{floor.NumberFloor}º ANDAR</h2>
-              <CardRoom floor={floors.filter(room => (room.NumberFloor == floor.NumberFloor))} />
+              <CardRoom floor={floors.filter(room => (room.NumberFloor === floor.NumberFloor))} />
             </ul>
           ))
         }

@@ -37,7 +37,7 @@ function AlterPassword() {
       <input className='inputs' placeholder="Nova senha" type="password" onChange={event => setPassword(event.target.value)} />
       <input className='inputs' placeholder="Confirme Nova senha" type="password" onChange={event => setVerifyPassword(event.target.value)} />
       {
-        (password == verifyPassword && password !== '' && verifyPassword !== '') 
+        (password === verifyPassword && password !== '' && verifyPassword !== '') 
         
         ? <p id="verify">Senha correta</p> : <p id="incorret">Senha Incorreta</p>
       }
