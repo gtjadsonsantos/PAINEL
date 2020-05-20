@@ -58,35 +58,35 @@ function Administration() {
                     <nav>
                         <ul>
                             <li onClick={()=> handleAdministration("user")}>
-                                <i class="fas fa-user" />
+                                <i className="fas fa-user" />
                                 <ul>
-                                    <snap>Usuario</snap>
+                                    <span>Usuario</span>
                                 </ul>
                             </li>
                             <li onClick={()=> handleAdministration("hall")}>
-                                <i class="fas fa-door-closed"></i>
+                                <i className="fas fa-door-closed"></i>
                                 <ul>
-                                    <snap>Sala</snap>
+                                    <span>Sala</span>
                                 </ul>
                             </li>
                             <a href="/view"><li>
-                                <i class="fas fa-solar-panel"></i>
+                                <i className="fas fa-solar-panel"></i>
                                 <ul>
-                                    <snap>Painel</snap>
+                                    <span>Painel</span>
                                 </ul>
                             </li></a>
                             <li onClick={()=>setOptionCurrent(2)}>
-                                <i class="fas fa-users"></i>
+                                <i className="fas fa-users"></i>
                                 <ul>
-                                    <snap>Usuarios</snap>
+                                    <span>Usuarios</span>
                                 </ul>
                             </li>
                         </ul>
                         <ul>
                             <li>
-                                <i class="fas fa-sign-out-alt"></i>
+                                <i className="fas fa-sign-out-alt"></i>
                                 <li onClick={()=>LogoutSystem()}>
-                                    <snap>Sair</snap>
+                                    <span>Sair</span>
                                 </li>
                             </li>
                         </ul>
@@ -96,14 +96,14 @@ function Administration() {
                     <nav className="container-navbar">
                         <ul>
                             <li onClick={()=> setOptionCurrent(create)}>
-                                <i class="fas fa-plus" />
+                                <i className="fas fa-plus" />
                             </li>
                             <li onClick={()=> setOptionCurrent(deleter)}>
-                                <i class="fas fa-trash" />
+                                <i className="fas fa-trash" />
 
                             </li>
                             <li onClick={()=> setOptionCurrent(update)}>
-                                <i class="fas fa-pen" />
+                                <i className="fas fa-pen" />
 
                             </li>
                         </ul>

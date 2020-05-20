@@ -46,10 +46,10 @@ html, body, #root, #container  {
 }
 
 .imageCostumer {
-  width: 130px;
-  height: 60px;
+  width: 120px;
+  height: 65px;
   margin-bottom: 5px;
-  image-resolution: 300dpi;
+  object-fit: scale-down;
 }
 .numberCostumer {
   color: rgb(9, 0, 78);
