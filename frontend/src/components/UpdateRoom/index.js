@@ -39,8 +39,8 @@ function UpdateRoom() {
         }
     }
     return (
-      <div id="contianerUpdateRoom">
-         <h2>Atualizar Sala</h2>
+      <div className="contianerUpdateRoom">
+         <h2  className="primary-text-color">Atualizar Sala</h2>
          <input className='inputs' type="text" placeholder="Número da sala" onChange={value => setRoom(value.target.value)} />
          <input type="file" name="file" onChange={value => setFile(value.target.files[0])} />
          <p id="incorret"></p>

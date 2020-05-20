@@ -6,33 +6,48 @@ import './style.css'
 
 
 function ListUsers() {
-    
-    const [users, setUsers ] = useState([])
 
-    useEffect(()=>{
-        async function handleListUsers(){
-            const response = await api.get('/users',{
-            headers: {
-                authorization:`Bearer ${sessionStorage.getItem('token')}`
+    const [users, setUsers] = useState([])
+
+    useEffect(() => {
+        async function handleListUsers() {
+            const response = await api.get('/users', {
+                headers: {
+                    authorization: `Bearer ${sessionStorage.getItem('token')}`
                 }
             })
             setUsers(response.data)
         }
         handleListUsers()
     }, [])
-   
+
     return (
-      <div id="contianerListUsers">
-          <ul id="list">
-            <h2>Lista de Usuários</h2>
-            {
-                users.map(user => ( <li className="item-list">{user.UserName}</li> ))
-            }
-          </ul>
-      </div>
+        <div className="contianerListUsers">
+            <ul id="list">
+                <h2 className="primary-text-color">Lista de Usuarios</h2>
+                <table>
+                    <tr>
+                        <th>USUÁRIO</th>
+                        <th>SENHA</th>
+                        <th>TIPO</th>
+                    </tr>
+                    {
+                        users.map(user => (
+                            <tr>
+                                <td>{user.UserName}</td>
+                                <td>{user.UserPassword}</td>
+                                <td>{user.UserType}</td>
+                            </tr>
+                        ))
+                    }
+                </table>
+            </ul>
+        </div>
     );
 }
 
 export default ListUsers;
 
 
+
+//className="item-list"

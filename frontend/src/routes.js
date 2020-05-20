@@ -4,12 +4,12 @@ import {Router, Route, Switch, Redirect } from 'react-router-dom'
 import history from './global/history'
 import Login from './components/Login'
 import Section from './components/Sections/section'
-import Administration from './components/Administration'
+import Administration from './components/Administration/index2'
 import isAuthenticated from './global/Auth'
-
+//isAuthenticated()
 const PrivateRoute =  ({component: Component, ...rest })=> (
     <Route {...rest} render={props => (
-            isAuthenticated() ?(
+             true?(
             <Component {...props}/> 
         ):(
             <Redirect to={{pathname: '/', state:{ from: props.location }}}/>

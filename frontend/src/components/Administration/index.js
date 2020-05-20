@@ -26,17 +26,6 @@ function Administration() {
     return (
         <>
         <ActionAlert />
-        <ul id="list-menu">
-          <li id="fields-mobile-0" onClick={()=> setValueAction(0)}> Criar Usuário </li>
-          <li id="fields-mobile-1" onClick={()=> setValueAction(1)}> Alterar Senha </li>
-          <li id="fields-mobile-6" onClick={()=> setValueAction(6)}> Deletar Usuario </li>
-          <li id="fields-mobile-2" onClick={()=> setValueAction(2)}> Usuários </li>
-          <li id="fields-mobile-3" onClick={()=> setValueAction(3)}> Adicionar Sala</li> 
-          <li id="fields-mobile-4" onClick={()=> setValueAction(4)}> Alterar Sala</li>
-          <li id="fields-mobile-5" onClick={()=> setValueAction(5)}> Deletar Sala</li>
-          <Link to="/view"><li> Visualizar Painel </li></Link>
-          <li onClick={()=> LogoutSystem()}>Sair</li>
-        </ul>
         <div id="containerAdministration">
           <nav id="containerNavigation">
             <ul>

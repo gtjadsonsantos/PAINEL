@@ -30,8 +30,8 @@ function DeleteUser() {
 
   }
   return (
-    <div id="contianerDeleteUser">
-      <h2>Deletar Usuario</h2>
+    <div className="contianerDeleteUser">
+      <h2  className="primary-text-color">Deletar Usuario</h2>
       <input className='inputs' type="text" placeholder="Nome do usuário" onChange={value => setUser(value.target.value)} />
       <p id="incorret"></p>
       <div>
