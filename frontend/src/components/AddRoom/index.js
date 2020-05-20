@@ -48,7 +48,7 @@ function AddRoom() {
       <input type="file" name="file" onChange={value => setFile(value.target.files[0])} />
       <p id="incorret"></p>
       <div>
-        <button className="buttons">Enviar</button>
+        <button className="buttons" onClick={()=> handleAddRoom}>Enviar</button>
       </div>
     </div>
   );
