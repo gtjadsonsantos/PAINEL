@@ -11,17 +11,6 @@
 </p>
 
 
-
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-<input type="hidden" name="cmd" value="_donations" />
-<input type="hidden" name="business" value="TQ2QEYCNZNH7C" />
-<input type="hidden" name="item_name" value="Motive ao desenvolvedor a continuar dando suporte ao produto" />
-<input type="hidden" name="currency_code" value="BRL" />
-<input type="image" src="https://www.paypalobjects.com/pt_BR/BR/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Faça doações com o botão do PayPal" />
-<img alt="" border="0" src="https://www.paypal.com/pt_BR/i/scr/pixel.gif" width="1" height="1" />
-</form>
-
-
 **Chat: __[WhatsApp](https://api.whatsapp.com/send?phone=5548999328092)**
 
 
@@ -100,7 +89,7 @@ Retorne a raiz do projeto e suba o container da aplicação
 - `password`: admin
 
 
-# DOCUMENTÇÃO 
+# DOCUMENTAÇÃO 
 
 - [DOC BACKEND](https://jadson179.github.io/PAINEL/docs/index.html)
 
