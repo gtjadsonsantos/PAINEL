@@ -58,3 +58,8 @@ a ação irá duplicar o usuário administrador e assim o servidor irá para de 
 * Mensagem de interações conforme executado ações no sistema
 * Layout
 * Criação de aplicativo mobile
+
+
+## VERSÂO 1.0.7
+
+* Update Interface web

@@ -1,21 +1,26 @@
-#contianerUpdateRoom {
+.contianerUpdateRoom {
     flex: 1;
     height: 100%;
+    width: 600px;
+    margin: auto;
     display: flex;
     flex-direction: column;
-    padding-top: 40px;
+    align-items: center;
     padding-left: 20px;
-    border-left: 0.1px solid #000;
-
+ 
 
 }
-#contianerUpdateRoom h2 {
-    text-align: left;
+.contianerUpdateRoom h2 {
+    text-align: center;
     margin-top: 40px;
 }
-#contianerUpdateRoom div {
+.contianerUpdateRoom div {
     display: flex;
-    justify-content: left;
-    align-items: flex-end;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
     height: 200px;
+}
+.contianerUpdateRoom div button {
+    width: 90%;
 }

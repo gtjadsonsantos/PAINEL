@@ -36,10 +36,10 @@ async function Auth() {
   }
     return (
       <>
-      <div id="containerLogin">
+      <div className="containerLogin">
         <div id="box-login">
           <header>
-              <h2>Login</h2>          
+              <h2  className="primary-text-color">Login</h2>          
           </header>
           <main>
             <input type="text" placeholder="Usuario" onChange={username => setUsername(username.target.value)} autoFocus required />
@@ -50,7 +50,7 @@ async function Auth() {
           </div>
         </div>
         <span>
-          Nova Versão : {version.version} =>> Date {version.date}  
+          Nova Versão : {version.version} <i className="fas fa-star"></i>  Data {version.date}  
         </span>
       </div>
       </>

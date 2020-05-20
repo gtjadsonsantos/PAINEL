@@ -33,9 +33,9 @@ function DeleteRoom() {
 
   }
   return (
-    <div id="contianerDeleteRoom">
-      <h2>Deletar Sala</h2>
-      <input className='inputs' type="text" placeholder="Númbero da sala" onChange={value => setRoom(value.target.value)} />
+    <div className="contianerDeleteRoom">
+      <h2  className="primary-text-color">Deletar Sala</h2>
+      <input className='inputs' type="text" placeholder="Número da sala" onChange={value => setRoom(value.target.value)} />
       <p id="incorret"></p>
       <div>
         <button className="buttons"  onClick={handleDeleteRoom} >Enviar</button>

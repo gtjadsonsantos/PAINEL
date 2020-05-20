@@ -1,0 +1,116 @@
+.container-administration {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+}
+
+.container-sidebar {
+    height: 100%;
+    background-color: var(--sidebar-background-color);
+    width: 290px;
+    display: flex;
+    flex-direction: column;
+    border-right: 0.8px solid rgb(211, 211, 211);
+}
+.container-sidebar header {
+    width: 100%;
+    height: 90px;
+    background-color: ivory;
+    border-bottom: 0.9px solid rgb(236, 236, 236);
+}
+.container-sidebar header h2 {
+    color: black;
+    font-family: 'Roboto',sans-serif;
+    font-size: 20px;
+    text-align: center;
+    width: 100%;
+}
+.container-sidebar nav {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.container-sidebar nav ul li {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    flex-direction: row;
+    align-items: center;
+    font-weight: 600;
+    font-size: 17px;
+    font-family: 'Roboto',sans-serif;
+    color: var(--text-sidebar-color);
+    cursor: pointer;
+
+}
+.container-sidebar nav ul li:hover {
+    background-color: var(--hover-item-sidebar-color);
+}
+.container-sidebar nav ul li ul {
+    width: 100px;
+}
+.container-sidebar nav ul li i {
+    width: 40px;
+    height: 100%;
+    padding-top: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align: center;
+    color: var(--icons-sidebar-color);
+    font-size: 25px;
+}
+
+.container-main {
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.container-navbar {
+    height: 80px;
+    width: 100%;
+    background-color: var(--primary-background-color,--navbar-background-color);
+}
+.container-navbar ul {
+    width: 150px;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+}
+.container-navbar ul li {
+    list-style-type: none;
+    cursor: pointer;
+    height: 100%;
+    padding-bottom: 10px;
+    text-align: center;
+    width: 30px;
+    display: flex;
+    flex-direction: column;
+    flex-direction: column-reverse;
+    
+}
+.container-navbar ul li:hover {
+    border-bottom: 1px solid #fff;
+}   
+.container-navbar ul li i {
+    font-size: 20px;
+    color: var(--icons-navebar-color);
+}
+
+.main {
+height: 100%;
+width: 100%;
+background-color: var(--main-background-color);
+}
+
+.primary-text-color{
+    color: var(--primary-text-color) ;
+    text-align: center;
+}
