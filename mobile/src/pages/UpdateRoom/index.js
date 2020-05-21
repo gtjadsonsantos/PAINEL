@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Image, Text, View, StyleSheet, TextInput, TouchableOpacity, AsyncStorage,Alert } from 'react-native'
 import { FontAwesome } from '@expo/vector-icons';
-
+import io from 'socket.io-client'
 
 
 import * as ImagePicker from 'expo-image-picker';
@@ -14,7 +14,8 @@ export default function UpdateRoom() {
     const [image, setImage] = useState({})
     const [room, setRoom] = useState('')
     const [server,setServer] = useState('')
-    
+    const socket = io(`http://${server}`,{ jsonp: false, agent: '-', pfx: '-', cert: '-', ca: '-', ciphers: '-', rejectUnauthorized: '-', perMessageDeflate: '-' })
+
     useEffect(()=>{
         AsyncStorage.getItem('server',(err,result)=> {
             if(!err){
@@ -39,13 +40,13 @@ export default function UpdateRoom() {
         form.append("file", image)
 
 
-       const { data } =  await axios.put(`http://${server}/room`,form,{
+        await axios.put(`http://${server}/room`,form,{
         headers: {
             authorization: `Bearer ${token}`,
         }
        })
 
-        
+        socket.emit("send-image",{data: "send-image"})
 
 
     }
@@ -61,7 +62,7 @@ export default function UpdateRoom() {
             let result = await ImagePicker.launchImageLibraryAsync({
                 mediaTypes: ImagePicker.MediaTypeOptions.All,
                 allowsEditing: true,
-                aspect: [4, 3],
+                aspect: [35, 16],
                 quality: 1,
             });
             if (!result.cancelled) {
@@ -113,7 +114,7 @@ const styles = StyleSheet.create({
         color: "#ffff"
     },
     logo: {
-        width: 200,
+        width: 250,
         height: 200,
         marginBottom: 100,
         borderRadius: 10

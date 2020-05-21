@@ -37,7 +37,7 @@ function CreateUser() {
     
     return (
       <div className="contianerCreateUser">
-          <h2 className="primary-text-color" >Criar Usuário</h2>
+          <h2 className="primary-text-color" >Criar Usuario</h2>
           <input className="inputs"  placeholder="Nome de usuário" type="text" onChange={event => setUsername(event.target.value) } required />
           <input  className="inputs" placeholder="Senha" type="password" onChange={event => setPassword(event.target.value) } required />
           <input className="inputs"  placeholder="Confirme sua senha" type="password" onChange={event => setVerifyPassword(event.target.value) } required/>

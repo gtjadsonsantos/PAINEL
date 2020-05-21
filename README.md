@@ -16,10 +16,12 @@
 
 # FUNCIONALIDADES 
 
-- **Json Web Token** 🤩
-- **Upload de imagens** 🤩
-- **Provisionamento** 🤩
-- **Multi-Platorma(`web`,`mobile`)** 🤩
+- 🤩 **Json Web Token** 
+- 🤩 **Upload de imagens** 
+- - **Size** `<= 3MB` 
+- - **Mime type accept**: jpeg ,pjpeg ,png, jpg 
+- 🤩 **Provisionamento** 
+- 🤩 **Multi-Platorma(`web`,`mobile`)** 
 
 # APLICATIVOS 
 
