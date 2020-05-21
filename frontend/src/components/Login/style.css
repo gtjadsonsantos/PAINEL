@@ -85,7 +85,7 @@ a {
 }
 
 span {
-    color: #fff;
+    color: var(--text-sidebar-color);
     font-size: small;
 }
 
@@ -93,8 +93,6 @@ span {
     #box-login {
         width: 100%;
     }
-    span{
-        display: none;
-    }
+   
 }
 

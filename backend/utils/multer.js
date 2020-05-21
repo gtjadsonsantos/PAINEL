@@ -11,13 +11,13 @@ module.exports = {
             crypto.randomBytes(16, (err, hash)=>{
                 if (err) cb(err);
 
-                const fileName = `${hash.toString('hex')}-${file.originalname}`;
+                const fileName = `${hash.toString('hex')}-${String(file.originalname).replace(/\s/g,'-')}`;
                 cb(null, fileName)
             })
         }
     }),
     limits:{
-        fileSize: 2 * 1024 * 1024
+        fileSize: 3 * 1024 * 1024
     },
     fileFilter: (req, file, cb)=>{
         const allowedMimes = [

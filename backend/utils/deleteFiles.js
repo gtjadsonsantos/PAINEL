@@ -8,7 +8,7 @@ async function deleteFiles(filename) {
     }catch( err ){
         
         if(err){
-            console.log("não foi possível entrar imagem")
+            console.log("Image not found")
         }
     }
 }

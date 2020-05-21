@@ -49,7 +49,7 @@ async function Auth() {
           <button className="buttons" onClick={Auth}>Acessar</button>
           </div>
         </div>
-        <span>
+        <span className="primary-text-color">
           Nova Versão : {version.version} <i className="fas fa-star"></i>  Data {version.date}  
         </span>
       </div>
