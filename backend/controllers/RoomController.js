@@ -36,8 +36,6 @@ module.exports = {
             return response.send({status: "Faild in create room"})
 
         }
-
-
     },
     async update (request, response) {   
 
