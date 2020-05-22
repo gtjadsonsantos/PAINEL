@@ -20,7 +20,7 @@ echo "Install yarn"
 
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - 
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-sudo apt-get update && sudo apt-get install yarn
+sudo apt-get update && sudo apt-get install yarn -y
 yarn --vesion
 
 
@@ -28,11 +28,11 @@ echo "Install docker and docker-compose"
 
 curl -sS https://get.docker.com/ | bash
 sudo apt-get update && sudo apt-get upgrade -y
-sudo apt-get install docker-compose
+sudo apt-get install docker-compose -y
 
 echo "Install git"
 
-sudo apt-get install git && git --version
+sudo apt-get install git -y && git --version
 
 echo "Clone respository"
 
