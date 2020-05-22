@@ -24,6 +24,11 @@ sudo apt-get update && sudo apt-get install yarn -y
 yarn --vesion
 
 
+echo "install package sqlite3"
+
+yarn global add sqlite3
+
+
 echo "Install docker and docker-compose"
 
 curl -sS https://get.docker.com/ | bash
@@ -35,6 +40,7 @@ echo "Install git"
 sudo apt-get install git -y && git --version
 
 echo "Clone respository"
+
 
 cd $HOME
 
