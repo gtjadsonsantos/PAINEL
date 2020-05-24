@@ -8,6 +8,7 @@ services:
 
   frontend:
     container_name: frontend
+    network_mode: host
     build:  ./frontend
     ports: 
       - "8080:8080"
