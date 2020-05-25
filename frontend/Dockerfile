@@ -18,8 +18,3 @@ RUN npm install
 EXPOSE 8080 
 
 CMD [ "npm","run","server"]
-
-
-# docker push disciplina/paineldesalasfrontend:1.0
-# docker build -t paineldesalasfrontend .
-# docker tag paineldesalasfrontend disciplina/paineldesalasfrontend:1.0
