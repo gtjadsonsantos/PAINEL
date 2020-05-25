@@ -63,10 +63,10 @@ Instale as dependências `frontend`
     cd ./frontend && yarn install && sudo yarn build
 ```
 
-Configure o endereço ip ou dominio do servidor(`backend`) no frontend
+Configure o endereço ip ou dominio do servidor(`backend`) no frontend alterando a o endereço ip da variável ADDRESS_BACKEND_PUBLIC, a porta deve ser sempre a 3333 
 
 ```bash
-  cd ./frontend && vim config.js
+  cd ./frontend && vim Dockerfile 
 
 ```
 

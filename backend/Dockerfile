@@ -8,10 +8,10 @@ RUN mkdir -p /home/node/PAINEL/backend
 WORKDIR /home/node/PAINEL/backend
 
 
-COPY ./backend/package.json /home/node/PAINEL/backend
+COPY ./package.json /home/node/PAINEL/backend
 RUN npm install
 
-COPY ./backend /home/node/PAINEL/backend
+COPY . /home/node/PAINEL/backend
 
 EXPOSE 3333 
 

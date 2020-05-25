@@ -4,6 +4,7 @@ import api from '../../services/api'
 import config from '../../config'
 
 import CardRoom from '../CardRoom'
+import LogoCostumer from '../LogoCostumer'
 
 import './style.css';
 
@@ -31,6 +32,7 @@ function Sessao() {
   }, [])
   return (
     <>
+     <LogoCostumer />
       <div id="container" >
         {
           ordernFloor.map(floor => (

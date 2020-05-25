@@ -1,8 +1,1 @@
-const config = {
-    backend: {
-	    url: 'http://192.168.0.21:3333'
-    }
-
-}
-
-export default config
+export default { backend: {  url: 'http://192.168.0.21:3333' }, logo: "https://jadson179.github.io/SITE-PAINEL/logo192.png" }
