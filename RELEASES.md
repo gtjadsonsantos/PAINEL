@@ -69,15 +69,3 @@ a ação irá duplicar o usuário administrador e assim o servidor irá para de 
 # Para Começar
 
 Insira o endereço do backend do projeto painel em seu docker-compose juntamente com a porta 3333
-
-
-```yaml
-version: "3.1"
-services:
-    frontend:
-       image: 'disciplina/paineldesalasfrontend:1.0'
-       ports: 
-            - "8080:8080"
-       environment: 
-              ADDRESS_BACKEND_PUBLIC: 192.168.0.21:3333
-```

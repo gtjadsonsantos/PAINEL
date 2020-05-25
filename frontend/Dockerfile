@@ -11,9 +11,9 @@ COPY . /home/node/PAINEL/frontend
 
 RUN echo "export default { backend: {  url: 'http://${ADDRESS_BACKEND_PUBLIC}' }, logo: 'https://jadson179.github.io/SITE-PAINEL/logo192.png' }" > /home/node/PAINEL/frontend/src/config.js
 
-RUN npm run build
-
 RUN npm install
+
+RUN npm run build
 
 EXPOSE 8080 
 
