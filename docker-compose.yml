@@ -5,6 +5,7 @@ services:
     build: ./backend
     ports: 
        - "3333:3333"
+    restart: always
 
   frontend:
     container_name: frontend
@@ -12,5 +13,6 @@ services:
     build:  ./frontend
     ports: 
       - "8080:8080"
+    restart: always
     depends_on: 
           - backend
