@@ -9,7 +9,7 @@ COPY ./package.json /home/node/PAINEL/frontend
 
 COPY . /home/node/PAINEL/frontend
 
-RUN echo "export default { backend: {  url: 'http://${ADDRESS_BACKEND_PUBLIC}' } }" > /home/node/PAINEL/frontend/src/config.js
+RUN echo "export default { backend: {  url: 'http://${ADDRESS_BACKEND_PUBLIC}' }, logo: 'https://jadson179.github.io/SITE-PAINEL/logo192.png' }" > /home/node/PAINEL/frontend/src/config.js
 
 RUN npm run build
 

@@ -1,0 +1,15 @@
+.contianerCostumer {
+    width: 100%;
+    height: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+}
+
+.logoConstumer  {
+    width: 200px;
+    height: 150px;
+    object-fit: scale-down;
+}
