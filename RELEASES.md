@@ -64,8 +64,3 @@ a ação irá duplicar o usuário administrador e assim o servidor irá para de 
 
 * Update Interface web
 
-
-
-# Para Começar
-
-Insira o endereço do backend do projeto painel em seu docker-compose juntamente com a porta 3333

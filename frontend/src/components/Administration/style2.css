@@ -19,6 +19,13 @@
     background-color: ivory;
     border-bottom: 0.9px solid rgb(236, 236, 236);
 }
+
+.container-sidebar header i {
+    display: none;
+}
+.container-navbar .button-show-sidebar {
+    display: none;
+}
 .container-sidebar header h2 {
     color: black;
     font-family: 'Roboto',sans-serif;
@@ -75,6 +82,8 @@
 .container-navbar {
     height: 80px;
     width: 100%;
+    display: flex;
+    justify-content: space-between;
     background-color: var(--primary-background-color,--navbar-background-color);
 }
 .container-navbar ul {
@@ -113,4 +122,37 @@ background-color: var(--main-background-color);
 .primary-text-color{
     color: var(--primary-text-color) ;
     text-align: center;
+}
+
+
+@media only screen and (max-width: 700px){
+    .container-sidebar {
+        position: fixed;
+        left: -300px;
+        animation: sidebar 1s ease-in-out;
+    }
+    .container-sidebar header {
+        align-items: center;
+
+    }
+    .container-sidebar header i {
+        display: block;
+        font-size: 30px;
+        margin: 10px 10px 10px 10px;
+        position: relative;
+        cursor: pointer;
+    }
+    .container-navbar .button-show-sidebar {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end ;
+        font-size: 25px;
+        color: #fff;
+        margin-right: 20px;
+
+    }
+    .container-navbar .button-show-sidebar i {
+        cursor: pointer;
+    }
 }

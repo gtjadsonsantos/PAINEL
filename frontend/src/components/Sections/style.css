@@ -28,14 +28,14 @@ html, body, #root, #container  {
   zoom: var(--zoom-page-view);
   
 }
-.floors {
+#container .floors {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.title {
+#container  .title {
   padding-bottom: 13px;
   width: 100%;
   font-size: 20px;
@@ -46,35 +46,27 @@ html, body, #root, #container  {
   line-height: 45px;
 }
 
-.imageCostumer {
+#container .imageCostumer {
   width: 120px;
   height: 65px;
   margin-bottom: 5px;
   object-fit: scale-down;
 }
-.numberCostumer {
+#container  .numberCostumer {
   color: rgb(9, 0, 78);
   font-weight: 600;
 }
 
-.containerRoom {
+#container  .containerRoom {
   display: flex;
   flex-direction: column;
   margin: 0px 0px 5px 5px;
 }
 
 
-@media only screen and (max-width: 599px){
-  .floors {
-    width: 411px;
+@media only screen and (max-width: 699px){
+  #container ul.floors {
+    width: 400px;
   }
-  .imageCostumer {
-    width: 60%;
-  }
-  .numberRoom {
-    width: 30%;
-  }
-  .containerWeather {
-      display: none;
-  }
+  
 }
