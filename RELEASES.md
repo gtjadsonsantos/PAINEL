@@ -63,4 +63,7 @@ a ação irá duplicar o usuário administrador e assim o servidor irá para de 
 ## VERSÂO 1.0.7
 
 * Update Interface web
+<<<<<<< HEAD
 
+=======
+>>>>>>> 26a8154dbb8f87349c2619d97c45937281e6eaa0
