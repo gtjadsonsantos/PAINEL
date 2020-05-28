@@ -11,10 +11,8 @@ COPY . /home/node/PAINEL/frontend
 
 RUN echo "export default { backend: {  url: 'http://${ADDRESS_BACKEND_PUBLIC}' }, logo: 'https://jadson179.github.io/SITE-PAINEL/logo192.png' }" > /home/node/PAINEL/frontend/src/config.js
 
-RUN npm install
-
-RUN npm run build
+RUN yarn install && yarn upgrade && yarn build 
 
 EXPOSE 8080 
 
-CMD [ "npm","run","server"]
+CMD [ "yarn","server"]

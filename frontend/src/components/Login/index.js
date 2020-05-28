@@ -13,15 +13,6 @@ function Login() {
   sessionStorage.setItem('username',username)
   sessionStorage.setItem('password',password)
 
-  useEffect(()=>{
-    async function github(){
-      const response = await api.get('https://raw.githubusercontent.com/jadson179/PAINEL/master/frontend/package.json')
-      
-      setVersion(response.data)
-    }
-    github()
-      
-  },[])
 async function Auth() { 
     if(username !== '' && password !== ''){
       const {data} = await api.post('/user/auth', { username, password })
@@ -48,10 +39,7 @@ async function Auth() {
           <div id="area-buttons">
           <button className="buttons" onClick={Auth}>Acessar</button>
           </div>
-        </div>
-        <span className="primary-text-color">
-          Nova Versão : {version.version} <i className="fas fa-star"></i>  Data {version.date}  
-        </span>
+        </div>  
       </div>
       </>
     );

@@ -22,8 +22,9 @@
       "**/*"
     ],
     "ios": {
+      "bundleIdentifier": "com.jadsonsantos.hallspanel",
       "supportsTablet": true
-    },
+        },
     "android": {
       "package": "com.jadsonsantos.hallspanel"
     }

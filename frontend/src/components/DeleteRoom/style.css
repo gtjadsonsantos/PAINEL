@@ -27,3 +27,13 @@
     display: flex;
     justify-content: center;
 }
+
+
+@media only screen and (max-width: 600px){
+    .contianerDeleteRoom div button {
+      margin: 0px;  
+    }
+    .contianerDeleteRoom {
+        width: 100%;
+    }
+}

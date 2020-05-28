@@ -47,14 +47,29 @@ function Administration() {
             setUpdate(1)
     },[])
 
+
+    function handleSidebar(valor){
+
+        if(valor == 0){
+            document.getElementById("container-sidebar").style.left = "-300px"; 
+        }else {
+            document.getElementById("container-sidebar").style.left = "0px"; 
+        }
+
+
+
+
+    }
+
     return (
         <>
             <ActionAlert />
             <div className="container-administration">
-                <div className="container-sidebar" >
+                <div id="container-sidebar" className="container-sidebar" >
                     <header>
                         <h2>PAINEL DE SALAS</h2>
-                    </header>
+                        <i className="fas fa-times" onClick={()=> handleSidebar(0)} ></i>    
+                   </header>
                     <nav>
                         <ul>
                             <li onClick={()=> handleAdministration("user")}>
@@ -106,6 +121,9 @@ function Administration() {
                                 <i className="fas fa-pen" />
 
                             </li>
+                        </ul>
+                        <ul className="button-show-sidebar">
+                            <i class="fas fa-bars" onClick={()=> handleSidebar(1)}></i>
                         </ul>
                     </nav>
                     <div className="main">

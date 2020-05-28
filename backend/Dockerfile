@@ -9,10 +9,11 @@ WORKDIR /home/node/PAINEL/backend
 
 
 COPY ./package.json /home/node/PAINEL/backend
-RUN npm install
+
+RUN yarn install
 
 COPY . /home/node/PAINEL/backend
 
 EXPOSE 3333 
 
-CMD [ "npm","run","start"]
+CMD [ "yarn","start"]

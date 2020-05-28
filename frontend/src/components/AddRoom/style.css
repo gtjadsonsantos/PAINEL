@@ -50,3 +50,12 @@ input[type="file"]{
     align-items: center;
 }
 
+
+@media only screen and (max-width: 600px){
+    #contianerAddRoom  div button {
+      margin: 0px;  
+    }
+    #contianerAddRoom  {
+        width: 100%;
+    }
+}

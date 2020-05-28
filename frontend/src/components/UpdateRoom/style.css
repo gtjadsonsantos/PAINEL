@@ -24,3 +24,12 @@
 .contianerUpdateRoom div button {
     width: 90%;
 }
+
+@media only screen and (max-width: 600px){
+    .contianerUpdateRoom  div button {
+      margin: 0px;  
+    }
+    .contianerUpdateRoom  {
+        width: 100%;
+    }
+}
