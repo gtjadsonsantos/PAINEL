@@ -1,6 +1,6 @@
 function Time() {
     const ObjDate = new Date()
-    const getday = ObjDate.getDay()
+    const getday = ObjDate.getDate  ()
     const getmonth = ObjDate.getMonth()
     const gethours = ObjDate.getHours()
     const getminutes = ObjDate.getMinutes()
@@ -9,7 +9,8 @@ function Time() {
 
     const Month = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setebro", "Outubro", "Novembro","Dezembro"]
 
-    return `${getday} de ${Month[getmonth]} de ${getfullyear} ${gethours}:${getminutes}:${getseconds}`
+    return { getday, month:  Month[getmonth], getfullyear, gethours, getminutes, getseconds }
 }
+
 
 export default Time

@@ -12,6 +12,8 @@ COPY ./package.json /home/node/PAINEL/backend
 
 RUN yarn install
 
+RUN yarn build 
+
 COPY . /home/node/PAINEL/backend
 
 EXPOSE 3333 

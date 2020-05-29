@@ -1,52 +1,52 @@
   .containerWeather {
   position: absolute;
   width: 14.2%;
-  min-width: 215.52px;
-  height: 365px;
+  min-width: 245.52px;
+  height: 384px;
   right: 0px;
-  bottom: 0px;
+  bottom: 20px;
   background: #fff;
   display: flex;
   flex-direction: column;
 }
-.containerWeather header {
+.containerWeather .item-list {
+  display: flex;
+  justify-content: space-between;
+
+}
+.containerWeather .item-list p {
+  font-family: 'Roboto',sans-serif;
+}
+
+.containerWeather .item-list img {
+  object-fit: scale-down;
+}
+.containerHours {
   width: 100%;
-  background: rgb(1, 13, 85);
-  height: 60px;
+  background-color: rgb(212, 199, 16);
+  height: 70px;
   display: flex;
+  align-items: center;
+  justify-content: space-around;
   flex-direction: column;
+
+  border-radius: 10px 0px 0px 180px ;
 }
-.containerWeather header p {
+.containerHours h3 {
+  font-family: 'Roboto',sans-serif;
   color: #fff;
-  font-size: small;
-  margin-top: 5px;
-  text-align: center;
+  font-size: 15;
 }
-.containerWeather header h1 {
+
+.containerHours p {
+  font-family: 'Roboto',sans-serif;
   color: #fff;
-  margin-top: 5px;
-  font-size: medium;  
+  font-size: 15;
   text-align: center;
-}
-.containerWeather footer h3 {
-  color: #000;
-  font-size: 15px;
-}
-.containerWeather footer ul img {
-  width: 50%;
-}
-.containerWeather footer ul div p {
-  font-size: 10px;
-}
-.containerWeather footer ul p {
-  font-size: 10px;
-}
-.containerWeather footer ul div {
-  display: flex;
-  flex-direction: row;
-}
-.containerWeather footer {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  width: 100%;
+} 
+.containerHours p:nth-child(3){
+  text-align: right;
+  padding-right: 10px;
+
 }
