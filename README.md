@@ -33,10 +33,6 @@ A proposta desta aplicação é tornar simples o gerenciamento de salas, para em
 
 ### REQUISITOS 
 
-[NODEJS > 12.14.1](https://nodejs.org/en/)
-
-[NPM](https://www.npmjs.com/get-npm) ou [YARN](https://classic.yarnpkg.com/en/docs/install/#debian-stable)
-
 [Docker](https://docs.docker.com/install/)
 
 [Docker Compose](https://docs.docker.com/compose/)
@@ -51,35 +47,38 @@ Faça o download do repositório
     git clone https://github.com/jadson179/PAINEL.git 
 ```
 
-Instale as dependências `backend`
+### CONFIGURE SUA KEY SECRET
 
-```bash
-  cd ./backend && yarn install && npx knex migrate:latest && npx knex seed:run --specific=002_users.js
-```
+Essa chave será usada para encriptar os tokens gerados pela aplicação
 
-Instale as dependências `frontend`
-
-```bash
-    cd ./frontend && yarn install && sudo yarn build
-```
-
-Configure o endereço ip ou dominio do servidor(`backend`) no frontend alterando a o endereço ip da variável ADDRESS_BACKEND_PUBLIC, a porta deve ser sempre a 3333 
-
-```bash
-  cd ./frontend && vim Dockerfile 
-
-```
-
-Configure a chave de encriptação dos tokens da aplicação no backend
 
 ```bash
   cd ./backend && vim config.js
 ```
 
+### CONFIGURE ALGUMAS VARIÁVEIS DE AMBIENTE NO FRONTEND
+
+Essa configuração permite que o frontend conheça o backend do painel e juntamente a isso, a configuração da api de tempo do yahoo. É necessário ter uma conta de desenvolvedor no yahoo e criar um app na plataforma para ter acesso aos dados de configuração para a api. [Criar Conta](https://developer.yahoo.com/api/) 
+
+
+```Dockerfile
+  cd ./frontend && vim Dockerfile 
+
+  ## Visualização do que deve ser configurado
+
+  ENV ADDRESS_BACKEND_PUBLIC "ENDEREÇO DO SERVIDOR PAINEL"
+  ENV APPID "APP ID DO SEU APLICATIVO CRIADO  NO YAHOO"
+  ENV CLIENTID "ID DO CLIENTE GERADO NA CRIAÇÃO DO SEU APP NO YAHOO"
+  ENV CLIENTE_SECRET "SENHA DO CLIENTE GERADO NA CRIAÇÃO DO SEU APP NO YAHOO"
+  ENV LOGO "ENDEREÇO DA IMAGEM QUE VAI SER USADA NA NO EMPREENDIMENTO"
+
+```
+
+
 Retorne a raiz do projeto e suba o container da aplicação
 
 ```bash
-  sudo docker-compose up
+  docker-compose up --build -d 
 ``` 
 
 `Acesse`: http://0.0.0.0:8080

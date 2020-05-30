@@ -1,7 +1,7 @@
 FROM node:12.16.1
 
 ## CONFIG ADDRESS TO COMUNICATION WITH BACKEND
-ENV ADDRESS_BACKEND_PUBLIC "192.168.0.21:3333"
+ENV ADDRESS_BACKEND_PUBLIC "192.168.0.21"
 
 ## BEGIN CONFIG API WEATHER
 ENV APPID "hFc5Rx4a"
@@ -22,7 +22,7 @@ COPY ./package.json /home/node/PAINEL/frontend
 
 COPY . /home/node/PAINEL/frontend
 
-RUN echo "export default { backend: {  url: 'http://${ADDRESS_BACKEND_PUBLIC}' }, logo: '${LOGO}', weather: { appID: '${APPID}', clientID: '${CLIENTID}', clientSecret: '${CLIENTE_SECRET}'  }  }" > /home/node/PAINEL/frontend/src/config.js
+RUN echo "export default { backend: {  url: 'http://${ADDRESS_BACKEND_PUBLIC}:3333' }, logo: '${LOGO}', weather: { appID: '${APPID}', clientID: '${CLIENTID}', clientSecret: '${CLIENTE_SECRET}'  }  }" > /home/node/PAINEL/frontend/src/config.js
 
 RUN yarn install
 
