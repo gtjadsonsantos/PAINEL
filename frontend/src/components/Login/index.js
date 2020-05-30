@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from 'react';
+import React, { useState} from 'react';
 
 import history from '../../global/history'
 import api from '../../services/api'
@@ -8,7 +8,6 @@ function Login() {
 
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
-  const [version, setVersion] = useState('')
 
   sessionStorage.setItem('username',username)
   sessionStorage.setItem('password',password)

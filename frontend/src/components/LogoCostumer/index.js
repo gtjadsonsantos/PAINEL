@@ -1,5 +1,7 @@
-import React,{} from 'react'
+import React from 'react'
 import config from "../../config"
+import Weather from '../Weather'
+
 import "./style.css"
 
 
@@ -18,7 +20,8 @@ export default function LogoCostumer() {
 
     return (
         <div id="containerCostumer" className="contianerCostumer">
-            <img className="logoConstumer" src={`${config.logo}`} />
+            <img className="logoConstumer" src={`${config.logo}`} alt="Logo Costumer" />
+            <Weather />
         </div>
     )
 }

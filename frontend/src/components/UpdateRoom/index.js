@@ -20,7 +20,7 @@ function UpdateRoom() {
             const form = new FormData()
             form.append('file',file,file.name)
             form.append('room', room)
-            console.log(file)
+          
             const {data} = await api.put('/room', 
             form,
             {
