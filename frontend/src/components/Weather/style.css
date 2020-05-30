@@ -23,7 +23,7 @@
 }
 .containerHours {
   width: 100%;
-  background-color: rgb(212, 199, 16);
+  background-color: var(--primary-background-color);
   height: 70px;
   display: flex;
   align-items: center;

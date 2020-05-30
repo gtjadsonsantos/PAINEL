@@ -95,8 +95,6 @@ Retorne a raiz do projeto e suba o container da aplicação
 - [DOC BACKEND](https://jadson179.github.io/PAINEL/docs/index.html)
 
 
-
-
 ## Licença 📝
 
 Esse projeto usa a licença MIT license - veja o arquivo [LICENSE](LICENSE) para mais detalhes

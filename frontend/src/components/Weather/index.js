@@ -106,9 +106,9 @@ function Weather() {
         {
           weather.map(weatherday => (
 
-            <li className="item-list">
+            <li key={Math.random() * 100}  className="item-list">
               <p>{weatherday.day}</p>
-              <img src={`https://web.archive.org/web/20200529100011if_/http://l.yimg.com/a/i/us/we/52/${weatherday.code}.gif`} />
+              <img src={`https://web.archive.org/web/20200529100011if_/http://l.yimg.com/a/i/us/we/52/${weatherday.code}.gif`} alt={weatherday.text} />
             </li>
 
           ))
