@@ -74,8 +74,8 @@ export default function UpdateRoom() {
 
             
             }
-        } catch (E) {
-            console.log(E);
+        } catch (error) {
+            console.log(error);
         }
     };
 

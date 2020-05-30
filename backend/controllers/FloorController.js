@@ -20,7 +20,6 @@ module.exports = {
             .count('*', { as: 'qtdfloors' })
             .where('NumberFloor', '=', request.body.numberfloor)
 
-        console.log(qtdfloors)
 
         if (qtdfloors == 0) {
             await database('Floors')

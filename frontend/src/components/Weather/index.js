@@ -54,7 +54,6 @@ function Weather() {
             console.log(err);
           } else {
             const { forecasts } = JSON.parse(data)
-            console.log(forecasts)
             const state = []
 
             forecasts.forEach(item => {
