@@ -16,7 +16,7 @@ export default function LogoCostumer() {
         },20000)
     }
     
-    //setInterval(handleShowLogo,60000)
+    setInterval(handleShowLogo,60000)
 
     return (
         <div id="containerCostumer" className="contianerCostumer">
