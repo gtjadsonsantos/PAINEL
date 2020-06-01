@@ -4,16 +4,15 @@ FROM node:12.16.1
 RUN yarn global add nw-gyp
 RUN yarn global add sqlite3 
 
-RUN mkdir -p /home/node/PAINEL/backend
-WORKDIR /home/node/PAINEL/backend
+RUN mkdir -p /backend
+WORKDIR /backend
 
+COPY ./package.json /backend
 
-COPY ./package.json /home/node/PAINEL/backend
+RUN npm install
 
-RUN yarn install
-
-COPY . /home/node/PAINEL/backend
+COPY . /backend
 
 EXPOSE 3333 
 
-CMD [ "yarn","start"]
+CMD [ "npm","run","start"]

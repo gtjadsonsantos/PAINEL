@@ -1,3 +1,608 @@
+{
+    "_type": "export",
+    "__export_format": 4,
+    "__export_date": "2020-05-30T16:07:19.634Z",
+    "__export_source": "insomnia.desktop.app:v7.1.1",
+    "resources": [
+        {
+            "_id": "req_5afb3423435e4f13a8b6ed6b68736114",
+            "authentication": {},
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"numberfloor\":2\n}"
+            },
+            "created": 1589498724670,
+            "description": "",
+            "headers": [
+                {
+                    "id": "pair_521bdc61d56b4569b70136a81212151c",
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "description": "",
+                    "id": "pair_af54ea40f17643fe8bdab6f90e20fcd3",
+                    "name": "Authorization",
+                    "value": "{{ token  }}"
+                }
+            ],
+            "isPrivate": false,
+            "metaSortKey": -1589498724670,
+            "method": "DELETE",
+            "modified": 1589654409284,
+            "name": "Delete Floor",
+            "parameters": [],
+            "parentId": "fld_2e2ebc45d21a4afd86c8e5fd54ef7ff5",
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingFollowRedirects": "global",
+            "settingRebuildPath": true,
+            "settingSendCookies": true,
+            "settingStoreCookies": true,
+            "url": "0.0.0.0:3333/floor",
+            "_type": "request"
+        },
+        {
+            "_id": "fld_2e2ebc45d21a4afd86c8e5fd54ef7ff5",
+            "created": 1589494552056,
+            "description": "",
+            "environment": {},
+            "environmentPropertyOrder": null,
+            "metaSortKey": -1589494552056,
+            "modified": 1589494552056,
+            "name": "Floors",
+            "parentId": "wrk_f8a3100ca8a0484183179ae7e3c03bc3",
+            "_type": "request_group"
+        },
+        {
+            "_id": "wrk_f8a3100ca8a0484183179ae7e3c03bc3",
+            "created": 1589489816007,
+            "description": "",
+            "modified": 1589489816007,
+            "name": "PAINEL",
+            "parentId": null,
+            "_type": "workspace"
+        },
+        {
+            "_id": "req_f2bf8b240b5a4dbc99de9f66cc434468",
+            "authentication": {},
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"newnumberfloor\":2,\n\t\"numberfloor\": 1\n}"
+            },
+            "created": 1589498584526,
+            "description": "",
+            "headers": [
+                {
+                    "id": "pair_a31e46af0c1a435a9a5d1c04476b0150",
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "description": "",
+                    "id": "pair_b7be9c871e84463197fed191afd63804",
+                    "name": "Authorization",
+                    "value": "{{ token  }}"
+                }
+            ],
+            "isPrivate": false,
+            "metaSortKey": -1589498584526,
+            "method": "PUT",
+            "modified": 1589505562620,
+            "name": "Update Floor",
+            "parameters": [],
+            "parentId": "fld_2e2ebc45d21a4afd86c8e5fd54ef7ff5",
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingFollowRedirects": "global",
+            "settingRebuildPath": true,
+            "settingSendCookies": true,
+            "settingStoreCookies": true,
+            "url": "0.0.0.0:3333/floor",
+            "_type": "request"
+        },
+        {
+            "_id": "req_9bc9158217974f929ba0e52547449892",
+            "authentication": {},
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"numberfloor\":1,\n\t\"roomid\":1\n}"
+            },
+            "created": 1589498420302,
+            "description": "",
+            "headers": [
+                {
+                    "id": "pair_3818fb46cdc24bdd98e227babc31e03e",
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "description": "",
+                    "id": "pair_c12391b71b134c3a91880a49c010c67f",
+                    "name": "Authorization",
+                    "value": "{{ token  }}"
+                }
+            ],
+            "isPrivate": false,
+            "metaSortKey": -1589498420302,
+            "method": "POST",
+            "modified": 1589505581047,
+            "name": "Create Floor",
+            "parameters": [],
+            "parentId": "fld_2e2ebc45d21a4afd86c8e5fd54ef7ff5",
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingFollowRedirects": "global",
+            "settingRebuildPath": true,
+            "settingSendCookies": true,
+            "settingStoreCookies": true,
+            "url": "0.0.0.0:3333/floor",
+            "_type": "request"
+        },
+        {
+            "_id": "req_0bbdfd80f6e44147afc4648a3ee613ed",
+            "authentication": {},
+            "body": {},
+            "created": 1589494872449,
+            "description": "",
+            "headers": [
+                {
+                    "description": "",
+                    "id": "pair_59fae5e7daf8413bba617a015c203d49",
+                    "name": "Authorization",
+                    "value": "{{ token  }}"
+                },
+                {
+                    "description": "",
+                    "id": "pair_cd395f27722a465ba7dc8b2dc874a586",
+                    "name": "",
+                    "value": ""
+                }
+            ],
+            "isPrivate": false,
+            "metaSortKey": -1589494872449,
+            "method": "GET",
+            "modified": 1589655829023,
+            "name": "List Floors",
+            "parameters": [],
+            "parentId": "fld_2e2ebc45d21a4afd86c8e5fd54ef7ff5",
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingFollowRedirects": "global",
+            "settingRebuildPath": true,
+            "settingSendCookies": true,
+            "settingStoreCookies": true,
+            "url": "0.0.0.0:3333/floors",
+            "_type": "request"
+        },
+        {
+            "_id": "req_2454f27906534adfb67ea6e0469fbdf8",
+            "authentication": {},
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"username\": \"jubileu\"\n}"
+            },
+            "created": 1589490376259,
+            "description": "",
+            "headers": [
+                {
+                    "id": "pair_ce4b13679d1149318a76d51f57a986bb",
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "description": "",
+                    "id": "pair_c58a2cb2678e4c7eaba74b513c24dceb",
+                    "name": "Authorization",
+                    "value": "{{ token  }}"
+                }
+            ],
+            "isPrivate": false,
+            "metaSortKey": -1589490376259,
+            "method": "DELETE",
+            "modified": 1589632285556,
+            "name": "Delete User",
+            "parameters": [],
+            "parentId": "fld_2e20e02c108441ce8ba12c7d56385f3d",
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingFollowRedirects": "global",
+            "settingRebuildPath": true,
+            "settingSendCookies": true,
+            "settingStoreCookies": true,
+            "url": "0.0.0.0:3333/user",
+            "_type": "request"
+        },
+        {
+            "_id": "fld_2e20e02c108441ce8ba12c7d56385f3d",
+            "created": 1589489826715,
+            "description": "",
+            "environment": {},
+            "environmentPropertyOrder": null,
+            "metaSortKey": -1589489826715,
+            "modified": 1589489826714,
+            "name": "Users",
+            "parentId": "wrk_f8a3100ca8a0484183179ae7e3c03bc3",
+            "_type": "request_group"
+        },
+        {
+            "_id": "req_a43e3c392ede421d8d9418a9f3b443ee",
+            "authentication": {},
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"username\":\"test\",\n\t\"password\":\"test\",\n\t\"oldPassword\": \"jadson\"\n}"
+            },
+            "created": 1589490184125,
+            "description": "",
+            "headers": [
+                {
+                    "id": "pair_0b52cbef7f3140999d32e5e6d4a9cea5",
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "description": "",
+                    "id": "pair_f9b974f0dcb24497a63138c75520599c",
+                    "name": "Authorization",
+                    "value": "{{ token  }}"
+                }
+            ],
+            "isPrivate": false,
+            "metaSortKey": -1589490184125,
+            "method": "PUT",
+            "modified": 1589633148403,
+            "name": "Update User",
+            "parameters": [],
+            "parentId": "fld_2e20e02c108441ce8ba12c7d56385f3d",
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingFollowRedirects": "global",
+            "settingRebuildPath": true,
+            "settingSendCookies": true,
+            "settingStoreCookies": true,
+            "url": "0.0.0.0:3333/user",
+            "_type": "request"
+        },
+        {
+            "_id": "req_47d4284ac8b74ba7927d37735a110020",
+            "authentication": {},
+            "body": {},
+            "created": 1589490098814,
+            "description": "",
+            "headers": [
+                {
+                    "description": "",
+                    "id": "pair_0287645bdb5b48e2abc4b8f68ff9a19c",
+                    "name": "Authorization",
+                    "value": "{{ token  }}"
+                },
+                {
+                    "description": "",
+                    "id": "pair_9441abb7a4a94ab7ac1ba898fdb17963",
+                    "name": "",
+                    "value": ""
+                }
+            ],
+            "isPrivate": false,
+            "metaSortKey": -1589490098814,
+            "method": "GET",
+            "modified": 1589505690217,
+            "name": "List Users",
+            "parameters": [],
+            "parentId": "fld_2e20e02c108441ce8ba12c7d56385f3d",
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingFollowRedirects": "global",
+            "settingRebuildPath": true,
+            "settingSendCookies": true,
+            "settingStoreCookies": true,
+            "url": "0.0.0.0:3333/users",
+            "_type": "request"
+        },
+        {
+            "_id": "req_7ec34005b30743f68f07cd4164eacdab",
+            "authentication": {},
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"username\":\"test\",\n  \"password\":\"jadson\",\n  \"usertype\":\"comum\"\t\n}"
+            },
+            "created": 1589489913903,
+            "description": "",
+            "headers": [
+                {
+                    "id": "pair_8659d4b87edd4882b062ed3b3b3fcb8d",
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "description": "",
+                    "id": "pair_bb010d71318a4c218dbab48af42a2077",
+                    "name": "Authorization",
+                    "value": " {{ token  }}"
+                }
+            ],
+            "isPrivate": false,
+            "metaSortKey": -1589489913904,
+            "method": "POST",
+            "modified": 1589630175636,
+            "name": "Create User",
+            "parameters": [],
+            "parentId": "fld_2e20e02c108441ce8ba12c7d56385f3d",
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingFollowRedirects": "global",
+            "settingRebuildPath": true,
+            "settingSendCookies": true,
+            "settingStoreCookies": true,
+            "url": "0.0.0.0:3333/user",
+            "_type": "request"
+        },
+        {
+            "_id": "req_e0afc7ab6e6a4ce89714ad2d0881c92e",
+            "authentication": {},
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"username\":\"admin\",\n  \"password\":\"admin\"\n}"
+            },
+            "created": 1589628948591,
+            "description": "",
+            "headers": [
+                {
+                    "id": "pair_8659d4b87edd4882b062ed3b3b3fcb8d",
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "description": "",
+                    "id": "pair_bb010d71318a4c218dbab48af42a2077",
+                    "name": "Authorization",
+                    "value": " {{ token  }}"
+                }
+            ],
+            "isPrivate": false,
+            "metaSortKey": -1589489913854,
+            "method": "POST",
+            "modified": 1589634437667,
+            "name": "Login",
+            "parameters": [],
+            "parentId": "fld_2e20e02c108441ce8ba12c7d56385f3d",
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingFollowRedirects": "global",
+            "settingRebuildPath": true,
+            "settingSendCookies": true,
+            "settingStoreCookies": true,
+            "url": "0.0.0.0:3333/user/auth",
+            "_type": "request"
+        },
+        {
+            "_id": "req_8d624eba558d48cf8666be6e25921463",
+            "authentication": {},
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"room\": 108\n}"
+            },
+            "created": 1589490535633,
+            "description": "",
+            "headers": [
+                {
+                    "id": "pair_ce4b13679d1149318a76d51f57a986bb",
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "description": "",
+                    "id": "pair_fd6d4bdbc0134a778139a2a6e4b5f353",
+                    "name": "Authorization",
+                    "value": "{{ token  }}"
+                }
+            ],
+            "isPrivate": false,
+            "metaSortKey": -1589490376259,
+            "method": "DELETE",
+            "modified": 1589596555839,
+            "name": "Delete Room",
+            "parameters": [],
+            "parentId": "fld_d3e9a55dad844d41b20ed35b0a7fab40",
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingFollowRedirects": "global",
+            "settingRebuildPath": true,
+            "settingSendCookies": true,
+            "settingStoreCookies": true,
+            "url": "0.0.0.0:3333/room",
+            "_type": "request"
+        },
+        {
+            "_id": "fld_d3e9a55dad844d41b20ed35b0a7fab40",
+            "created": 1589490535626,
+            "description": "",
+            "environment": {},
+            "environmentPropertyOrder": null,
+            "metaSortKey": -1589489826665,
+            "modified": 1589490535626,
+            "name": "Rooms",
+            "parentId": "wrk_f8a3100ca8a0484183179ae7e3c03bc3",
+            "_type": "request_group"
+        },
+        {
+            "_id": "req_d0864964b5ba431281cc140389eb94b6",
+            "authentication": {},
+            "body": {
+                "mimeType": "multipart/form-data",
+                "params": [
+                    {
+                        "description": "",
+                        "fileName": "/home/jadson/Downloads/neon-sinal-barzinhos-imagem-coquetel_23-2148184280.jpg",
+                        "id": "pair_629d7ab42f4a4bb68309a3440bda8537",
+                        "name": "file",
+                        "type": "file",
+                        "value": ""
+                    },
+                    {
+                        "description": "",
+                        "id": "pair_3a165afdcc104fb8917ce002dd02d9c4",
+                        "name": "room",
+                        "value": "108"
+                    },
+                    {
+                        "description": "",
+                        "id": "pair_bc0c36386ce846cfa4904c1654827ed5",
+                        "name": "",
+                        "value": ""
+                    }
+                ]
+            },
+            "created": 1589490535631,
+            "description": "",
+            "headers": [
+                {
+                    "id": "pair_0b52cbef7f3140999d32e5e6d4a9cea5",
+                    "name": "Content-Type",
+                    "value": "multipart/form-data"
+                },
+                {
+                    "description": "",
+                    "id": "pair_187f5a1541af436392441509178438eb",
+                    "name": "Authorization",
+                    "value": "{{ token  }}"
+                }
+            ],
+            "isPrivate": false,
+            "metaSortKey": -1589490184125,
+            "method": "PUT",
+            "modified": 1589730428692,
+            "name": "Update Room",
+            "parameters": [],
+            "parentId": "fld_d3e9a55dad844d41b20ed35b0a7fab40",
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingFollowRedirects": "global",
+            "settingRebuildPath": true,
+            "settingSendCookies": true,
+            "settingStoreCookies": true,
+            "url": "http://192.168.0.21:3333/room",
+            "_type": "request"
+        },
+        {
+            "_id": "req_289014d93ce34bb6902290652fce2fce",
+            "authentication": {},
+            "body": {},
+            "created": 1589490535630,
+            "description": "",
+            "headers": [
+                {
+                    "description": "",
+                    "id": "pair_ce002d3572e44305b0d8ecba3433c96c",
+                    "name": "Authorization",
+                    "value": "{{ token  }}"
+                }
+            ],
+            "isPrivate": false,
+            "metaSortKey": -1589490098814,
+            "method": "GET",
+            "modified": 1589505726181,
+            "name": "List Rooms",
+            "parameters": [],
+            "parentId": "fld_d3e9a55dad844d41b20ed35b0a7fab40",
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingFollowRedirects": "global",
+            "settingRebuildPath": true,
+            "settingSendCookies": true,
+            "settingStoreCookies": true,
+            "url": "0.0.0.0:3333/rooms",
+            "_type": "request"
+        },
+        {
+            "_id": "req_a9ce9df957ea464e8126596aed91e058",
+            "authentication": {},
+            "body": {
+                "mimeType": "multipart/form-data",
+                "params": [
+                    {
+                        "description": "",
+                        "id": "pair_82bdf8bff6d440b29f9a2b6a551deae5",
+                        "name": "room",
+                        "value": "101"
+                    },
+                    {
+                        "description": "",
+                        "fileName": "/home/jadson/Downloads/carrefour.jpeg",
+                        "id": "pair_d00bc11a22074c9ba973f05f6a0b7710",
+                        "name": "file",
+                        "type": "file",
+                        "value": ""
+                    },
+                    {
+                        "description": "",
+                        "id": "pair_15808bc0b2054e8a812339fdaf90ace8",
+                        "name": "numberfloor",
+                        "value": "1"
+                    }
+                ]
+            },
+            "created": 1589490535629,
+            "description": "",
+            "headers": [
+                {
+                    "id": "pair_8659d4b87edd4882b062ed3b3b3fcb8d",
+                    "name": "Content-Type",
+                    "value": "multipart/form-data"
+                },
+                {
+                    "description": "",
+                    "id": "pair_4d92bd4a0d254a929dc8dc064ef0c3e7",
+                    "name": "Authorization",
+                    "value": "{{ token  }}"
+                }
+            ],
+            "isPrivate": false,
+            "metaSortKey": -1589489913904,
+            "method": "POST",
+            "modified": 1590061569151,
+            "name": "Create Room",
+            "parameters": [],
+            "parentId": "fld_d3e9a55dad844d41b20ed35b0a7fab40",
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingFollowRedirects": "global",
+            "settingRebuildPath": true,
+            "settingSendCookies": true,
+            "settingStoreCookies": true,
+            "url": "0.0.0.0:3333/room",
+            "_type": "request"
+        },
+        {
+            "_id": "env_b2de76662b0093c1adb23a8363eda4e9fd830cc0",
+            "color": null,
+            "created": 1589489816029,
+            "data": {
+                "token": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySUQiOjEsIlVzZXJOYW1lIjoiYWRtaW4iLCJVc2VyUGFzc3dvcmQiOiJhZG1pbiIsIlVzZXJUeXBlIjoiYWRtaW4iLCJpYXQiOjE1OTAwNjE1ODAsImV4cCI6MTU5MDA2NTE4MH0.7sZS_tP-mkrtPLBSymeLijhshM-8JBuP7tucJKgsu_I"
+            },
+            "dataPropertyOrder": {
+                "&": [
+                    "token"
+                ]
+            },
+            "isPrivate": false,
+            "metaSortKey": 1589489816029,
+            "modified": 1590061596641,
+            "name": "Base Environment",
+            "parentId": "wrk_f8a3100ca8a0484183179ae7e3c03bc3",
+            "_type": "environment"
+        },
+        {
+            "_id": "jar_b2de76662b0093c1adb23a8363eda4e9fd830cc0",
+            "cookies": [],
+            "created": 1589489816032,
+            "modified": 1589489816032,
+            "name": "Default Jar",
+            "parentId": "wrk_f8a3100ca8a0484183179ae7e3c03bc3",
+            "_type": "cookie_jar"
+        }
+    ]
+}
 var app=function(){"use strict";function e(){}function t(e,t){for(const n in t)e[n]=t[n];return e}function n(e){return e()}function r(){return Object.create(null)}function a(e){e.forEach(n)}function i(e){return"function"==typeof e}function o(e,t){return e!=e?t==t:e!==t||e&&"object"==typeof e||"function"==typeof e}function s(e,n,r){return e[1]?t({},t(n.$$scope.ctx,e[1](r?r(n):{}))):n.$$scope.ctx}function l(e){return null==e?"":e}function c(e,t){e.appendChild(t)}function u(e,t,n){e.insertBefore(t,n||null)}function d(e){e.parentNode.removeChild(e)}function p(e,t){for(let n=0;n<e.length;n+=1)e[n]&&e[n].d(t)}function h(e){return document.createElement(e)}function g(e){return document.createTextNode(e)}function f(){return g(" ")}function m(){return g("")}function b(e,t,n,r){return e.addEventListener(t,n,r),()=>e.removeEventListener(t,n,r)}function _(e,t,n){null==n?e.removeAttribute(t):e.setAttribute(t,n)}function v(e,t){for(const n in t)"style"===n?e.style.cssText=t[n]:n in e?e[n]=t[n]:_(e,n,t[n])}function w(e,t,n){t in e?e[t]=n:_(e,t,n)}function y(e,t){t=""+t,e.data!==t&&(e.data=t)}function k(e,t){(null!=t||e.value)&&(e.value=t)}function x(e,t,n,r){e.style.setProperty(t,n,r?"important":"")}function E(e,t){for(let n=0;n<e.options.length;n+=1){const r=e.options[n];if(r.__value===t)return void(r.selected=!0)}}function S(e,t,n){e.classList[n?"add":"remove"](t)}class ${constructor(e,t=null){this.e=h("div"),this.a=t,this.u(e)}m(e,t=null){for(let n=0;n<this.n.length;n+=1)u(e,this.n[n],t);this.t=e}u(e){this.e.innerHTML=e,this.n=Array.from(this.e.childNodes)}p(e){this.d(),this.u(e),this.m(this.t,this.a)}d(){this.n.forEach(d)}}let C;function L(e){C=e}function I(){if(!C)throw new Error("Function called outside component initialization");return C}function M(e){I().$$.before_update.push(e)}function T(e){I().$$.on_mount.push(e)}function O(e){I().$$.on_destroy.push(e)}function j(){const e=C;return(t,n)=>{const r=e.$$.callbacks[t];if(r){const a=function(e,t){const n=document.createEvent("CustomEvent");return n.initCustomEvent(e,!1,!1,t),n}(t,n);r.slice().forEach(t=>{t.call(e,a)})}}}const A=[],P=[],N=[],H=[],R=Promise.resolve();let q=!1;function z(){q||(q=!0,R.then(V))}function D(){return z(),R}function B(e){N.push(e)}function V(){const e=new Set;do{for(;A.length;){const e=A.shift();L(e),U(e.$$)}for(;P.length;)P.pop()();for(let t=0;t<N.length;t+=1){const n=N[t];e.has(n)||(n(),e.add(n))}N.length=0}while(A.length);for(;H.length;)H.pop()();q=!1}function U(e){e.fragment&&(e.update(e.dirty),a(e.before_update),e.fragment.p(e.dirty,e.ctx),e.dirty=null,e.after_update.forEach(B))}const F=new Set;let G,K;function W(){G={r:0,c:[],p:G}}function J(){G.r||a(G.c),G=G.p}function Z(e,t){e&&e.i&&(F.delete(e),e.i(t))}function Q(e,t,n,r){if(e&&e.o){if(F.has(e))return;F.add(e),G.c.push(()=>{F.delete(e),r&&(n&&e.d(1),r())}),e.o(t)}}function X(e,t){Q(e,1,1,()=>{t.delete(e.key)})}function Y(e,t){const n={},r={},a={$$scope:1};let i=e.length;for(;i--;){const o=e[i],s=t[i];if(s){for(const e in o)e in s||(r[e]=1);for(const e in s)a[e]||(n[e]=s[e],a[e]=1);e[i]=s}else for(const e in o)a[e]=1}for(const e in r)e in n||(n[e]=void 0);return n}function ee(e,t,r){const{fragment:o,on_mount:s,on_destroy:l,after_update:c}=e.$$;o.m(t,r),B(()=>{const t=s.map(n).filter(i);l?l.push(...t):a(t),e.$$.on_mount=[]}),c.forEach(B)}function te(e,t){e.$$.fragment&&(a(e.$$.on_destroy),e.$$.fragment.d(t),e.$$.on_destroy=e.$$.fragment=null,e.$$.ctx={})}function ne(t,n,i,o,s,l){const c=C;L(t);const u=n.props||{},d=t.$$={fragment:null,ctx:null,props:l,update:e,not_equal:s,bound:r(),on_mount:[],on_destroy:[],before_update:[],after_update:[],context:new Map(c?c.$$.context:[]),callbacks:r(),dirty:null};let p=!1;d.ctx=i?i(t,u,(e,n,a=n)=>(d.ctx&&s(d.ctx[e],d.ctx[e]=a)&&(d.bound[e]&&d.bound[e](a),p&&function(e,t){e.$$.dirty||(A.push(e),z(),e.$$.dirty=r()),e.$$.dirty[t]=!0}(t,e)),n)):u,d.update(),p=!0,a(d.before_update),d.fragment=o(d.ctx),n.target&&(n.hydrate?d.fragment.l(function(e){return Array.from(e.childNodes)}(n.target)):d.fragment.c(),n.intro&&Z(t.$$.fragment),ee(t,n.target,n.anchor),V()),L(c)}"undefined"!=typeof HTMLElement&&(K=class extends HTMLElement{constructor(){super(),this.attachShadow({mode:"open"})}connectedCallback(){for(const e in this.$$.slotted)this.appendChild(this.$$.slotted[e])}attributeChangedCallback(e,t,n){this[e]=n}$destroy(){te(this,1),this.$destroy=e}$on(e,t){const n=this.$$.callbacks[e]||(this.$$.callbacks[e]=[]);return n.push(t),()=>{const e=n.indexOf(t);-1!==e&&n.splice(e,1)}}$set(){}});class re{$destroy(){te(this,1),this.$destroy=e}$on(e,t){const n=this.$$.callbacks[e]||(this.$$.callbacks[e]=[]);return n.push(t),()=>{const e=n.indexOf(t);-1!==e&&n.splice(e,1)}}$set(){}}function ae(t){var n,r,a,i,o,s,l,p,m=t.request.method+"",b=t.request.name+"";return{c(){n=h("a"),r=h("strong"),a=g(m),o=f(),s=h("span"),l=g(b),_(r,"class",i=t.request.method.toLowerCase()),_(n,"href",p="#"+t.request._id),_(n,"class","sidebar-list-link name")},m(e,t){u(e,n,t),c(n,r),c(r,a),c(n,o),c(n,s),c(s,l)},p(e,t){e.request&&m!==(m=t.request.method+"")&&y(a,m),e.request&&i!==(i=t.request.method.toLowerCase())&&_(r,"class",i),e.request&&b!==(b=t.request.name+"")&&y(l,b),e.request&&p!==(p="#"+t.request._id)&&_(n,"href",p)},i:e,o:e,d(e){e&&d(n)}}}function ie(e,t,n){let{request:r}=t;return e.$set=e=>{"request"in e&&n("request",r=e.request)},{request:r}}class oe extends re{constructor(e){super(),ne(this,e,ie,ae,o,["request"])}}function se(e,t,n){const r=Object.create(e);return r.request=t[n],r}function le(e,t,n){const r=Object.create(e);return r.child=t[n],r}function ce(e){var t,n,r,a;return{c(){t=h("a"),n=h("span"),r=g(e.name),_(t,"href","javascript:;"),_(t,"class","sidebar-list-link name svelte-1banbqx"),S(t,"expanded",e.expanded),a=b(t,"click",e.toggle)},m(e,a){u(e,t,a),c(t,n),c(n,r)},p(e,n){e.name&&y(r,n.name),e.expanded&&S(t,"expanded",n.expanded)},d(e){e&&d(t),a()}}}function ue(e){var t,n,r;let a=e.children,i=[];for(let t=0;t<a.length;t+=1)i[t]=de(le(e,a,t));const o=e=>Q(i[e],1,1,()=>{i[e]=null});let s=e.requests,l=[];for(let t=0;t<s.length;t+=1)l[t]=pe(se(e,s,t));const g=e=>Q(l[e],1,1,()=>{l[e]=null});return{c(){t=h("ul");for(let e=0;e<i.length;e+=1)i[e].c();n=f();for(let e=0;e<l.length;e+=1)l[e].c();_(t,"class","svelte-1banbqx")},m(e,a){u(e,t,a);for(let e=0;e<i.length;e+=1)i[e].m(t,null);c(t,n);for(let e=0;e<l.length;e+=1)l[e].m(t,null);r=!0},p(e,r){if(e.children){let s;for(a=r.children,s=0;s<a.length;s+=1){const o=le(r,a,s);i[s]?(i[s].p(e,o),Z(i[s],1)):(i[s]=de(o),i[s].c(),Z(i[s],1),i[s].m(t,n))}for(W(),s=a.length;s<i.length;s+=1)o(s);J()}if(e.requests){let n;for(s=r.requests,n=0;n<s.length;n+=1){const a=se(r,s,n);l[n]?(l[n].p(e,a),Z(l[n],1)):(l[n]=pe(a),l[n].c(),Z(l[n],1),l[n].m(t,null))}for(W(),n=s.length;n<l.length;n+=1)g(n);J()}},i(e){if(!r){for(let e=0;e<a.length;e+=1)Z(i[e]);for(let e=0;e<s.length;e+=1)Z(l[e]);r=!0}},o(e){i=i.filter(Boolean);for(let e=0;e<i.length;e+=1)Q(i[e]);l=l.filter(Boolean);for(let e=0;e<l.length;e+=1)Q(l[e]);r=!1},d(e){e&&d(t),p(i,e),p(l,e)}}}function de(e){var n,r,a=[e.child];let i={};for(var o=0;o<a.length;o+=1)i=t(i,a[o]);var s=new fe({props:i});return{c(){n=h("li"),s.$$.fragment.c(),_(n,"class","folder")},m(e,t){u(e,n,t),ee(s,n,null),r=!0},p(e,t){var n,r=e.children?Y(a,[(n=t.child,"object"==typeof n&&null!==n?n:{})]):{};s.$set(r)},i(e){r||(Z(s.$$.fragment,e),r=!0)},o(e){Q(s.$$.fragment,e),r=!1},d(e){e&&d(n),te(s)}}}function pe(e){var t,n,r=new oe({props:{request:e.request}});return{c(){t=h("li"),r.$$.fragment.c(),_(t,"class","request")},m(e,a){u(e,t,a),ee(r,t,null),n=!0},p(e,t){var n={};e.requests&&(n.request=t.request),r.$set(n)},i(e){n||(Z(r.$$.fragment,e),n=!0)},o(e){Q(r.$$.fragment,e),n=!1},d(e){e&&d(t),te(r)}}}function he(e){var t,n,r,a=!e.root&&ce(e),i=e.expanded&&ue(e);return{c(){a&&a.c(),t=f(),i&&i.c(),n=m()},m(e,o){a&&a.m(e,o),u(e,t,o),i&&i.m(e,o),u(e,n,o),r=!0},p(e,r){r.root?a&&(a.d(1),a=null):a?a.p(e,r):((a=ce(r)).c(),a.m(t.parentNode,t)),r.expanded?i?(i.p(e,r),Z(i,1)):((i=ue(r)).c(),Z(i,1),i.m(n.parentNode,n)):i&&(W(),Q(i,1,1,()=>{i=null}),J())},i(e){r||(Z(i),r=!0)},o(e){Q(i),r=!1},d(e){a&&a.d(e),e&&d(t),i&&i.d(e),e&&d(n)}}}function ge(e,t,n){let{root:r=!1,expanded:a=!1,name:i,children:o,requests:s}=t;return e.$set=e=>{"root"in e&&n("root",r=e.root),"expanded"in e&&n("expanded",a=e.expanded),"name"in e&&n("name",i=e.name),"children"in e&&n("children",o=e.children),"requests"in e&&n("requests",s=e.requests)},{root:r,expanded:a,name:i,children:o,requests:s,toggle:function(){n("expanded",a=!a)}}}class fe extends re{constructor(e){super(),ne(this,e,ge,he,o,["root","expanded","name","children","requests"])}}function me(e){var t,n,r=new fe({props:{name:e.workspace.name,children:e.groups,requests:e.requests,root:!0,expanded:!0}});return{c(){t=h("aside"),r.$$.fragment.c(),_(t,"class","svelte-qjien1"),S(t,"visible",e.visible)},m(e,a){u(e,t,a),ee(r,t,null),n=!0},p(e,n){var a={};e.workspace&&(a.name=n.workspace.name),e.groups&&(a.children=n.groups),e.requests&&(a.requests=n.requests),r.$set(a),e.visible&&S(t,"visible",n.visible)},i(e){n||(Z(r.$$.fragment,e),n=!0)},o(e){Q(r.$$.fragment,e),n=!1},d(e){e&&d(t),te(r)}}}function be(e,t,n){let{requests:r,groups:a,workspace:i,visible:o}=t;return e.$set=e=>{"requests"in e&&n("requests",r=e.requests),"groups"in e&&n("groups",a=e.groups),"workspace"in e&&n("workspace",i=e.workspace),"visible"in e&&n("visible",o=e.visible)},{requests:r,groups:a,workspace:i,visible:o}}class _e extends re{constructor(e){super(),ne(this,e,be,me,o,["requests","groups","workspace","visible"])}}var ve="undefined"!=typeof globalThis?globalThis:"undefined"!=typeof window?window:"undefined"!=typeof global?global:"undefined"!=typeof self?self:{};function we(e,t){return e(t={exports:{}},t.exports),t.exports}var ye=we((function(e,t){var n,r;n=function(e){var t=[],n=Object.keys,r={},a={},i=/^(no-?highlight|plain|text)$/i,o=/\blang(?:uage)?-([\w-]+)\b/i,s=/((^(<[^>]+>|\t|)+|(?:\n)))/gm,l={classPrefix:"hljs-",tabReplace:null,useBR:!1,languages:void 0};function c(e){return e.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}function u(e){return e.nodeName.toLowerCase()}function d(e,t){var n=e&&e.exec(t);return n&&0===n.index}function p(e){return i.test(e)}function h(e){var t,n={},r=Array.prototype.slice.call(arguments,1);for(t in e)n[t]=e[t];return r.forEach((function(e){for(t in e)n[t]=e[t]})),n}function g(e){var t=[];return function e(n,r){for(var a=n.firstChild;a;a=a.nextSibling)3===a.nodeType?r+=a.nodeValue.length:1===a.nodeType&&(t.push({event:"start",offset:r,node:a}),r=e(a,r),u(a).match(/br|hr|img|input/)||t.push({event:"stop",offset:r,node:a}));return r}(e,0),t}function f(e){function t(e){return e&&e.source||e}function r(n,r){return new RegExp(t(n),"m"+(e.case_insensitive?"i":"")+(r?"g":""))}!function a(i,o){if(!i.compiled){if(i.compiled=!0,i.keywords=i.keywords||i.beginKeywords,i.keywords){var s={},l=function(t,n){e.case_insensitive&&(n=n.toLowerCase()),n.split(" ").forEach((function(e){var n=e.split("|");s[n[0]]=[t,n[1]?Number(n[1]):1]}))};"string"==typeof i.keywords?l("keyword",i.keywords):n(i.keywords).forEach((function(e){l(e,i.keywords[e])})),i.keywords=s}i.lexemesRe=r(i.lexemes||/\w+/,!0),o&&(i.beginKeywords&&(i.begin="\\b("+i.beginKeywords.split(" ").join("|")+")\\b"),i.begin||(i.begin=/\B|\b/),i.beginRe=r(i.begin),i.endSameAsBegin&&(i.end=i.begin),i.end||i.endsWithParent||(i.end=/\B|\b/),i.end&&(i.endRe=r(i.end)),i.terminator_end=t(i.end)||"",i.endsWithParent&&o.terminator_end&&(i.terminator_end+=(i.end?"|":"")+o.terminator_end)),i.illegal&&(i.illegalRe=r(i.illegal)),null==i.relevance&&(i.relevance=1),i.contains||(i.contains=[]),i.contains=Array.prototype.concat.apply([],i.contains.map((function(e){return function(e){return e.variants&&!e.cached_variants&&(e.cached_variants=e.variants.map((function(t){return h(e,{variants:null},t)}))),e.cached_variants||e.endsWithParent&&[h(e)]||[e]}("self"===e?i:e)}))),i.contains.forEach((function(e){a(e,i)})),i.starts&&a(i.starts,o);var c=i.contains.map((function(e){return e.beginKeywords?"\\.?(?:"+e.begin+")\\.?":e.begin})).concat([i.terminator_end,i.illegal]).map(t).filter(Boolean);i.terminators=c.length?r(function(e,n){for(var r=/\[(?:[^\\\]]|\\.)*\]|\(\??|\\([1-9][0-9]*)|\\./,a=0,i="",o=0;o<e.length;o++){var s=a,l=t(e[o]);for(o>0&&(i+=n);l.length>0;){var c=r.exec(l);if(null==c){i+=l;break}i+=l.substring(0,c.index),l=l.substring(c.index+c[0].length),"\\"==c[0][0]&&c[1]?i+="\\"+String(Number(c[1])+s):(i+=c[0],"("==c[0]&&a++)}}return i}(c,"|"),!0):{exec:function(){return null}}}}(e)}function m(e,t,n,a){function i(e){return new RegExp(e.replace(/[-\/\\^$*+?.()|[\]{}]/g,"\\$&"),"m")}function o(e,t){var n=g.case_insensitive?t[0].toLowerCase():t[0];return e.keywords.hasOwnProperty(n)&&e.keywords[n]}function s(e,t,n,r){var a='<span class="'+(r?"":l.classPrefix);return e?(a+=e+'">')+t+(n?"":"</span>"):t}function u(){k+=null!=v.subLanguage?function(){var e="string"==typeof v.subLanguage;if(e&&!r[v.subLanguage])return c(x);var t=e?m(v.subLanguage,x,!0,w[v.subLanguage]):b(x,v.subLanguage.length?v.subLanguage:void 0);return v.relevance>0&&(E+=t.relevance),e&&(w[v.subLanguage]=t.top),s(t.language,t.value,!1,!0)}():function(){var e,t,n,r;if(!v.keywords)return c(x);for(r="",t=0,v.lexemesRe.lastIndex=0,n=v.lexemesRe.exec(x);n;)r+=c(x.substring(t,n.index)),(e=o(v,n))?(E+=e[1],r+=s(e[0],c(n[0]))):r+=c(n[0]),t=v.lexemesRe.lastIndex,n=v.lexemesRe.exec(x);return r+c(x.substr(t))}(),x=""}function p(e){k+=e.className?s(e.className,"",!0):"",v=Object.create(e,{parent:{value:v}})}function h(e,t){if(x+=e,null==t)return u(),0;var r=function(e,t){var n,r;for(n=0,r=t.contains.length;n<r;n++)if(d(t.contains[n].beginRe,e))return t.contains[n].endSameAsBegin&&(t.contains[n].endRe=i(t.contains[n].beginRe.exec(e)[0])),t.contains[n]}(t,v);if(r)return r.skip?x+=t:(r.excludeBegin&&(x+=t),u(),r.returnBegin||r.excludeBegin||(x=t)),p(r),r.returnBegin?0:t.length;var a=function e(t,n){if(d(t.endRe,n)){for(;t.endsParent&&t.parent;)t=t.parent;return t}if(t.endsWithParent)return e(t.parent,n)}(v,t);if(a){var o=v;o.skip?x+=t:(o.returnEnd||o.excludeEnd||(x+=t),u(),o.excludeEnd&&(x=t));do{v.className&&(k+="</span>"),v.skip||v.subLanguage||(E+=v.relevance),v=v.parent}while(v!==a.parent);return a.starts&&(a.endSameAsBegin&&(a.starts.endRe=a.endRe),p(a.starts)),o.returnEnd?0:t.length}if(function(e,t){return!n&&d(t.illegalRe,e)}(t,v))throw new Error('Illegal lexeme "'+t+'" for mode "'+(v.className||"<unnamed>")+'"');return x+=t,t.length||1}var g=y(e);if(!g)throw new Error('Unknown language: "'+e+'"');f(g);var _,v=a||g,w={},k="";for(_=v;_!==g;_=_.parent)_.className&&(k=s(_.className,"",!0)+k);var x="",E=0;try{for(var S,$,C=0;v.terminators.lastIndex=C,S=v.terminators.exec(t);)$=h(t.substring(C,S.index),S[0]),C=S.index+$;for(h(t.substr(C)),_=v;_.parent;_=_.parent)_.className&&(k+="</span>");return{relevance:E,value:k,language:e,top:v}}catch(e){if(e.message&&-1!==e.message.indexOf("Illegal"))return{relevance:0,value:c(t)};throw e}}function b(e,t){t=t||l.languages||n(r);var a={relevance:0,value:c(e)},i=a;return t.filter(y).filter(k).forEach((function(t){var n=m(t,e,!1);n.language=t,n.relevance>i.relevance&&(i=n),n.relevance>a.relevance&&(i=a,a=n)})),i.language&&(a.second_best=i),a}function _(e){return l.tabReplace||l.useBR?e.replace(s,(function(e,t){return l.useBR&&"\n"===e?"<br>":l.tabReplace?t.replace(/\t/g,l.tabReplace):""})):e}function v(e){var n,r,i,s,d,h=function(e){var t,n,r,a,i=e.className+" ";if(i+=e.parentNode?e.parentNode.className:"",n=o.exec(i))return y(n[1])?n[1]:"no-highlight";for(t=0,r=(i=i.split(/\s+/)).length;t<r;t++)if(p(a=i[t])||y(a))return a}(e);p(h)||(l.useBR?(n=document.createElementNS("http://www.w3.org/1999/xhtml","div")).innerHTML=e.innerHTML.replace(/\n/g,"").replace(/<br[ \/]*>/g,"\n"):n=e,d=n.textContent,i=h?m(h,d,!0):b(d),(r=g(n)).length&&((s=document.createElementNS("http://www.w3.org/1999/xhtml","div")).innerHTML=i.value,i.value=function(e,n,r){var a=0,i="",o=[];function s(){return e.length&&n.length?e[0].offset!==n[0].offset?e[0].offset<n[0].offset?e:n:"start"===n[0].event?e:n:e.length?e:n}function l(e){i+="<"+u(e)+t.map.call(e.attributes,(function(e){return" "+e.nodeName+'="'+c(e.value).replace('"',"&quot;")+'"'})).join("")+">"}function d(e){i+="</"+u(e)+">"}function p(e){("start"===e.event?l:d)(e.node)}for(;e.length||n.length;){var h=s();if(i+=c(r.substring(a,h[0].offset)),a=h[0].offset,h===e){o.reverse().forEach(d);do{p(h.splice(0,1)[0]),h=s()}while(h===e&&h.length&&h[0].offset===a);o.reverse().forEach(l)}else"start"===h[0].event?o.push(h[0].node):o.pop(),p(h.splice(0,1)[0])}return i+c(r.substr(a))}(r,g(s),d)),i.value=_(i.value),e.innerHTML=i.value,e.className=function(e,t,n){var r=t?a[t]:n,i=[e.trim()];return e.match(/\bhljs\b/)||i.push("hljs"),-1===e.indexOf(r)&&i.push(r),i.join(" ").trim()}(e.className,h,i.language),e.result={language:i.language,re:i.relevance},i.second_best&&(e.second_best={language:i.second_best.language,re:i.second_best.relevance}))}function w(){if(!w.called){w.called=!0;var e=document.querySelectorAll("pre code");t.forEach.call(e,v)}}function y(e){return e=(e||"").toLowerCase(),r[e]||r[a[e]]}function k(e){var t=y(e);return t&&!t.disableAutodetect}return e.highlight=m,e.highlightAuto=b,e.fixMarkup=_,e.highlightBlock=v,e.configure=function(e){l=h(l,e)},e.initHighlighting=w,e.initHighlightingOnLoad=function(){addEventListener("DOMContentLoaded",w,!1),addEventListener("load",w,!1)},e.registerLanguage=function(t,n){var i=r[t]=n(e);i.aliases&&i.aliases.forEach((function(e){a[e]=t}))},e.listLanguages=function(){return n(r)},e.getLanguage=y,e.autoDetection=k,e.inherit=h,e.IDENT_RE="[a-zA-Z]\\w*",e.UNDERSCORE_IDENT_RE="[a-zA-Z_]\\w*",e.NUMBER_RE="\\b\\d+(\\.\\d+)?",e.C_NUMBER_RE="(-?)(\\b0[xX][a-fA-F0-9]+|(\\b\\d+(\\.\\d*)?|\\.\\d+)([eE][-+]?\\d+)?)",e.BINARY_NUMBER_RE="\\b(0b[01]+)",e.RE_STARTERS_RE="!|!=|!==|%|%=|&|&&|&=|\\*|\\*=|\\+|\\+=|,|-|-=|/=|/|:|;|<<|<<=|<=|<|===|==|=|>>>=|>>=|>=|>>>|>>|>|\\?|\\[|\\{|\\(|\\^|\\^=|\\||\\|=|\\|\\||~",e.BACKSLASH_ESCAPE={begin:"\\\\[\\s\\S]",relevance:0},e.APOS_STRING_MODE={className:"string",begin:"'",end:"'",illegal:"\\n",contains:[e.BACKSLASH_ESCAPE]},e.QUOTE_STRING_MODE={className:"string",begin:'"',end:'"',illegal:"\\n",contains:[e.BACKSLASH_ESCAPE]},e.PHRASAL_WORDS_MODE={begin:/\b(a|an|the|are|I'm|isn't|don't|doesn't|won't|but|just|should|pretty|simply|enough|gonna|going|wtf|so|such|will|you|your|they|like|more)\b/},e.COMMENT=function(t,n,r){var a=e.inherit({className:"comment",begin:t,end:n,contains:[]},r||{});return a.contains.push(e.PHRASAL_WORDS_MODE),a.contains.push({className:"doctag",begin:"(?:TODO|FIXME|NOTE|BUG|XXX):",relevance:0}),a},e.C_LINE_COMMENT_MODE=e.COMMENT("//","$"),e.C_BLOCK_COMMENT_MODE=e.COMMENT("/\\*","\\*/"),e.HASH_COMMENT_MODE=e.COMMENT("#","$"),e.NUMBER_MODE={className:"number",begin:e.NUMBER_RE,relevance:0},e.C_NUMBER_MODE={className:"number",begin:e.C_NUMBER_RE,relevance:0},e.BINARY_NUMBER_MODE={className:"number",begin:e.BINARY_NUMBER_RE,relevance:0},e.CSS_NUMBER_MODE={className:"number",begin:e.NUMBER_RE+"(%|em|ex|ch|rem|vw|vh|vmin|vmax|cm|mm|in|pt|pc|px|deg|grad|rad|turn|s|ms|Hz|kHz|dpi|dpcm|dppx)?",relevance:0},e.REGEXP_MODE={className:"regexp",begin:/\//,end:/\/[gimuy]*/,illegal:/\n/,contains:[e.BACKSLASH_ESCAPE,{begin:/\[/,end:/\]/,relevance:0,contains:[e.BACKSLASH_ESCAPE]}]},e.TITLE_MODE={className:"title",begin:e.IDENT_RE,relevance:0},e.UNDERSCORE_TITLE_MODE={className:"title",begin:e.UNDERSCORE_IDENT_RE,relevance:0},e.METHOD_GUARD={begin:"\\.\\s*"+e.UNDERSCORE_IDENT_RE,relevance:0},e},r="object"==typeof window&&window||"object"==typeof self&&self,t.nodeType?r&&(r.hljs=n({})):n(t)})),ke=function(e){var t="[A-Za-z$_][0-9A-Za-z$_]*",n={keyword:"in of if for while finally var new function do return void else break catch instanceof with throw case default try this switch continue typeof delete let yield const export super debugger as async await static import from as",literal:"true false null undefined NaN Infinity",built_in:"eval isFinite isNaN parseFloat parseInt decodeURI decodeURIComponent encodeURI encodeURIComponent escape unescape Object Function Boolean Error EvalError InternalError RangeError ReferenceError StopIteration SyntaxError TypeError URIError Number Math Date String RegExp Array Float32Array Float64Array Int16Array Int32Array Int8Array Uint16Array Uint32Array Uint8Array Uint8ClampedArray ArrayBuffer DataView JSON Intl arguments require module console window document Symbol Set Map WeakSet WeakMap Proxy Reflect Promise"},r={className:"number",variants:[{begin:"\\b(0[bB][01]+)"},{begin:"\\b(0[oO][0-7]+)"},{begin:e.C_NUMBER_RE}],relevance:0},a={className:"subst",begin:"\\$\\{",end:"\\}",keywords:n,contains:[]},i={begin:"html`",end:"",starts:{end:"`",returnEnd:!1,contains:[e.BACKSLASH_ESCAPE,a],subLanguage:"xml"}},o={begin:"css`",end:"",starts:{end:"`",returnEnd:!1,contains:[e.BACKSLASH_ESCAPE,a],subLanguage:"css"}},s={className:"string",begin:"`",end:"`",contains:[e.BACKSLASH_ESCAPE,a]};a.contains=[e.APOS_STRING_MODE,e.QUOTE_STRING_MODE,i,o,s,r,e.REGEXP_MODE];var l=a.contains.concat([e.C_BLOCK_COMMENT_MODE,e.C_LINE_COMMENT_MODE]);return{aliases:["js","jsx"],keywords:n,contains:[{className:"meta",relevance:10,begin:/^\s*['"]use (strict|asm)['"]/},{className:"meta",begin:/^#!/,end:/$/},e.APOS_STRING_MODE,e.QUOTE_STRING_MODE,i,o,s,e.C_LINE_COMMENT_MODE,e.C_BLOCK_COMMENT_MODE,r,{begin:/[{,]\s*/,relevance:0,contains:[{begin:t+"\\s*:",returnBegin:!0,relevance:0,contains:[{className:"attr",begin:t,relevance:0}]}]},{begin:"("+e.RE_STARTERS_RE+"|\\b(case|return|throw)\\b)\\s*",keywords:"return throw case",contains:[e.C_LINE_COMMENT_MODE,e.C_BLOCK_COMMENT_MODE,e.REGEXP_MODE,{className:"function",begin:"(\\(.*?\\)|"+t+")\\s*=>",returnBegin:!0,end:"\\s*=>",contains:[{className:"params",variants:[{begin:t},{begin:/\(\s*\)/},{begin:/\(/,end:/\)/,excludeBegin:!0,excludeEnd:!0,keywords:n,contains:l}]}]},{className:"",begin:/\s/,end:/\s*/,skip:!0},{begin:/</,end:/(\/[A-Za-z0-9\\._:-]+|[A-Za-z0-9\\._:-]+\/)>/,subLanguage:"xml",contains:[{begin:/<[A-Za-z0-9\\._:-]+\s*\/>/,skip:!0},{begin:/<[A-Za-z0-9\\._:-]+/,end:/(\/[A-Za-z0-9\\._:-]+|[A-Za-z0-9\\._:-]+\/)>/,skip:!0,contains:[{begin:/<[A-Za-z0-9\\._:-]+\s*\/>/,skip:!0},"self"]}]}],relevance:0},{className:"function",beginKeywords:"function",end:/\{/,excludeEnd:!0,contains:[e.inherit(e.TITLE_MODE,{begin:t}),{className:"params",begin:/\(/,end:/\)/,excludeBegin:!0,excludeEnd:!0,contains:l}],illegal:/\[|%/},{begin:/\$[(.]/},e.METHOD_GUARD,{className:"class",beginKeywords:"class",end:/[{;=]/,excludeEnd:!0,illegal:/[:"\[\]]/,contains:[{beginKeywords:"extends"},e.UNDERSCORE_TITLE_MODE]},{beginKeywords:"constructor get set",end:/\{/,excludeEnd:!0}],illegal:/#(?!!)/}};ye.registerLanguage("javascript",ke),ye.registerLanguage("node",ke),ye.registerLanguage("python",(function(e){var t={keyword:"and elif is global as in if from raise for except finally print import pass return exec else break not with class assert yield try while continue del or def lambda async await nonlocal|10",built_in:"Ellipsis NotImplemented",literal:"False None True"},n={className:"meta",begin:/^(>>>|\.\.\.) /},r={className:"subst",begin:/\{/,end:/\}/,keywords:t,illegal:/#/},a={className:"string",contains:[e.BACKSLASH_ESCAPE],variants:[{begin:/(u|b)?r?'''/,end:/'''/,contains:[e.BACKSLASH_ESCAPE,n],relevance:10},{begin:/(u|b)?r?"""/,end:/"""/,contains:[e.BACKSLASH_ESCAPE,n],relevance:10},{begin:/(fr|rf|f)'''/,end:/'''/,contains:[e.BACKSLASH_ESCAPE,n,r]},{begin:/(fr|rf|f)"""/,end:/"""/,contains:[e.BACKSLASH_ESCAPE,n,r]},{begin:/(u|r|ur)'/,end:/'/,relevance:10},{begin:/(u|r|ur)"/,end:/"/,relevance:10},{begin:/(b|br)'/,end:/'/},{begin:/(b|br)"/,end:/"/},{begin:/(fr|rf|f)'/,end:/'/,contains:[e.BACKSLASH_ESCAPE,r]},{begin:/(fr|rf|f)"/,end:/"/,contains:[e.BACKSLASH_ESCAPE,r]},e.APOS_STRING_MODE,e.QUOTE_STRING_MODE]},i={className:"number",relevance:0,variants:[{begin:e.BINARY_NUMBER_RE+"[lLjJ]?"},{begin:"\\b(0o[0-7]+)[lLjJ]?"},{begin:e.C_NUMBER_RE+"[lLjJ]?"}]},o={className:"params",begin:/\(/,end:/\)/,contains:["self",n,i,a]};return r.contains=[a,i,n],{aliases:["py","gyp","ipython"],keywords:t,illegal:/(<\/|->|\?)|=>/,contains:[n,i,a,e.HASH_COMMENT_MODE,{variants:[{className:"function",beginKeywords:"def"},{className:"class",beginKeywords:"class"}],end:/:/,illegal:/[${=;\n,]/,contains:[e.UNDERSCORE_TITLE_MODE,o,{begin:/->/,endsWithParent:!0,keywords:"None"}]},{className:"meta",begin:/^[\t ]*@/,end:/$/},{begin:/\b(print|exec)\(/}]}})),ye.registerLanguage("curl",(function(e){var t={className:"variable",variants:[{begin:/\$[\w\d#@][\w\d_]*/},{begin:/\$\{(.*?)}/}]},n={className:"string",begin:/"/,end:/"/,contains:[e.BACKSLASH_ESCAPE,t,{className:"variable",begin:/\$\(/,end:/\)/,contains:[e.BACKSLASH_ESCAPE]}]};return{aliases:["sh","zsh"],lexemes:/\b-?[a-z\._]+\b/,keywords:{keyword:"if then else elif fi for while in do done case esac function",literal:"true false",built_in:"break cd continue eval exec exit export getopts hash pwd readonly return shift test times trap umask unset alias bind builtin caller command declare echo enable help let local logout mapfile printf read readarray source type typeset ulimit unalias set shopt autoload bg bindkey bye cap chdir clone comparguments compcall compctl compdescribe compfiles compgroups compquote comptags comptry compvalues dirs disable disown echotc echoti emulate fc fg float functions getcap getln history integer jobs kill limit log noglob popd print pushd pushln rehash sched setcap setopt stat suspend ttyctl unfunction unhash unlimit unsetopt vared wait whence where which zcompile zformat zftp zle zmodload zparseopts zprof zpty zregexparse zsocket zstyle ztcp",_:"-ne -eq -lt -gt -f -d -e -s -l -a"},contains:[{className:"meta",begin:/^#![^\n]+sh\s*$/,relevance:10},{className:"function",begin:/\w[\w\d_]*\s*\(\s*\)\s*\{/,returnBegin:!0,contains:[e.inherit(e.TITLE_MODE,{begin:/\w[\w\d_]*/})],relevance:0},e.HASH_COMMENT_MODE,n,{className:"",begin:/\\"/},{className:"string",begin:/'/,end:/'/},t]}})),ye.registerLanguage("ruby",(function(e){var t="[a-zA-Z_]\\w*[!?=]?|[-+~]\\@|<<|>>|=~|===?|<=>|[<>]=?|\\*\\*|[-/+%^&*~`|]|\\[\\]=?",n={keyword:"and then defined module in return redo if BEGIN retry end for self when next until do begin unless END rescue else break undef not super class case require yield alias while ensure elsif or include attr_reader attr_writer attr_accessor",literal:"true false nil"},r={className:"doctag",begin:"@[A-Za-z]+"},a={begin:"#<",end:">"},i=[e.COMMENT("#","$",{contains:[r]}),e.COMMENT("^\\=begin","^\\=end",{contains:[r],relevance:10}),e.COMMENT("^__END__","\\n$")],o={className:"subst",begin:"#\\{",end:"}",keywords:n},s={className:"string",contains:[e.BACKSLASH_ESCAPE,o],variants:[{begin:/'/,end:/'/},{begin:/"/,end:/"/},{begin:/`/,end:/`/},{begin:"%[qQwWx]?\\(",end:"\\)"},{begin:"%[qQwWx]?\\[",end:"\\]"},{begin:"%[qQwWx]?{",end:"}"},{begin:"%[qQwWx]?<",end:">"},{begin:"%[qQwWx]?/",end:"/"},{begin:"%[qQwWx]?%",end:"%"},{begin:"%[qQwWx]?-",end:"-"},{begin:"%[qQwWx]?\\|",end:"\\|"},{begin:/\B\?(\\\d{1,3}|\\x[A-Fa-f0-9]{1,2}|\\u[A-Fa-f0-9]{4}|\\?\S)\b/},{begin:/<<[-~]?'?(\w+)(?:.|\n)*?\n\s*\1\b/,returnBegin:!0,contains:[{begin:/<<[-~]?'?/},{begin:/\w+/,endSameAsBegin:!0,contains:[e.BACKSLASH_ESCAPE,o]}]}]},l={className:"params",begin:"\\(",end:"\\)",endsParent:!0,keywords:n},c=[s,a,{className:"class",beginKeywords:"class module",end:"$|;",illegal:/=/,contains:[e.inherit(e.TITLE_MODE,{begin:"[A-Za-z_]\\w*(::\\w+)*(\\?|\\!)?"}),{begin:"<\\s*",contains:[{begin:"("+e.IDENT_RE+"::)?"+e.IDENT_RE}]}].concat(i)},{className:"function",beginKeywords:"def",end:"$|;",contains:[e.inherit(e.TITLE_MODE,{begin:t}),l].concat(i)},{begin:e.IDENT_RE+"::"},{className:"symbol",begin:e.UNDERSCORE_IDENT_RE+"(\\!|\\?)?:",relevance:0},{className:"symbol",begin:":(?!\\s)",contains:[s,{begin:t}],relevance:0},{className:"number",begin:"(\\b0[0-7_]+)|(\\b0x[0-9a-fA-F_]+)|(\\b[1-9][0-9_]*(\\.[0-9_]+)?)|[0_]\\b",relevance:0},{begin:"(\\$\\W)|((\\$|\\@\\@?)(\\w+))"},{className:"params",begin:/\|/,end:/\|/,keywords:n},{begin:"("+e.RE_STARTERS_RE+"|unless)\\s*",keywords:"unless",contains:[a,{className:"regexp",contains:[e.BACKSLASH_ESCAPE,o],illegal:/\n/,variants:[{begin:"/",end:"/[a-z]*"},{begin:"%r{",end:"}[a-z]*"},{begin:"%r\\(",end:"\\)[a-z]*"},{begin:"%r!",end:"![a-z]*"},{begin:"%r\\[",end:"\\][a-z]*"}]}].concat(i),relevance:0}].concat(i);o.contains=c,l.contains=c;var u=[{begin:/^\s*=>/,starts:{end:"$",contains:c}},{className:"meta",begin:"^([>?]>|[\\w#]+\\(\\w+\\):\\d+:\\d+>|(\\w+-)?\\d+\\.\\d+\\.\\d(p\\d+)?[^>]+>)",starts:{end:"$",contains:c}}];return{aliases:["rb","gemspec","podspec","thor","irb"],keywords:n,illegal:/\/\*/,contains:i.concat(u).concat(c)}})),ye.registerLanguage("go",(function(e){var t={keyword:"break default func interface select case map struct chan else goto package switch const fallthrough if range type continue for import return var go defer bool byte complex64 complex128 float32 float64 int8 int16 int32 int64 string uint8 uint16 uint32 uint64 int uint uintptr rune",literal:"true false iota nil",built_in:"append cap close complex copy imag len make new panic print println real recover delete"};return{aliases:["golang"],keywords:t,illegal:"</",contains:[e.C_LINE_COMMENT_MODE,e.C_BLOCK_COMMENT_MODE,{className:"string",variants:[e.QUOTE_STRING_MODE,{begin:"'",end:"[^\\\\]'"},{begin:"`",end:"`"}]},{className:"number",variants:[{begin:e.C_NUMBER_RE+"[i]",relevance:1},e.C_NUMBER_MODE]},{begin:/:=/},{className:"function",beginKeywords:"func",end:/\s*\{/,excludeEnd:!0,contains:[e.TITLE_MODE,{className:"params",begin:/\(/,end:/\)/,keywords:t,illegal:/["']/}]}]}})),ye.registerLanguage("php",(function(e){var t={begin:"\\$+[a-zA-Z_-ÿ][a-zA-Z0-9_-ÿ]*"},n={className:"meta",begin:/<\?(php)?|\?>/},r={className:"string",contains:[e.BACKSLASH_ESCAPE,n],variants:[{begin:'b"',end:'"'},{begin:"b'",end:"'"},e.inherit(e.APOS_STRING_MODE,{illegal:null}),e.inherit(e.QUOTE_STRING_MODE,{illegal:null})]},a={variants:[e.BINARY_NUMBER_MODE,e.C_NUMBER_MODE]};return{aliases:["php","php3","php4","php5","php6","php7"],case_insensitive:!0,keywords:"and include_once list abstract global private echo interface as static endswitch array null if endwhile or const for endforeach self var while isset public protected exit foreach throw elseif include __FILE__ empty require_once do xor return parent clone use __CLASS__ __LINE__ else break print eval new catch __METHOD__ case exception default die require __FUNCTION__ enddeclare final try switch continue endfor endif declare unset true false trait goto instanceof insteadof __DIR__ __NAMESPACE__ yield finally",contains:[e.HASH_COMMENT_MODE,e.COMMENT("//","$",{contains:[n]}),e.COMMENT("/\\*","\\*/",{contains:[{className:"doctag",begin:"@[A-Za-z]+"}]}),e.COMMENT("__halt_compiler.+?;",!1,{endsWithParent:!0,keywords:"__halt_compiler",lexemes:e.UNDERSCORE_IDENT_RE}),{className:"string",begin:/<<<['"]?\w+['"]?$/,end:/^\w+;?$/,contains:[e.BACKSLASH_ESCAPE,{className:"subst",variants:[{begin:/\$\w+/},{begin:/\{\$/,end:/\}/}]}]},n,{className:"keyword",begin:/\$this\b/},t,{begin:/(::|->)+[a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*/},{className:"function",beginKeywords:"function",end:/[;{]/,excludeEnd:!0,illegal:"\\$|\\[|%",contains:[e.UNDERSCORE_TITLE_MODE,{className:"params",begin:"\\(",end:"\\)",contains:["self",t,e.C_BLOCK_COMMENT_MODE,r,a]}]},{className:"class",beginKeywords:"class interface",end:"{",excludeEnd:!0,illegal:/[:\(\$"]/,contains:[{beginKeywords:"extends implements"},e.UNDERSCORE_TITLE_MODE]},{beginKeywords:"namespace",end:";",illegal:/[\.']/,contains:[e.UNDERSCORE_TITLE_MODE]},{beginKeywords:"use",end:";",contains:[e.UNDERSCORE_TITLE_MODE]},{begin:"=>"},r,a]}}));var xe,Ee=we((function(e,t){
 /*!
      * clipboard.js v2.0.4
