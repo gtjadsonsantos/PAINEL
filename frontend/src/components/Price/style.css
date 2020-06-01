@@ -1,29 +1,33 @@
 .containerPrice {
     width: 100%;
-    height: 90%;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-background-color);
+
 }
-.containerPrice {
-    height: 110px !important;
-    width: 100%;
-    padding: 0;
-    margin: 0 0 0 0;
-}
+
 .containerPrice p{ 
     margin-top: 5px;
+    margin-right: 10px;
     font-size: small;
+    color: #fff;
 }
-.containerPrice h2 {
-    color: #000;
-    margin-top: 14px;
-}
+
 .containerPrice div {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
 }
+
 .high {
-    color: rgb(175, 4, 4);
+    color: rgb(255, 0, 0);
+    font-family: 'Roboto';
 }
 .low {
-    color: rgb(13, 126, 18);
+    color: rgb(55, 255, 0);
+    font-family: 'Roboto';
+
 }

@@ -1,29 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import OAuth from 'oauth'
 import config from '../../config'
-import Time from '../../global/Time'
+import Time from '../Time'
+import Price from '../Price'
 
 import './style.css'
 
 
 function Weather() {
   const [weather, setWeather] = useState([])
-  const [getday, setGetDay] = useState('')
-  const [getfullyear, setFullYear] = useState('')
-  const [gethours, setGeHours] = useState('')
-  const [getminutes, setGetMinutes] = useState('')
-  const [month, setMonth] = useState('')
+  const [update, setUpdate] = useState(0)
 
-
-  function UpdateHours() {
-    setGetDay(Time().getday)
-    setFullYear(Time().getfullyear)
-    setGeHours(Time().gethours)
-    setGetMinutes(Time().getminutes)
-    setMonth(Time().month)
-  }
-
-  setInterval(UpdateHours, 1000);
 
   useEffect(() => {
     /* https://developer.yahoo.com/weather/documentation.html#oauth-nodejs */
@@ -93,15 +80,17 @@ function Weather() {
       );
     }
     getDada()
-  }, [])
+  }, [update])
+
+  setInterval(()=>{
+    setUpdate(Math.random() * 100)
+  }, 50000);
+
+
   return (
 
     <div className="containerWeather" >
-      <div className="containerHours">
-        <h3>Santa Catarina</h3>
-        <p>{getday} de {month} de {getfullyear}</p>
-        <p>{gethours}:{getminutes}</p>
-      </div>
+      <Time/>
       <ul className="containerlist">
         {
           weather.map(weatherday => (
@@ -114,6 +103,7 @@ function Weather() {
           ))
         }
       </ul>
+      <Price/>
     </div>
   )
 }

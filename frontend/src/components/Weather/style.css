@@ -2,9 +2,9 @@
   position: absolute;
   width: 14.2%;
   min-width: 245.52px;
-  height: 384px;
+  height: 434px;
   right: 0px;
-  bottom: 20px;
+  bottom: 0px;
   background: #fff;
   display: flex;
   flex-direction: column;
@@ -20,33 +20,4 @@
 
 .containerWeather .item-list img {
   object-fit: scale-down;
-}
-.containerHours {
-  width: 100%;
-  background-color: var(--primary-background-color);
-  height: 70px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  flex-direction: column;
-
-  border-radius: 10px 0px 0px 180px ;
-}
-.containerHours h3 {
-  font-family: 'Roboto',sans-serif;
-  color: #fff;
-  font-size: 15;
-}
-
-.containerHours p {
-  font-family: 'Roboto',sans-serif;
-  color: #fff;
-  font-size: 15;
-  text-align: center;
-  width: 100%;
-} 
-.containerHours p:nth-child(3){
-  text-align: right;
-  padding-right: 10px;
-
 }
