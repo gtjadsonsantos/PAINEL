@@ -92,6 +92,7 @@ Retorne a raiz do projeto e suba o container da aplicação
 
 # INTEGRAÇÃO  
 
+
 - [API PARA PREVISÃO DO TEMPO](https://developer.yahoo.com/api/)
 - [API PARA COTAÇÃO DO DOLAR](https://docs.awesomeapi.com.br/api-de-moedas)
 
