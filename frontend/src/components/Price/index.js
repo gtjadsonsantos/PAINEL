@@ -15,15 +15,18 @@ function Price() {
     getPrice()
   }, [update])
 
-  setInterval(() => {
-    setUpdate(Math.random() * 100)
-  }, 50000)
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setUpdate(update => update + 1);
+    }, 50000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <>
       <div className="containerPrice">
         <div>
-          <p><strong className="high">Alta</strong> {price.high}</p>
-          <p><strong className="low">Baixa</strong> {price.low}</p>
+          <p><strong className="ask">Dolar: </strong>{price.ask}</p>
         </div>
       </div>
     </>

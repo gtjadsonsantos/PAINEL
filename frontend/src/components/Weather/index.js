@@ -82,9 +82,13 @@ function Weather() {
     getDada()
   }, [update])
 
-  setInterval(()=>{
-    setUpdate(Math.random() * 100)
-  }, 50000);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setUpdate(update => update + 1);
+    }, 50000);
+    return () => clearInterval(interval);
+  }, []);
+  
 
 
   return (

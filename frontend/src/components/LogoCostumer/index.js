@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import config from "../../config"
 import Weather from '../Weather'
 
@@ -7,16 +7,22 @@ import "./style.css"
 
 
 
-export default function LogoCostumer() {   
-    
+export default function LogoCostumer() {
+
     function handleShowLogo() {
         document.getElementById('containerCostumer').style.display = "flex";
-        setTimeout(()=>{
+        setTimeout(() => {
             document.getElementById('containerCostumer').style.display = "none";
-        },20000)
+        }, 20000)
     }
-    
-    setInterval(handleShowLogo,60000)
+
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            handleShowLogo();
+        }, 60000);
+        return () => clearInterval(interval);
+    }, []);
 
     return (
         <div id="containerCostumer" className="contianerCostumer">
