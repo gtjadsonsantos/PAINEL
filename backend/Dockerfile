@@ -1,4 +1,5 @@
-FROM node:12.16.1
+FROM node:12-alpine
+##FROM node:12.16.1
 
 # Install libs 
 RUN yarn global add nw-gyp
