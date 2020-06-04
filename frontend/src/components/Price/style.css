@@ -22,12 +22,7 @@
     justify-content: space-evenly;
 }
 
-.high {
-    color: rgb(255, 0, 0);
+.ask {
+    color: rgb(255, 255, 255);
     font-family: 'Roboto';
-}
-.low {
-    color: rgb(55, 255, 0);
-    font-family: 'Roboto';
-
 }

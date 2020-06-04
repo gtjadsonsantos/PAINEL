@@ -22,6 +22,7 @@
 - 🤩 **Provisionamento** 
 - 🤩 **Multi-Platorma(`web`,`mobile`)** 
 
+
 # APLICATIVOS 
 
 - [ANDROID](https://exp-shell-app-assets.s3.us-west-1.amazonaws.com/android/%40jadson179/halls-panel-5333fa33f6c947c6959f869a65f5f203-signed.apk)
@@ -89,9 +90,11 @@ Retorne a raiz do projeto e suba o container da aplicação
 - `password`: admin
 
 
-# DOCUMENTAÇÃO 
+# INTEGRAÇÃO  
 
-- [DOC BACKEND](https://jadson179.github.io/PAINEL/docs/index.html)
+
+- [API PARA PREVISÃO DO TEMPO](https://developer.yahoo.com/api/)
+- [API PARA COTAÇÃO DO DOLAR](https://docs.awesomeapi.com.br/api-de-moedas)
 
 
 ## Licença 📝
