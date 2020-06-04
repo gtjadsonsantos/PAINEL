@@ -17,9 +17,11 @@ function Weather() {
     function getDada() {
 
       const header = {
-        "X-Yahoo-App-Id": config.weather.appID
+        "X-Yahoo-App-Id": config.weather.appID,
+        "Access-Control-Request-Method": "GET",
+        "Access-Control-Request-Headers": "X-PINGOTHER, Content-Type"
       };
-
+      
       const request = new OAuth.OAuth(
         null,
         null,
@@ -31,7 +33,7 @@ function Weather() {
         null,
         header
       );
-
+    
       request.get(
         'https://weather-ydn-yql.media.yahoo.com/forecastrss?location=florianópolis&u=c&format=json',
         null,
