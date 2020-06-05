@@ -24,10 +24,11 @@ COPY . /frontend
 
 RUN echo "export default { backend: {  url: 'http://${ADDRESS_BACKEND_PUBLIC}:3333' }, logo: '${LOGO}', weather: { appID: '${APPID}', clientID: '${CLIENTID}', clientSecret: '${CLIENTE_SECRET}'  }  }" > /frontend/src/config.js
 
-RUN npm install
+RUN yarn 
+RUN yarn global add react-scripts
 
-RUN npm run build 
+RUN yarn build 
 
 EXPOSE 8080 
 
-CMD [ "npm","run","server"]
+CMD [ "yarn","server"]
