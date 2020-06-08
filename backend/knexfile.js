@@ -3,8 +3,12 @@
 module.exports = {
 
   development: {
-    client: 'sqlite3',
+    client: 'pg',
     connection: {
+      host : '0.0.0.0',
+      user : 'root',
+      password : 'root',
+      database : 'test',
       filename: `${__dirname}/database/database.db`
     },
     useNullAsDefault: true,
