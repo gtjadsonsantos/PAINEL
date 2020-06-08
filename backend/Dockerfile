@@ -11,6 +11,8 @@ COPY ./package.json /backend
 
 COPY . /backend
 
+RUN yarn install 
+
 EXPOSE 3333 
 
 CMD [ "yarn","start"]
