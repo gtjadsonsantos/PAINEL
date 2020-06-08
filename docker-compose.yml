@@ -1,7 +1,7 @@
 version: "3.3"
 
 services: 
-    backendteste: 
+    backend-painel: 
         build: ./backend
         volumes: 
             - beckend:/backend
@@ -9,8 +9,8 @@ services:
             - 3333:3333
         restart: always
             
-    frontendteste:
-        build: ./backend
+    frontend-painel:
+        build: ./frontend
         volumes: 
             - ./config.js:/frontend/src/config.js
         ports:
