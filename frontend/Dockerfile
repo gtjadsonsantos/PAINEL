@@ -1,7 +1,7 @@
 FROM node:12-alpine
 
 ## CONFIG ADDRESS TO COMUNICATION WITH BACKEND
-ENV ADDRESS_BACKEND_PUBLIC "192.168.0.104"
+ENV ADDRESS_BACKEND_PUBLIC "192.168.0.21"
 
 ## BEGIN CONFIG API WEATHER
 ENV APPID "hFc5Rx4a"
@@ -12,7 +12,7 @@ ENV CLIENTE_SECRET "4ab18573d6fdd4368f6deaa6bded2d36603a9864"
 
 ## LOGO
 
-ENV LOGO "http://192.168.0.104:3333/ceu.png"
+ENV LOGO "https://jadson179.github.io/SITE-PAINEL/logo192.png"
 
 
 RUN mkdir -p /frontend
@@ -24,10 +24,10 @@ COPY . /frontend
 
 RUN echo "export default { backend: {  url: 'http://${ADDRESS_BACKEND_PUBLIC}:3333' }, logo: '${LOGO}', weather: { appID: '${APPID}', clientID: '${CLIENTID}', clientSecret: '${CLIENTE_SECRET}'  }  }" > /frontend/src/config.js
 
-RUN yarn global add react-scripts
-RUN yarn 
-RUN yarn build 
+RUN npm install
+
+RUN npm run build 
 
 EXPOSE 8080 
 
-CMD [ "yarn","server"]
+CMD [ "npm","run","server"]
