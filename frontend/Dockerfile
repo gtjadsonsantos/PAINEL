@@ -12,7 +12,7 @@ ENV CLIENTE_SECRET "4ab18573d6fdd4368f6deaa6bded2d36603a9864"
 
 ## LOGO
 
-ENV LOGO "https://jadson179.github.io/SITE-PAINEL/logo192.png"
+ENV LOGO "http://192.168.0.104:3333/ceu.png"
 
 
 RUN mkdir -p /frontend

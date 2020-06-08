@@ -9,8 +9,6 @@ WORKDIR /backend
 
 COPY ./package.json /backend
 
-RUN yarn
-
 COPY . /backend
 
 EXPOSE 3333 
