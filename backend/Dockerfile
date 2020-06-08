@@ -1,25 +1,19 @@
-FROM node:12.16.3
+FROM node:12-alpine
+##FROM node:12.16.1
 
 # Install libs 
 RUN yarn global add nw-gyp
-
 RUN yarn global add sqlite3 
 
-
 RUN mkdir -p /backend
-
-RUN npm install -g npx
-
-RUN npx knex migrate:latest
-
-RUN npx knex seed:run
-
 WORKDIR /backend
 
 COPY ./package.json /backend
+
+RUN npm install
 
 COPY . /backend
 
 EXPOSE 3333 
 
-CMD [ "yarn","start"]
+CMD [ "npm","run","start"]
