@@ -2,7 +2,7 @@ version: "3.3"
 
 services: 
     backendteste: 
-        image: disciplina/backend:1.0
+        build: ./backend
         volumes: 
             - beckend:/backend
         ports: 
@@ -10,7 +10,7 @@ services:
         restart: always
             
     frontendteste:
-        image: disciplina/frontend:1.0
+        build: ./backend
         volumes: 
             - ./config.js:/frontend/src/config.js
         ports:
@@ -18,7 +18,7 @@ services:
         command: > 
             sh -c "yarn build && 
                    yarn server"
-        depends_on:
+        depends_on: 
             - backendteste
         restart: always
 
