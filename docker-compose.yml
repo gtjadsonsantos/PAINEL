@@ -1,14 +1,14 @@
 version: "3.3"
 services:
-    painelbackend:
-        build: ./backend
+    backendteste:
+        image: disciplina/backend:1.0
         volumes:
             - beckend:/backend
         ports:
             - 3333:3333
         restart: always
-    painelfrontend:
-            build: ./frontend
+    frontendteste:
+        image: disciplina/frontend:1.0
         volumes:
             - ./config.js:/frontend/src/config.js
         ports:
@@ -17,7 +17,7 @@ services:
             sh -c "yarn build &&
                    yarn server"
         depends_on:
-            - painelbackend
+            - backendteste
         restart: always
 volumes:
     beckend:
