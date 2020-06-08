@@ -1,27 +1,15 @@
 version: "3.3"
+
 services: 
-    postgres:
-        image: postgres
-        environment:
-            POSTGRES_USER: root
-            POSTGRES_PASSWORD: root
-            POSTGRES_DB: test
-        volumes: 
-            - postgress:/var/lib/postgresql
-        ports: 
-            - 5432:5432
-        restart: always
-    backend: 
+    backendteste: 
         image: disciplina/backend:1.0
         volumes: 
             - beckend:/backend
         ports: 
             - 3333:3333
         restart: always
-        depends_on:
-            - postgres
             
-    frontend:
+    frontendteste:
         image: disciplina/frontend:1.0
         volumes: 
             - ./config.js:/frontend/src/config.js
@@ -31,9 +19,8 @@ services:
             sh -c "yarn build && 
                    yarn server"
         depends_on:
-            - backend
+            - backendteste
         restart: always
 
 volumes:
     beckend:
-    postgress:
