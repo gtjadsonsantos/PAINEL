@@ -1,16 +1,20 @@
-FROM node:12.13.1
-
-RUN yarn add sqlite3 
+FROM node:10.21.0
 
 RUN mkdir -p /backend
+
 WORKDIR /backend
 
 COPY ./package.json /backend
 
-RUN npm install
-
 COPY . /backend
+
+RUN yarn global add sqlite3
+RUN yarn global add node-pre-gyp
+
+RUN yarn 
+    
+RUN yarn add axios body-parser cors express jsonwebtoken knex multer socket.io sqlite sqlite3
 
 EXPOSE 3333 
 
-CMD [ "npm","run","start"]
+CMD [ "yarn","start"]
