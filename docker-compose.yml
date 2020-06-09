@@ -21,6 +21,7 @@ services:
                    yarn server"
         depends_on: 
             - backend
+            - backendteste
         restart: always
         
 volumes:
