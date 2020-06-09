@@ -1,7 +1,7 @@
 version: "3.3"
 services: 
     backend: 
-        image: disciplina/backend:1.0
+        build: ./backend
         volumes: 
             - painel-ceu-backend:/backend
         ports: 
@@ -10,13 +10,13 @@ services:
         restart: always
             
     frontend:
-        image: disciplina/frontend:1.0
+        build: ./frontend
         volumes: 
             - ./config.js:/frontend/src/config.js
         ports:
             - 8080:8080
         command: > 
-            sh -c "yarn build && 
+            sh -c "yarn build &&    
                    node index.js"
         depends_on: 
             - backend

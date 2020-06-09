@@ -1,0 +1,14 @@
+version: "3.3"
+services: 
+    painel: 
+        image: painel:latest
+        volumes: 
+            - painel-ceu:/backend
+            - painel-ceu:/frontend
+        ports: 
+            - 3333:3333
+        user: root
+        restart: always
+        
+volumes:
+    painel-ceu: {}
