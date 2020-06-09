@@ -1,9 +1,6 @@
-FROM node:12-alpine
-##FROM node:12.16.1
+FROM node:12.13.1
 
-# Install libs 
-RUN yarn global add nw-gyp
-RUN yarn global add sqlite3 
+RUN yarn add sqlite3 
 
 RUN mkdir -p /backend
 WORKDIR /backend
