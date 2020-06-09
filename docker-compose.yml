@@ -1,7 +1,7 @@
 version: "3.3"
 
 services: 
-    backend-painel: 
+    backend: 
         build: ./backend
         volumes: 
             - beckend:/backend
@@ -9,7 +9,7 @@ services:
             - 3333:3333
         restart: always
             
-    frontend-painel:
+    frontend:
         build: ./frontend
         volumes: 
             - ./config.js:/frontend/src/config.js
@@ -19,6 +19,7 @@ services:
             sh -c "yarn build && 
                    yarn server"
         depends_on: 
+            - backend
             - backendteste
         restart: always
 
