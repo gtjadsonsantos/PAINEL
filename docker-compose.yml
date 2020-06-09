@@ -2,15 +2,16 @@ version: "3.3"
 
 services: 
     backend: 
-        build: ./backend
+        image: disciplina/backend:1.0
         volumes: 
-            - beckend:/backend
+            - painel-ceu-backend:/backend
         ports: 
             - 3333:3333
+        user: node
         restart: always
             
     frontend:
-        build: ./frontend
+        image: disciplina/frontend:1.0
         volumes: 
             - ./config.js:/frontend/src/config.js
         ports:
@@ -21,6 +22,6 @@ services:
         depends_on: 
             - backend
         restart: always
-
+        
 volumes:
-    beckend:
+    painel-ceu-backend:
