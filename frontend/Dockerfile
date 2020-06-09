@@ -26,7 +26,7 @@ RUN echo "export default { backend: {  url: 'http://${ADDRESS_BACKEND_PUBLIC}:33
 
 RUN yarn 
 
-RUN yarn build 
+RUN yarn build  
 
 EXPOSE 8080 
 
