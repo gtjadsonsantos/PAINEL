@@ -15,7 +15,7 @@ RUN yarn global add sqlite3
 RUN yarn global add node-pre-gyp
 
 RUN yarn 
-    
+
 RUN yarn add axios body-parser cors express jsonwebtoken knex multer socket.io sqlite sqlite3
 
 EXPOSE 3333 
