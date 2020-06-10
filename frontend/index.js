@@ -4,7 +4,6 @@ const path = require('path');
 const app = express();
 const server = http.createServer(app)
 
-
 app.use(express.static(path.join(__dirname, 'build')));
 
 app.get('/', function(req, res) {

@@ -26,6 +26,7 @@ io.on('connection', socket => {
 
 app.use(routes)
 app.use(express.static(path.join('imgs')))
+app.use(express.static(path.join('build')))
 
 
 server.listen(3333, ()=>{
