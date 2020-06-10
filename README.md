@@ -47,33 +47,23 @@ Faça o download do repositório
     git clone https://github.com/jadson179/PAINEL.git 
 ```
 
-### CONFIGURE SUA KEY SECRET
-
-Essa chave será usada para encriptar os tokens gerados pela aplicação
-
-
-```bash
-  cd ./backend && vim config.js
-```
-
 ### CONFIGURE ALGUMAS VARIÁVEIS DE AMBIENTE NO FRONTEND
 
 Essa configuração permite que o frontend conheça o backend do painel e juntamente a isso, a configuração da api de tempo do yahoo. É necessário ter uma conta de desenvolvedor no yahoo e criar um app na plataforma para ter acesso aos dados de configuração para a api. [Criar Conta](https://developer.yahoo.com/api/) 
 
 
 ```Dockerfile
-  cd ./frontend && vim Dockerfile 
+# docker-compose.yml
 
-  ## Visualização do que deve ser configurado
+  ## Visualização da configuração que deve ser previamente feita
 
-  ENV ADDRESS_BACKEND_PUBLIC "ENDEREÇO DO SERVIDOR PAINEL"
-  ENV APPID "APP ID DO SEU APLICATIVO CRIADO  NO YAHOO"
-  ENV CLIENTID "ID DO CLIENTE GERADO NA CRIAÇÃO DO SEU APP NO YAHOO"
-  ENV CLIENTE_SECRET "SENHA DO CLIENTE GERADO NA CRIAÇÃO DO SEU APP NO YAHOO"
-  ENV LOGO "ENDEREÇO DA IMAGEM QUE VAI SER USADA NA NO EMPREENDIMENTO"
+   KEY_JWT: "HASH PARA ENCRIPTAR OS TOKENS"
+   LOGO: "ENDEREÇO DA IMAGEM QUE VAI SER USADA NA NO EMPREENDIMENTO"
+   APP_ID: "APP ID DO SEU APLICATIVO CRIADO  NO YAHOO"
+   CLIENT_ID: "ID DO CLIENTE GERADO NA CRIAÇÃO DO SEU APP NO YAHOO"
+   CLIENT_SECRET: "SENHA DO CLIENTE GERADO NA CRIAÇÃO DO SEU APP NO YAHOO"
 
 ```
-
 
 Retorne a raiz do projeto e suba o container da aplicação
 
