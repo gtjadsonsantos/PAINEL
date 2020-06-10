@@ -1,12 +1,14 @@
 const { Router } = require('express')
 const multer = require('multer')
-const path  = require('path')
+const path = require('path')
 const validate = require('./middlewares/validatejwt')
 const validateusertype = require('./middlewares/validateusertype')
 const multerConfig = require('./utils/multer')
 const UserController = require('./controllers/UserController')
 const FloorController = require('./controllers/FloorController')
 const RoomController = require('./controllers/RoomController')
+
+const { weather,logo } = require = require('./config').config
 
 const routes = Router()
 
@@ -44,7 +46,7 @@ routes.get('/admin', function (req, res) {
 
 
 routes.get('/config', function (req, res) {
-    res.sendFile(path.join(__dirname, 'build', 'index.html'));
+    res.json({weather, logo})
 });
 
 
