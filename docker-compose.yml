@@ -5,16 +5,17 @@ services:
     painel: 
         build: . 
         volumes: 
-            - backend2:/backend
+            - vpainel:/backend
         ports: 
             - 3333:3333
         user: root
         environment: 
-            LOGO: "https://jadson179.github.io/SITE-PAINEL/logo192.png"
+            KEY_JWT: "24434023039049323445344342"
+            LOGO: "https://github.com/jadson179/PAINEL/blob/develop/images/logo_CEU.png?raw=true"
             APP_ID: "hFc5Rx4a"
             CLIENT_ID: "dj0yJmk9aDFYd3YxaGtBZHNXJmQ9WVdrOWFFWmpOVko0TkdFbWNHbzlNQS0tJnM9Y29uc3VtZXJzZWNyZXQmc3Y9MCZ4PTEy"
             CLIENT_SECRET: "4ab18573d6fdd4368f6deaa6bded2d36603a9864"
         restart: always
         
 volumes:
-    backend2: 
+    vpainel: 

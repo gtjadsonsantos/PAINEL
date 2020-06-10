@@ -1,4 +1,5 @@
-FROM node:10.21.0
+#FROM node:10.21.0
+FROM node:10-alpine
 
 #BEGIN BACKEND 
 RUN mkdir -p /backend 

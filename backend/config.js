@@ -1,6 +1,5 @@
-exports.secretToken = "98924hub2j4igio54j#@!RT$#T#GBT$e092tmgG#GVSCVSV#EBRYN$%#$WER@FC#GGW$2@??>:<ILIILIÇÇIJIETAW{A}A}"
-
 module.exports = {
+    secretToken: `${ process.env.KEY_JWT || "3435434213245432343545331343543454-0294jt2inojrqg34gb34wt3qrwfivbji3vq2noqnngerbjwn4newroaenvjte23435"}`,
     config: {
         logo: `${ process.env.LOGO ||'https://jadson179.github.io/SITE-PAINEL/logo192.png'}`,
         weather: {
