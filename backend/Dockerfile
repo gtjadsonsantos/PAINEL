@@ -1,5 +1,8 @@
 FROM node:10.21.0
 
+RUN yarn add sqlite3 
+
+
 RUN mkdir -p /backend
 
 WORKDIR /backend
