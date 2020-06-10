@@ -9,7 +9,7 @@
 }
 
 .logoConstumer  {
-    width: 200px;
-    height: 150px;
+    max-width: 350px;
+    max-height: 150px;
     object-fit: scale-down;
 }

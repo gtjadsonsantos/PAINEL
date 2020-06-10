@@ -1,25 +1,18 @@
-FROM node:10.21.0
+#FROM node:10.21.0
+FROM node:10-alpine
 
-RUN mkdir -p /backend
-
-RUN mkdir -p /frontend
-
-COPY ./backend/package.json /backend
-
+#BEGIN BACKEND 
+RUN mkdir -p /backend 
 COPY ./backend /backend
-
 WORKDIR /backend
+RUN yarn global add sqlite3 && yarn global add node-pre-gyp && yarn && yarn add axios body-parser cors express jsonwebtoken knex multer socket.io sqlite sqlite3
+#END BACKEND 
 
-RUN yarn global add sqlite3
-RUN yarn global add node-pre-gyp
-
-RUN yarn 
-
-RUN yarn add axios body-parser cors express jsonwebtoken knex multer socket.io sqlite sqlite3
-
+#BEGIN FRONTEND 
+RUN mkdir -p /frontend
 COPY ./frontend /frontend
-
-RUN cd /frontend && yarn && yarn build
+RUN cd /frontend && yarn && yarn build && rm -rf /frontend
+#END FRONTEND 
 
 EXPOSE 3333 
 

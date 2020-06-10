@@ -1,15 +1,21 @@
+# Cria um container somente unificando as os dois projetos
+
 version: "3.3"
 services: 
     painel: 
-        image: disciplina/painel_de_salas:1.0 
+        build: . 
         volumes: 
-            - painelbackend:/backend
-            - painelfrontend:/frontend
+            - vpainel:/backend
         ports: 
             - 3333:3333
         user: root
+        environment: 
+            KEY_JWT: "24434023039049323445344342"
+            LOGO: "https://github.com/jadson179/PAINEL/blob/develop/images/logo_CEU.png?raw=true"
+            APP_ID: "hFc5Rx4a"
+            CLIENT_ID: "dj0yJmk9aDFYd3YxaGtBZHNXJmQ9WVdrOWFFWmpOVko0TkdFbWNHbzlNQS0tJnM9Y29uc3VtZXJzZWNyZXQmc3Y9MCZ4PTEy"
+            CLIENT_SECRET: "4ab18573d6fdd4368f6deaa6bded2d36603a9864"
         restart: always
         
 volumes:
-    painelbackend: 
-    painelfrontend:
+    vpainel: 

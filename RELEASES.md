@@ -62,4 +62,4 @@ a ação irá duplicar o usuário administrador e assim o servidor irá para de 
 
 ## VERSÂO 1.0.7
 
-* Update Interface web
+* Update Interface web.
