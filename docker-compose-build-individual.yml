@@ -1,3 +1,5 @@
+# Cria containers isolados do backend e frontend
+
 version: "3.3"
 services: 
     backend: 

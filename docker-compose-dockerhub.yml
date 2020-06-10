@@ -1,11 +1,12 @@
-# Cria um container somente unificando as os dois projetos
+# imagem para arquitetura arm, contém o build da imagem isolada
 
 version: "3.3"
 services: 
     painel: 
-        build: . 
+        image: disciplina/painel_de_salas:1.0 
         volumes: 
             - painelbackend:/backend
+            - painelfrontend:/frontend
         ports: 
             - 3333:3333
         user: root
@@ -13,3 +14,4 @@ services:
         
 volumes:
     painelbackend: 
+    painelfrontend:

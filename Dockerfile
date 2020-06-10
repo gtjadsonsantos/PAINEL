@@ -1,7 +1,7 @@
 FROM node:10.21.0
 
 #BEGIN BACKEND 
-RUN mkdir -p /backend
+RUN mkdir -p /backend 
 COPY ./backend/package.json /backend
 COPY ./backend /backend
 WORKDIR /backend
@@ -16,6 +16,7 @@ RUN yarn add axios body-parser cors express jsonwebtoken knex multer socket.io s
 RUN mkdir -p /frontend
 COPY ./frontend /frontend
 RUN cd /frontend && yarn && yarn build
+RUN rm -rf /frontend
 #END FRONTEND 
 
 EXPOSE 3333 

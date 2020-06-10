@@ -43,6 +43,9 @@ routes.get('/admin', function (req, res) {
 });
 
 
+routes.get('/config', function (req, res) {
+    res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
 
 
 
