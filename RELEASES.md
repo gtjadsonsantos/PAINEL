@@ -63,3 +63,20 @@ a ação irá duplicar o usuário administrador e assim o servidor irá para de 
 ## VERSÂO 1.0.7
 
 * Update Interface web.
+
+## VERSÃO 1.0.8
+
+**BACKEND**
+* Refatoração do backend
+* * Armazenamento das imagens de previsão do tempo no backend do painel
+* * Melhorias nos controllers
+* * Leitura de variáveis de ambiente caso existam 
+
+**FRONTEND**
+* Funcionaliade para gestão de andares
+* Refatoração do frontend
+* * Alterado endereço das imagens da api de previsão do tempo, para pegar na propria aplicação
+* * Retirado a responsabilidade do componente administração gerenciar/manter o estado do menu, foi incluido o redux para o mesmo
+
+
+
