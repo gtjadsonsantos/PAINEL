@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux'
+import { setNavigation } from '../../store/Administration'
+
 import './style2.css'
 import CreateUser from '../CreateUser'
 import AlterPassword from '../AlterPassword'
@@ -8,7 +11,12 @@ import UpdateRoom from '../UpdateRoom'
 import LogoutSystem from '../Logout'
 import DeleteRoom from '../DeleteRoom'
 import DeleteUser from '../DeleteUser'
+import CreateFloor from '../CreateFloor'
+import DeleteFloor from '../DeleteFloor'
+
+
 import ActionAlert from '../ActionAlert/index'
+
 
 function Administration() {
     const action = [
@@ -18,48 +26,112 @@ function Administration() {
         <AddRoom />,
         <UpdateRoom />,
         <DeleteRoom />,
-        <DeleteUser />
+        <DeleteUser />,
+        <CreateFloor />,
+        <DeleteFloor/>
     ]
 
-    const [optionCurrent,setOptionCurrent] = useState(0)
+    const dispatch = useDispatch()
 
-    const [create,setCreate] = useState(0)
-    const [deleter,setDelete] = useState(0)
-    const [update,setUpdate] = useState(0)
-    
-    function handleAdministration(optionSidebar){
-        
-        if(optionSidebar === "user"){
-            setOptionCurrent(0)
-            setCreate(0)
-            setDelete(6)
-            setUpdate(1)
-        }else if(optionSidebar === "hall") {
-                setOptionCurrent(3)
-                setCreate(3)
-                setDelete(5)
-                setUpdate(4)
+    const { current, create, deleter, update } = useSelector((state) => state.Administration)
+
+    const [optionCurrent, setOptionCurrent] = useState(current)
+
+    function handleAdministration(optionSidebar) {
+
+        switch (optionSidebar) {
+            case "user":
+                dispatch(setNavigation(
+                    {
+                        current: 0,
+                        create: {
+                            value: 0,
+                            show: "flex"
+                        },
+                        deleter: {
+                            value: 6,
+                            show: "flex"
+                        },
+                        update: {
+                            value: 1,
+                            show: "flex"
+                        }
+                    }))
+                break;
+            case "hall":
+                dispatch(setNavigation(
+                    {
+                        current: 3,
+                        create: {
+                            value: 3,
+                            show: "flex"
+                        },
+                        deleter: {
+                            value: 5,
+                            show: "flex"
+                        },
+                        update: {
+                            value: 4,
+                            show: "flex"
+                        }
+                    }))
+                break;
+
+            case "floor":
+                dispatch(setNavigation(
+                    {
+                        current: 7,
+                        create: {
+                            value: 7,
+                            show: "flex"
+                        },
+                        deleter: {
+                            value: 8,
+                            show: "flex"
+                        },
+                        update: {
+                            value: 4,
+                            show: "none"
+                        }
+                    }))
+                break;
+
+            case "users":
+                dispatch(setNavigation(
+                    {
+                        current: 2,
+                        create: {
+                            value: 0,
+                            show: "none"
+                        },
+                        deleter: {
+                            value: 0,
+                            show: "none"
+                        },
+                        update: {
+                            value: 0,
+                            show: "none"
+                        }
+                    }))
+
+                break;
+            default:
+                break;
         }
     }
-    useEffect(()=>{
-            setCreate(0)
-            setDelete(6)
-            setUpdate(1)
-    },[])
+    function handleSidebar(valor) {
 
-
-    function handleSidebar(valor){
-
-        if(valor == 0){
-            document.getElementById("container-sidebar").style.left = "-300px"; 
-        }else {
-            document.getElementById("container-sidebar").style.left = "0px"; 
+        if (valor == 0) {
+            document.getElementById("container-sidebar").style.left = "-300px";
+        } else {
+            document.getElementById("container-sidebar").style.left = "0px";
         }
 
-
-
-
     }
+
+    useEffect(() => {
+        setOptionCurrent(current)
+    }, [current])
 
     return (
         <>
@@ -68,20 +140,26 @@ function Administration() {
                 <div id="container-sidebar" className="container-sidebar" >
                     <header>
                         <h2>PAINEL DE SALAS</h2>
-                        <i className="fas fa-times" onClick={()=> handleSidebar(0)} ></i>    
-                   </header>
+                        <i className="fas fa-times" onClick={() => handleSidebar(0)} ></i>
+                    </header>
                     <nav>
                         <ul>
-                            <li onClick={()=> handleAdministration("user")}>
+                            <li onClick={() => handleAdministration("user")}>
                                 <i className="fas fa-user" />
                                 <ul>
                                     <span>Usuario</span>
                                 </ul>
                             </li>
-                            <li onClick={()=> handleAdministration("hall")}>
+                            <li onClick={() => handleAdministration("hall")}>
                                 <i className="fas fa-door-closed"></i>
                                 <ul>
                                     <span>Sala</span>
+                                </ul>
+                            </li>
+                            <li onClick={() => handleAdministration("floor")}>
+                                <i className="fas fa-building"></i>
+                                <ul>
+                                    <span>Andares</span>
                                 </ul>
                             </li>
                             <a href="/view"><li>
@@ -90,7 +168,7 @@ function Administration() {
                                     <span>Painel</span>
                                 </ul>
                             </li></a>
-                            <li onClick={()=>setOptionCurrent(2)}>
+                            <li onClick={() => handleAdministration("users")}>
                                 <i className="fas fa-users"></i>
                                 <ul>
                                     <span>Usuarios</span>
@@ -98,11 +176,9 @@ function Administration() {
                             </li>
                         </ul>
                         <ul>
-                            <li>
+                            <li onClick={() => LogoutSystem()}>
                                 <i className="fas fa-sign-out-alt"></i>
-                                <li onClick={()=>LogoutSystem()}>
-                                    <span>Sair</span>
-                                </li>
+                                <span>Sair</span>
                             </li>
                         </ul>
                     </nav>
@@ -110,20 +186,18 @@ function Administration() {
                 <main className="container-main">
                     <nav className="container-navbar">
                         <ul>
-                            <li onClick={()=> setOptionCurrent(create)}>
+                            <li style={{ display: create.show }} onClick={() => setOptionCurrent(create.value)}>
                                 <i className="fas fa-plus" />
                             </li>
-                            <li onClick={()=> setOptionCurrent(deleter)}>
+                            <li style={{ display: deleter.show }} onClick={() => setOptionCurrent(deleter.value)}>
                                 <i className="fas fa-trash" />
-
                             </li>
-                            <li onClick={()=> setOptionCurrent(update)}>
+                            <li style={{ display: update.show }} onClick={() => setOptionCurrent(update.value)}>
                                 <i className="fas fa-pen" />
-
                             </li>
                         </ul>
                         <ul className="button-show-sidebar">
-                            <i class="fas fa-bars" onClick={()=> handleSidebar(1)}></i>
+                            <i className="fas fa-bars" onClick={() => handleSidebar(1)}></i>
                         </ul>
                     </nav>
                     <div className="main">
@@ -138,5 +212,3 @@ function Administration() {
 }
 
 export default Administration;
-
-

@@ -5,7 +5,7 @@ const {secretToken} = require('../config')
 
 module.exports = {
     async index (request,response) {
-       
+        
         if(request.body.username != '' && request.body.password != ''){
 
             const results = await database('Users')
@@ -14,6 +14,7 @@ module.exports = {
             .where('UserPassword','=',request.body.password)
             .limit(1)
 
+            console.log(request.body)
              
             const token = results[0] != undefined ?
             jwt.sign(results[0],secretToken,{ expiresIn: '1h' })
@@ -64,6 +65,7 @@ module.exports = {
         .where('UserName','=',request.body.username)
         .where('UserPassword','=',request.body.oldPassword)
 
+        console.log(request.body)
         return response.json(results)
 
     },  

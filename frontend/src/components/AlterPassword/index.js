@@ -21,7 +21,7 @@ function AlterPassword() {
           authorization: `Bearer ${sessionStorage.getItem('token')}`
         }
       })
-
+      
       if(data === 1 ){
         handleActionAlert("Sucesso em Atualizar Usuário",'flex','green')
       }else{
