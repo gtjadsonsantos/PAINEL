@@ -53,7 +53,7 @@ Essa configuração permite que o frontend conheça o backend do painel e juntam
 
 
 ```Dockerfile
-# docker-compose.yml
+  # docker-compose.yml
 
   ## Visualização da configuração que deve ser previamente feita
 
@@ -68,10 +68,10 @@ Essa configuração permite que o frontend conheça o backend do painel e juntam
 Retorne a raiz do projeto e suba o container da aplicação
 
 ```bash
-  docker-compose up --build -d 
+  docker-compose up -d 
 ``` 
 
-`Acesse`: http://0.0.0.0:8080
+`Acesse`: http://0.0.0.0:3333
 
 
 ### AUTENTICAÇÃO INICIAL
