@@ -77,6 +77,6 @@ a ação irá duplicar o usuário administrador e assim o servidor irá para de 
 * Refatoração do frontend
 * * Alterado endereço das imagens da api de previsão do tempo, para pegar na propria aplicação
 * * Retirado a responsabilidade do componente administração gerenciar/manter o estado do menu, foi incluido o redux para o mesmo
-
+* Funcionalidade para mudar a cor da aplicação
 
 

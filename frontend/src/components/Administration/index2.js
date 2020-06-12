@@ -13,7 +13,7 @@ import DeleteRoom from '../DeleteRoom'
 import DeleteUser from '../DeleteUser'
 import CreateFloor from '../CreateFloor'
 import DeleteFloor from '../DeleteFloor'
-
+import Themes from '../Themes'
 
 import ActionAlert from '../ActionAlert/index'
 
@@ -173,6 +173,10 @@ function Administration() {
                                 <ul>
                                     <span>Usuarios</span>
                                 </ul>
+                            </li>
+                            <li>
+                                <i className="fas fa-palette"></i>
+                                <input style={{height: "40px", width: "100px", margin: "auto"}}  type="color" onChange={color => Themes(color.target.value)} />
                             </li>
                         </ul>
                         <ul>
