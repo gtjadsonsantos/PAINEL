@@ -67,7 +67,15 @@ Essa configuração permite que o frontend conheça o backend do painel e juntam
 
 Retorne a raiz do projeto e suba o container da aplicação
 
+
+**Obs**: sendo a primeira vez, execute o comando a seguir, para montar a imagem da aplicação
+
 ```bash
+  docker-compose up --build
+``` 
+
+```bash
+  # Inicializa o container
   docker-compose up -d 
 ``` 
 

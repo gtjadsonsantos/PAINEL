@@ -64,7 +64,7 @@ a ação irá duplicar o usuário administrador e assim o servidor irá para de 
 
 * Update Interface web.
 
-## VERSÃO 1.0.8
+## VERSÃO 1.0.9
 
 **BACKEND**
 * Refatoração do backend
