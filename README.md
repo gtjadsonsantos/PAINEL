@@ -47,13 +47,13 @@ Faça o download do repositório
     git clone https://github.com/jadson179/PAINEL.git 
 ```
 
-### CONFIGURE ALGUMAS VARIÁVEIS DE AMBIENTE NO FRONTEND
+### CONFIGURE ALGUMAS VARIÁVEIS DE AMBIENTE NO [docker-compose.yml](docker-compose.yml)
 
 Essa configuração permite que o frontend conheça o backend do painel e juntamente a isso, a configuração da api de tempo do yahoo. É necessário ter uma conta de desenvolvedor no yahoo e criar um app na plataforma para ter acesso aos dados de configuração para a api. [Criar Conta](https://developer.yahoo.com/api/) 
 
 
 ```Dockerfile
-# docker-compose.yml
+  # docker-compose.yml
 
   ## Visualização da configuração que deve ser previamente feita
 
@@ -68,10 +68,10 @@ Essa configuração permite que o frontend conheça o backend do painel e juntam
 Retorne a raiz do projeto e suba o container da aplicação
 
 ```bash
-  docker-compose up --build -d 
+  docker-compose up -d 
 ``` 
 
-`Acesse`: http://0.0.0.0:8080
+`Acesse`: http://0.0.0.0:3333
 
 
 ### AUTENTICAÇÃO INICIAL

@@ -5,32 +5,39 @@ module.exports = {
 
         const results = await database('Floors')
             .select('*')
-            .join('Rooms', 'Floors.RoomID', 'Rooms.RoomID')
+            .innerJoin('Rooms', 'Rooms.FloorID', 'Floors.FloorID')
             .orderBy('Rooms.NumberRoom', 'asc')
 
+
         const query = await database('Floors')
-            .distinct('NumberFloor')
-            
+        .select('*')
+        .orderBy("NumberFloor","asc")
+
+
         return response.json({ results, query })
 
     },
     async store(request, response) {
 
-        const [{ qtdfloors }] = await database('Floors')
-            .count('*', { as: 'qtdfloors' })
-            .where('NumberFloor', '=', request.body.numberfloor)
+        try {
+            const [{ qtdfloors }] = await database('Floors')
+                .count("FloorID", { as: "qtdfloors" })
+                .where("NumberFloor", '=', request.body.numberfloor)
+                .limit(1)
 
+            if (qtdfloors == 0) {
 
-        if (qtdfloors == 0) {
-            await database('Floors')
-                .insert({
-                    NumberFloor: request.body.numberfloor,
-                    RoomID: request.body.roomid
-                })
+                await database('Floors')
+                    .insert({
+                        NumberFloor: request.body.numberfloor
+                    })
+                return response.json({ status: "Success in create floor" })
+            } else {
+                return response.json({ status: "Faild in create floor" })
+            }
 
-            return response.json({ status: "Success in create floor" })
-        } else {
-            return response.json({ status: "Faild in create floor" })
+        } catch (error) {
+            console.log(error)
         }
 
     },
@@ -47,10 +54,29 @@ module.exports = {
     },
     async delete(request, response) {
 
-        const results = await database('Floors')
-            .where('NumberFloor', '=', request.body.numberfloor)
-            .del()
+        const floorid = await database('Floors')
+            .select('FloorID')
+            .where("NumberFloor", '=', request.body.numberfloor)
+            .limit(1)
 
-        return response.json(results)
+        if (floorid[0]) {
+
+            const { FloorID } = floorid[0]
+
+            await database('Rooms')
+                .where('FloorID', "=", FloorID)
+                .delete()
+
+
+            const results = await database('Floors')
+                .where('NumberFloor', '=', request.body.numberfloor)
+                .where('FloorID', '=', FloorID)
+                .del()
+
+            return response.json(results)
+        } else {
+            return response.json(0)
+        }
+
     }
 }

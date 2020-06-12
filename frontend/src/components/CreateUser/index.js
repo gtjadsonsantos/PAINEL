@@ -10,7 +10,7 @@ function CreateUser() {
     const [ username, setUsername ] = useState('')
     const [ password, setPassword ] = useState('')
     const [ verifyPassword, setVerifyPassword ] = useState('')
-    const [usertype, setUserType] = useState('')
+    const [ usertype, setUserType] = useState('')
 
 
     async function handleCreateUser(){

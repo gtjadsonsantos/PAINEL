@@ -8,7 +8,7 @@ const UserController = require('./controllers/UserController')
 const FloorController = require('./controllers/FloorController')
 const RoomController = require('./controllers/RoomController')
 
-const { weather,logo } = require = require('./config').config
+const { weather, logo } = require = require('./config').config
 
 const routes = Router()
 
@@ -20,12 +20,12 @@ routes.put('/user', validate, UserController.update)
 routes.delete('/user', validate, validateusertype, UserController.delete)
 
 // Routes to floors
-routes.post('/floor', validate, FloorController.store)
+routes.post('/floor', validate, validateusertype, FloorController.store)
 routes.get('/floors', FloorController.index)
-routes.put('/floor', validate, FloorController.update)
-routes.delete('/floor', validate, FloorController.delete)
+routes.put('/floor', validate, validateusertype, FloorController.update)
+routes.delete('/floor', validate, validateusertype, FloorController.delete)
 
-// Routes to Rooms
+// Routes to Rooms1
 routes.post('/room', validate, multer(multerConfig).single('file'), RoomController.store)
 routes.get('/rooms', validate, RoomController.index)
 routes.put('/room', validate, multer(multerConfig).single('file'), RoomController.update)
@@ -46,7 +46,7 @@ routes.get('/admin', function (req, res) {
 
 
 routes.get('/config', function (req, res) {
-    res.json({weather, logo})
+    res.json({ weather, logo })
 });
 
 
