@@ -2,12 +2,13 @@ import keyweather from './services/keyweather'
 
 keyweather()
 
+
 export default { 
         backend: {  url: `` },
-        logo: `${sessionStorage.getItem('logo')}`,
+        logo: `${localStorage.getItem('logo')}`,
         weather: { 
-        appID: `${sessionStorage.getItem('appid')}`,
-        clientID: `${sessionStorage.getItem('clientid')}`, 
-        clientSecret: `${sessionStorage.getItem('clientsecret')}`  
+        appID: `${localStorage.getItem('appid')}`,
+        clientID: `${localStorage.getItem('clientid')}`, 
+        clientSecret: `${localStorage.getItem('clientsecret')}`  
     }
 }

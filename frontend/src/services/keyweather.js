@@ -4,10 +4,10 @@ async function keyewather() {
     const { data } = await axios.get('/config')
     const { logo, weather } = data
 
-    sessionStorage.setItem('logo',logo)
-    sessionStorage.setItem('appid',weather.appid)
-    sessionStorage.setItem('clientid',weather.clientid)
-    sessionStorage.setItem('clientsecret',weather.clientsecret)
+    localStorage.setItem('logo',logo)
+    localStorage.setItem('appid',weather.appid)
+    localStorage.setItem('clientid',weather.clientid)
+    localStorage.setItem('clientsecret',weather.clientsecret)
 }
 
 export default keyewather
