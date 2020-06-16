@@ -8,7 +8,7 @@ const UserController = require('./controllers/UserController')
 const FloorController = require('./controllers/FloorController')
 const RoomController = require('./controllers/RoomController')
 
-const { weather, logo } = require = require('./config').config
+const { weather, logo }  = require('./config').config
 
 const routes = Router()
 
@@ -44,11 +44,9 @@ routes.get('/admin', function (req, res) {
     res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
-
 routes.get('/config', function (req, res) {
     res.json({ weather, logo })
 });
-
 
 
 module.exports = routes
