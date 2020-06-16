@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import io from 'socket.io-client';
 import api from '../../services/api'
 import config from '../../config'
+import Weather from '../Weather'
 
 import CardRoom from '../CardRoom'
 import LogoCostumer from '../LogoCostumer'
@@ -44,6 +45,7 @@ function Sessao() {
           ))
         }
       </div>
+      <Weather />
 
     </>
   );

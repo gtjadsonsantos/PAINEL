@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import Weather from '../Weather'
 
 import "./style.css"
 
@@ -39,7 +38,6 @@ export default function LogoCostumer() {
     return (
         <div id="containerCostumer" className="contianerCostumer">
             <img className="logoConstumer" src={`${logo}`} alt="Logo Costumer" />
-            <Weather />
         </div>
     )
 }
