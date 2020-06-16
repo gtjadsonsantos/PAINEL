@@ -1,4 +1,5 @@
 const { Router } = require('express')
+const OAuth = require('oauth');
 const multer = require('multer')
 const path = require('path')
 const validate = require('./middlewares/validatejwt')
@@ -8,7 +9,7 @@ const UserController = require('./controllers/UserController')
 const FloorController = require('./controllers/FloorController')
 const RoomController = require('./controllers/RoomController')
 
-const { weather, logo }  = require('./config').config
+const { weather, logo } = require('./config').config
 
 const routes = Router()
 
@@ -48,5 +49,37 @@ routes.get('/config', function (req, res) {
     res.json({ weather, logo })
 });
 
+routes.get('/forencast', function (req, res) {
+
+    const header = {
+        "X-Yahoo-App-Id": process.env.APP_ID || 'hFc5Rx4a'
+    };
+    const request = new OAuth.OAuth(
+        null,
+        null,
+        process.env.CLIENT_ID || 'dj0yJmk9aDFYd3YxaGtBZHNXJmQ9WVdrOWFFWmpOVko0TkdFbWNHbzlNQS0tJnM9Y29uc3VtZXJzZWNyZXQmc3Y9MCZ4PTEy',
+        process.env.CLIENT_SECRET || '4ab18573d6fdd4368f6deaa6bded2d36603a9864',
+        '1.0',
+        null,
+        'HMAC-SHA1',
+        null,
+        header
+    );
+
+    request.get(
+        'https://weather-ydn-yql.media.yahoo.com/forecastrss?location=sunnyvale,ca&format=json',
+        null,
+        null,
+        function (err, data, result) {
+            if (err) {
+                console.log(err);
+            } else {
+                const { forecasts } = JSON.parse(data)
+
+                res.json(forecasts)
+            }
+        }
+    );
+});
 
 module.exports = routes

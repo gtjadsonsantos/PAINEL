@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react'
-import config from "../../config"
+import React, { useEffect, useState } from 'react'
+import axios from 'axios'
 import Weather from '../Weather'
 
 import "./style.css"
@@ -8,6 +8,8 @@ import "./style.css"
 
 
 export default function LogoCostumer() {
+    const [logo, setLogo] = useState('')
+
 
     function handleShowLogo() {
         document.getElementById('containerCostumer').style.display = "flex";
@@ -16,6 +18,16 @@ export default function LogoCostumer() {
         }, 20000)
     }
 
+    useEffect(() => {
+        async function requestConfig() {
+            const { data } = await axios.get('/config')
+            const { logo } = data
+
+            setLogo(logo)
+        }
+
+        requestConfig()
+    })
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -26,7 +38,7 @@ export default function LogoCostumer() {
 
     return (
         <div id="containerCostumer" className="contianerCostumer">
-            <img className="logoConstumer" src={`${config.logo}`} alt="Logo Costumer" />
+            <img className="logoConstumer" src={`${logo}`} alt="Logo Costumer" />
             <Weather />
         </div>
     )
