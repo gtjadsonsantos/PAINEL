@@ -67,7 +67,7 @@ routes.get('/forencast', function (req, res) {
     );
 
     request.get(
-        'https://weather-ydn-yql.media.yahoo.com/forecastrss?location=florianópolis&u=c&format=json',
+        'https://weather-ydn-yql.media.yahoo.com/forecastrss?location=florianopolis&u=c&format=json',
         null,
         null,
         function (err, data, result) {
