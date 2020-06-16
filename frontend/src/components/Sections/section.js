@@ -13,10 +13,11 @@ const socket = io(`${config.backend.url}`)
 function Sessao() {
   const [floors, setFloors] = useState([])
   const [ordernFloor, setordernFloor] = useState([])
+
   useEffect(() => {
     async function getFloors() {
       const { data } = await api.get('/floors')
-        setFloors(data.results)
+      setFloors(data.results)
       setordernFloor(data.query)
 
     }
@@ -32,7 +33,7 @@ function Sessao() {
   }, [])
   return (
     <>
-     <LogoCostumer />
+      <LogoCostumer />
       <div id="container" >
         {
           ordernFloor.map(floor => (

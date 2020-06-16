@@ -80,3 +80,76 @@ a ação irá duplicar o usuário administrador e assim o servidor irá para de 
 * Funcionalidade para mudar a cor da aplicação
 
 
+
+
+  useEffect(() => {
+    /* https://developer.yahoo.com/weather/documentation.html#oauth-nodejs */
+    function getDada() {
+
+      const header = {
+        "X-Yahoo-App-Id": config.weather.appID,
+        "Access-Control-Request-Method": "GET",
+        "Access-Control-Request-Headers": "X-PINGOTHER, Content-Type"
+      };
+
+      const request = new OAuth.OAuth(
+        null,
+        null,
+        config.weather.clientID,
+        config.weather.clientSecret,
+        '1.0',
+        null,
+        'HMAC-SHA1',
+        null,
+        header
+      );
+
+      request.get(
+        'https://weather-ydn-yql.media.yahoo.com/forecastrss?location=florianópolis&u=c&format=json',
+        null,
+        null,
+        function (err, data, result) {
+          if (err) {
+            console.log(err);
+          } else {
+            const { forecasts } = JSON.parse(data)
+            const state = []
+
+            forecasts.forEach(item => {
+
+              switch (item.day) {
+                case "Mon":
+                  state.push({ code: item.code, day: "Segunda" })
+                  break;
+                case "Tue":
+                  state.push({ code: item.code, day: "Terça" })
+                  break;
+                case "Wed":
+                  state.push({ code: item.code, day: "Quarta" })
+                  break;
+                case "Thu":
+                  state.push({ code: item.code, day: "Quinta" })
+                  break;
+                case "Fri":
+                  state.push({ code: item.code, day: "Sexta" })
+                  break;
+                case "Sat":
+                  state.push({ code: item.code, day: "Sábado" })
+                  break;
+                case "Sun":
+                  state.push({ code: item.code, day: "Domingo" })
+                  break;
+                default:
+                  break;
+              }
+
+            });
+
+            setWeather(state)
+
+          }
+        }
+      );
+    }
+    getDada()
+  }, [update])
