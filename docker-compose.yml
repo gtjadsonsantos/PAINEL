@@ -5,7 +5,7 @@ services:
     painel: 
         build: . 
         volumes: 
-            - vvpainel:/backend
+            - vvpainel:/PAINEL/backend
         ports: 
             - 3333:3333
         user: root
