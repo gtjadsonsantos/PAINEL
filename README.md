@@ -20,7 +20,7 @@
 - - **Size** `<= 3MB` 
 - - **Mime type accept**: jpeg ,pjpeg ,png, jpg 
 - 🤩 **Provisionamento** 
-- 🤩 **Multi-Platorma(`web`,`mobile`)** 
+- 🤩 **Multi-Plataforma(`web`,`mobile`)** 
 
 
 # APLICATIVOS 
