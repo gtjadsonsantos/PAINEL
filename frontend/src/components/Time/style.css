@@ -21,6 +21,8 @@
   font-size: 15;
   text-align: center;
   width: 100%;
+  font-size: larger;
+
 } 
 .containerHours p:nth-child(3){
   text-align: right;
