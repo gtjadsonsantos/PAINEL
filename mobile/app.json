@@ -26,7 +26,10 @@
       "supportsTablet": true
         },
     "android": {
-      "package": "com.jadsonsantos.hallspanel"
+      "package": "com.jadsonsantos.hallspanel",
+      "config": {
+        "googleMobileAdsAppId": "ca-app-pub-8392436291566867~7328164487"
+      }
     }
   }
 }

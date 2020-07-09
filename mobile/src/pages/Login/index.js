@@ -17,7 +17,7 @@ export default function Login({navigation}) {
     },[password,username,server])
 
     async function handleLogin() {
-        const { data } = await axios.post(`http://${server}/user/auth`, { username, password })
+        const { data } = await axios.post(`${server}/user/auth`, { username, password })
         if (data.token) {
             AsyncStorage.setItem('token',data.token)
             navigation.navigate('UpdateRoom')   
