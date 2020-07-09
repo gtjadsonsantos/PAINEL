@@ -14,7 +14,7 @@ export default function UpdateRoom() {
     const [image, setImage] = useState({})
     const [room, setRoom] = useState('')
     const [server,setServer] = useState('')
-    const socket = io(`http://${server}`,{ jsonp: false, agent: '-', pfx: '-', cert: '-', ca: '-', ciphers: '-', rejectUnauthorized: '-', perMessageDeflate: '-' })
+    const socket = io(`${server}`,{ jsonp: false, agent: '-', pfx: '-', cert: '-', ca: '-', ciphers: '-', rejectUnauthorized: '-', perMessageDeflate: '-' })
 
     useEffect(()=>{
         AsyncStorage.getItem('server',(err,result)=> {
@@ -40,7 +40,7 @@ export default function UpdateRoom() {
         form.append("file", image)
 
 
-        await axios.put(`http://${server}/room`,form,{
+        await axios.put(`${server}/room`,form,{
         headers: {
             authorization: `Bearer ${token}`,
         }
