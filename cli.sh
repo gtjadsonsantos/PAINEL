@@ -1,41 +1,59 @@
 #!/bin/bash
 
-install () {
-    docker-compose up --build
+install() {
+    docker-compose up --build painel
 }
 
 update(){
-    docker-compose up -d 
+    docker-compose up -d painel 
 
-    if [ -f database.db ]; 
+    if [ -f ./backup/database.db ]; 
     then 
-        docker cp database.db $(docker container ls -q):/backend/database
+        docker cp ./backup/database.db $(docker container ls -q):/backend/database
         echo "database ok"
     else
-        echo "arquivo database.db não existe na raiz do projeto"
+        echo "file database.db is not exists"
     fi    
 
-      if [ -d imgs ]; 
+      if [ -d ./backup/imgs ]; 
     then 
-        docker cp imgs $(docker container ls -q):/backend
+        docker cp ./backup/imgs $(docker container ls -q):/backend
         echo "imgs ok"
     else
-        echo "a pasta imgs na raiz do projeto"
+        echo "The folder imgs is not exists"
     fi  
 }
 
-options=(1-Instalar 2-Atualizar)
+backup(){
+    docker-compose up -d painel 
+    echo "Starting application"
+    sleep 5
+    if [ -d backup ]
+    then 
+        echo "Backup already exists"
+    else 
+        echo "Creating backup folder"
+        mkdir backup
+    fi
+
+    docker cp $(docker container ls -q):/backend/imgs ./backup
+    echo "imgs ok"
+    docker cp $(docker container ls -q):/backend/database/database.db ./backup
+    echo "database ok"
+}
+
+options=("Welcome to PAINEL CLI" "" "You want do what ?" "" "1 - Install application" "2 - Import images and database to container " "3 - Do Backup imgs and database ")
 for i in "${options[@]}" 
-do 
+do  
     echo "$i " 
 done
 
-read option 
+echo "response: " && read option 
 
-if [ $option -eq '1' ]
-then
- install
-else
- update
+if [ $option -eq '1' ]; then
+    install
+elif [ $option -eq '2' ]; then
+    update
+elif [ $option -eq '3' ]; then
+    backup 
 fi
-
