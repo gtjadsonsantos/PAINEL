@@ -42,7 +42,7 @@ backup(){
     echo "database ok"
 }
 
-options=("Welcome to PAINEL CLI" "" "You want do what ?" "" "1 - Install application" "2 - Import images and database to container " "3 - Do Backup imgs and database ")
+options=("Welcome to PAINEL CLI" "" "You want do what ?" "" "1 - Install application" "2 - Import images and database to container " "3 - Do Backup imgs and database " "4 - Exit" '')
 for i in "${options[@]}" 
 do  
     echo "$i " 
@@ -56,4 +56,6 @@ elif [ $option -eq '2' ]; then
     update
 elif [ $option -eq '3' ]; then
     backup 
+elif [ $option -eq '4' ]; then
+   exit 
 fi
