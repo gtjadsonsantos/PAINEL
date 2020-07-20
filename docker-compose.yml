@@ -1,5 +1,3 @@
-# Cria um container somente unificando as os dois projetos
-
 version: "3.3"
 services: 
     painel: 
